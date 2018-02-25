@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'Thai Sans Lite';
+    src: url('../fonts/ThaiSansLite.eot');
+    src: url('../fonts/ThaiSansLite.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/ThaiSansLite.woff2') format('woff2'),
+        url('../fonts/ThaiSansLite.woff') format('woff'),
+        url('../fonts/ThaiSansLite.ttf') format('truetype'),
+        url('../fonts/ThaiSansLite.svg#ThaiSansLite') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.thaisans {
+    font-family: 'Thai Sans Lite';
+}
