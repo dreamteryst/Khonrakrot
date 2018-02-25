@@ -3,13 +3,14 @@
 <head>
   <base href="/">
   <meta charset="utf-8" />
-	<title>คนรักรถ - Testing</title>
+	<title>คนรักรถ</title>
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
 	<meta content="" name="description" />
   <meta content="Floppy Soft" name="author" />
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 	
-	<!-- ================== BEGIN BASE CSS STYLE ================== -->
+  <!-- ================== BEGIN BASE CSS STYLE ================== -->
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
 	<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 	<link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
@@ -22,9 +23,11 @@
 	
 	<!-- ================== BEGIN BASE JS ================== -->
 	<script src="assets/plugins/pace/pace.min.js"></script>
-	<!-- ================== END BASE JS ================== -->
+  <!-- ================== END BASE JS ================== -->
+  <!-- include summernote css/js -->
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
 </head>
-<body>
+<body class="bg-silver">
   <!-- BEGIN #page-container -->
   <div id="page-container" class="fade">
     <app-root></app-root>
@@ -35,6 +38,7 @@
   <script src="assets/plugins/jquery/jquery-1.9.1.min.js"></script>
   <script src="assets/plugins/jquery/jquery-migrate-1.1.0.min.js"></script>
   <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
   <!--[if lt IE 9]>
   <script src="assets/crossbrowserjs/html5shiv.js"></script>
   <script src="assets/crossbrowserjs/respond.min.js"></script>
@@ -45,6 +49,11 @@
   <!-- ================== END BASE JS ================== -->
 
   <script>
+    window.addEventListener('initSummernote', function(e) {
+      $('#summernote').summernote({
+        height: 200
+      });
+    });
     $(document).ready(function() {
         App.init();
     });

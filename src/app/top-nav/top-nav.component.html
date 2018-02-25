@@ -2,12 +2,12 @@
 <div id="top-head" class="top-head">
     <!-- BEGIN container -->
     <div class="container">
-        <img src="assets/img/logo.png" class="img-logo" />
         <div class="sign-box">
+            <a routerLink="/"><img src="assets/img/logo.png" class="img-logo" /></a>
             <div class="sign-content">
                 <div class="btn-group">
-                    <button class="btn btn-primary">เข้าสู่ระบบ</button>
-                    <button class="btn btn-success">สมัครสมาชิก</button>
+                    <a routerLink="/addnews" routerLinkActive="active" class="btn btn-inverse"><i class="fas fa-lock"></i> เข้าสู่ระบบ</a>
+                    <a routerLink="/register" routerLinkActive="active" class="btn btn-theme"><i class="fas fa-user"></i> สมัครสมาชิก</a>
                 </div>
             </div>
         </div>

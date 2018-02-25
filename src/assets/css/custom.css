@@ -10,6 +10,35 @@
     font-style: normal;
 }
 
+.img-logo {
+    height: 130px;
+    float: left;
+}
+.top-head {
+    background: url('../img/bg-pattern.png'), linear-gradient(#F48FB1, #E57373);
+    height: 150px;
+    padding-top: 8px;
+    border-bottom: 1px solid white;
+}
+.sign-box {
+    position: relative;
+    height: 120px;
+    vertical-align: bottom;
+}
+.sign-content {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.footer-copyright {
+    background: url('../img/bg-pattern.png'), linear-gradient(#F48FB1, #E57373);
+    background-position: bottom;
+}
+.text-footer {
+    color: #333111;
+    text-align: center;
+    font-size: 18px;
+}
 .thaisans {
     font-family: 'Thai Sans Lite';
 }
