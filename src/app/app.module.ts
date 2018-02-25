@@ -12,14 +12,15 @@ import { TopNavComponent } from './top-nav/top-nav.component';
 import { NewsComponent } from './news/news.component';
 import { AddNewsComponent } from './add-news/add-news.component';
 import { ErrorComponent } from './error/error.component';
+import { News2Component } from './news2/news2.component';
 
 const appRoutes: Routes = [
   { 
     path: '', 
     component: MainComponent,
     children: [
-      { path: '', component: NewsComponent },
-      { path: 'home', component: NewsComponent },
+      { path: '', component: News2Component },
+      { path: 'home', component: News2Component },
       { path: 'addnews', component: AddNewsComponent }
     ]
   },
@@ -40,7 +41,8 @@ const appRoutes: Routes = [
     TopNavComponent,
     NewsComponent,
     AddNewsComponent,
-    ErrorComponent
+    ErrorComponent,
+    News2Component
   ],
   imports: [
     RouterModule.forRoot(
