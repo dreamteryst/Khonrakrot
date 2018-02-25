@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'Thai Sans Lite';
+    src: url('assets/fonts/ThaiSansLite.eot');
+    src: url('assets/fonts/ThaiSansLite.eot?#iefix') format('embedded-opentype'),
+        url('assets/fonts/ThaiSansLite.woff2') format('woff2'),
+        url('assets/fonts/ThaiSansLite.woff') format('woff'),
+        url('assets/fonts/ThaiSansLite.ttf') format('truetype'),
+        url('assets/fonts/ThaiSansLite.svg#ThaiSansLite') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.thaisans {
+    font-family: 'Thai Sans Lite';
+}
