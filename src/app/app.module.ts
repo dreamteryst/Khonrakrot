@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { MainComponent } from './main/main.component';
 import { TopNavComponent } from './top-nav/top-nav.component';
+import { NewsComponent } from './news/news.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { TopNavComponent } from './top-nav/top-nav.component';
     HeaderComponent,
     FooterComponent,
     MainComponent,
-    TopNavComponent
+    TopNavComponent,
+    NewsComponent
   ],
   imports: [
     BrowserModule
