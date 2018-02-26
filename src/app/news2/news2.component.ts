@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { Observable } from 'rxjs/Observable';
+import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-news2',
@@ -8,20 +10,18 @@ import { Observable } from 'rxjs/Observable';
   styleUrls: ['./news2.component.css']
 })
 export class News2Component implements OnInit {
-  private items: Observable<any[]>;
-  private limit = 10;
+  items: Observable<Object>;
+  limit = 10;
 
-  constructor(db: AngularFirestore) { 
-    this.items = db.collection('news', ref => ref.orderBy("date")).valueChanges();
-    // this.items = db.collection('news', ref => ref.orderBy("date").startAt({'key': "H4mh0ziSqu4gN3YnAruF"}).limit(10)).snapshotChanges().map( actions => {
-    //   return actions.map(item => {
-    //     return { id: item.payload.doc.id, ...item.payload.doc.data() }
-    //   });
-    // });
+  constructor(db: AngularFirestore, private http: HttpClient) {
+    // this.items = db.collection('news', ref => ref.orderBy("date")).valueChanges();
   }
 
   ngOnInit() {
-
+    // this.items = this.http.get('http://localhost/api/news/read.php');
+    this.items = this.http.get('http://localhost/api/news/read.php').pipe(
+      map(res => res['message']) // or any other operator
+    );
   }
 
   more() {
