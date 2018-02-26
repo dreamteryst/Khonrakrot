@@ -8,3 +8,13 @@ html, body {
     font-weight: 550;
     font-size: 18px;
 }
+.btn {
+    font-size: 20px;
+    font-weight: 800;
+}
+.header-nav a {
+    font-size: 18px;
+}
+.header-nav .nav>li>a {
+    font-size: 18px;
+}
