@@ -1,10 +1,10 @@
 <?php
 class Database{
     private $conn;
-    private $host = "localhost";
+    private $host = "10.199.66.227";
     private $dbname = "sec01_flop";
-    private $username = "root";
-    private $password = "";
+    private $username = "Sec01_Flop";
+    private $password = "Fs3P7s0T";
 
     public function getConnection(){
         $this->conn = null;
