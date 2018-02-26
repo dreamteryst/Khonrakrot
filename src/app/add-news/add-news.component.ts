@@ -15,7 +15,7 @@ export class AddNewsComponent implements OnInit {
     window.dispatchEvent(new CustomEvent('initSummernote'));
     $(function(){
       $("#date").datetimepicker({
-        format: 'd/m/Y'
+        format: 'DD/MM/Y'
       });
     });
   }
