@@ -8,8 +8,8 @@ import { Observable } from 'rxjs/Observable';
   styleUrls: ['./news2.component.css']
 })
 export class News2Component implements OnInit {
-  private items: Observable<any[]>;
-  private limit = 10;
+  items: Observable<any[]>;
+  limit = 10;
 
   constructor(db: AngularFirestore) { 
     this.items = db.collection('news', ref => ref.orderBy("date")).valueChanges();
