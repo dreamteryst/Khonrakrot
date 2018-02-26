@@ -36,7 +36,7 @@
             </h4> -->
     </div>
     <!-- END news item -->
-    <a href="javascript:;" class="btn btn-inverse pull-right" (click)="more()">
+    <a href="javascript:;" class="btn btn-inverse pull-right" (click)="more()" *ngIf="(items | async)?.length >= limit">
       <i class="fas fa-plus"></i> More</a>
   </div>
   <!-- END container -->
