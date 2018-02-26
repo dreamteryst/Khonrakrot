@@ -1,5 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
-.th-title {
+@font-face {
     font-family: 'Thai Sans Lite';
-    font-size: 24px;
+    src: url(/assets/fonts/ThaiSansLite.ttf) format("truetype");
+    }
+html, body {
+    font-family: 'Thai Sans Lite', sans-serif;
+    font-weight: 550;
+    font-size: 18px;
 }
