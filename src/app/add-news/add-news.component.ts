@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+declare var jquery:any;
+declare var $ :any;
 
 @Component({
   selector: 'app-add-news',
@@ -11,6 +13,11 @@ export class AddNewsComponent implements OnInit {
 
   ngOnInit() {
     window.dispatchEvent(new CustomEvent('initSummernote'));
+    $(function(){
+      $("#date").datetimepicker({
+        format: 'd/m/Y'
+      });
+    });
   }
 
 }

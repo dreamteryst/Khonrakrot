@@ -14,15 +14,15 @@
       <table class="table table-striped">
         <thead>
           <tr>
-            <th>#</th>
-            <th>วันที่</th>            
+            <!-- <th>#</th>
+            <th>วันที่</th>             -->
             <th>ข่าว / ประกาศ</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let item of items | async | slice: 0:limit; let i = index ">
-            <td>{{ i+1 }}</td>
-            <td>{{ item.date }}</td>
+            <!-- <td>{{ i+1 }}</td>
+            <td>{{ item.date }}</td> -->
             <td>
               <p class="news-title">
                 <a href="#">{{ item.topic }}</a>
