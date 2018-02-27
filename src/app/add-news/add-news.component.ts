@@ -20,6 +20,7 @@ export class AddNewsComponent implements OnInit {
       $('input[type=file]').change(function () {
         readURL(this);
       });
+
       function readURL(input) {
 
         if (input.files && input.files[0]) {
@@ -32,6 +33,16 @@ export class AddNewsComponent implements OnInit {
           reader.readAsDataURL(input.files[0]);
         }
       }
+    });
+  }
+  formConfirm(){
+    $("#confirm-modal").modal('show');
+    $("#modal-btn-yes").on("click", function(){
+      $("#confirm-modal").modal('hide');
+      $("#form_shipping").submit();
+    });
+    $("#modal-btn-no").on("click", function(){
+      $("#confirm-modal").modal('hide');
     });
   }
 
