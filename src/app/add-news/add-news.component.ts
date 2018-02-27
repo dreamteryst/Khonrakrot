@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 declare var jquery: any;
 declare var $: any;
 
@@ -9,11 +12,20 @@ declare var $: any;
 })
 export class AddNewsComponent implements OnInit {
 
-  constructor() { }
+  private topic:String;
+  private content:String;
+  private date:String;
+  private cover:String;
+
+  returned:any = {status:'',message:''};
+
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    window.dispatchEvent(new CustomEvent('initSummernote'));
     $(function () {
+      $('#summernote').summernote({
+        height: 500
+      });
       $("#date").datetimepicker({
         format: 'DD/MM/Y'
       });
@@ -36,10 +48,34 @@ export class AddNewsComponent implements OnInit {
     });
   }
   formConfirm(){
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+      })
+    };
+    var self = this;
     $("#confirm-modal").modal('show');
     $("#modal-btn-yes").on("click", function(){
+      self.topic = $("#topic").val();
+      self.date = $("#date").val();
+      self.content = $('#summernote').val();
+      self.cover = $("#cover_image").val();
       $("#confirm-modal").modal('hide');
-      $("#form_shipping").submit();
+      self.http.post('http://localhost/api/news/insert.php', {
+        topic: self.topic,
+        content: self.content,
+        cover_image: self.cover,
+        date_post: self.date
+      }, httpOptions).subscribe(
+        res => {
+          self.returned = res;
+          console.log(self.returned);
+        },
+        err => {
+          console.log(err);
+        }
+      );
+      // $("#form_shipping").submit();
     });
     $("#modal-btn-no").on("click", function(){
       $("#confirm-modal").modal('hide');
