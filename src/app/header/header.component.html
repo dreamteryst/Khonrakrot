@@ -1,5 +1,5 @@
 <!-- BEGIN #slider -->
-<div id="slider" class="section-container p-0 bg-image-phone">
+<div id="slider" class="section-container p-0 bg-image-phone" *ngIf="(items | async)?.length > 0">
     <!-- BEGIN carousel -->
     <div id="main-carousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
