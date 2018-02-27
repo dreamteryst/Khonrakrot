@@ -18,8 +18,8 @@ export class News2Component implements OnInit {
   }
 
   ngOnInit() {
-    // this.items = this.http.get('http://localhost/api/news/read.php');
-    this.items = this.http.get('http://10.199.66.227/SoftEn2018/Sec01_Flop/api/news/read.php').pipe(
+    this.items = this.http.get('http://localhost/api/news/read.php').pipe(
+    // this.items = this.http.get('http://10.199.66.227/SoftEn2018/Sec01_Flop/api/news/read.php').pipe(
       map(res => res['message']) // or any other operator
     );
   }

@@ -4,7 +4,7 @@
     <div class="container">
         <!-- BEGIN checkout -->
         <div class="checkout">
-            <form action="http://10.199.66.227/SoftEn2018/Sec01_Flop/api/news/insert.php" method="POST" name="form_shipping" class="form-horizontal">
+            <form action="http://localhost/api/news/insert.php" method="POST" name="form_shipping" class="form-horizontal"  enctype="multipart/form-data">
                 <!-- BEGIN checkout-header -->
                 <div class="checkout-header"  style="background:linear-gradient(#F48FB1, #E57373);">
                     <!-- BEGIN row -->
@@ -45,7 +45,8 @@
                             Cover Images
                         </label>
                         <div class="col-md-9">
-                            <input type="file" multiple="true" class="form-control" name="cover_images[]" value="" placeholder="">
+                            <input type="file" class="form-control" value="" placeholder="">
+                            <input type="hidden" id="cover_image" name="cover_image">
                         </div>
                     </div>
                 </div>

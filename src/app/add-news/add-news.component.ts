@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-declare var jquery:any;
-declare var $ :any;
+declare var jquery: any;
+declare var $: any;
 
 @Component({
   selector: 'app-add-news',
@@ -13,10 +13,25 @@ export class AddNewsComponent implements OnInit {
 
   ngOnInit() {
     window.dispatchEvent(new CustomEvent('initSummernote'));
-    $(function(){
+    $(function () {
       $("#date").datetimepicker({
         format: 'DD/MM/Y'
       });
+      $('input[type=file]').change(function () {
+        readURL(this);
+      });
+      function readURL(input) {
+
+        if (input.files && input.files[0]) {
+          var reader = new FileReader();
+      
+          reader.onload = function(e) {
+            $("#cover_image").val(e.target['result']);
+          }
+      
+          reader.readAsDataURL(input.files[0]);
+        }
+      }
     });
   }
 
