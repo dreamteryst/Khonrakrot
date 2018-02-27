@@ -12,12 +12,12 @@ declare var $: any;
 })
 export class AddNewsComponent implements OnInit {
 
-  private topic:String;
-  private content:String;
-  private date:String;
-  private cover:String;
+  topic: String;
+  content: String;
+  date: String;
+  cover: String;
 
-  returned:any = {status:'',message:''};
+  returned: any = { status: '', message: '' };
 
   constructor(private http: HttpClient) { }
 
@@ -37,31 +37,31 @@ export class AddNewsComponent implements OnInit {
 
         if (input.files && input.files[0]) {
           var reader = new FileReader();
-      
-          reader.onload = function(e) {
+
+          reader.onload = function (e) {
             $("#cover_image").val(e.target['result']);
           }
-      
+
           reader.readAsDataURL(input.files[0]);
         }
       }
     });
   }
-  formConfirm(){
+  formConfirm() {
     const httpOptions = {
       headers: new HttpHeaders({
-        'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
       })
     };
     var self = this;
     $("#confirm-modal").modal('show');
-    $("#modal-btn-yes").on("click", function(){
+    $("#modal-btn-yes").on("click", function () {
       self.topic = $("#topic").val();
       self.date = $("#date").val();
       self.content = $('#summernote').val();
       self.cover = $("#cover_image").val();
       $("#confirm-modal").modal('hide');
-      self.http.post('http://localhost/api/news/insert.php', {
+      self.http.post(window['domain'] + '/api/news/insert.php', {
         topic: self.topic,
         content: self.content,
         cover_image: self.cover,
@@ -69,7 +69,10 @@ export class AddNewsComponent implements OnInit {
       }, httpOptions).subscribe(
         res => {
           self.returned = res;
-          console.log(self.returned);
+          $("#topic").val('');
+          $("#date").val('');
+          $('#summernote').summernote('code', '');
+          $("#cover_image").val('');
         },
         err => {
           console.log(err);
@@ -77,7 +80,7 @@ export class AddNewsComponent implements OnInit {
       );
       // $("#form_shipping").submit();
     });
-    $("#modal-btn-no").on("click", function(){
+    $("#modal-btn-no").on("click", function () {
       $("#confirm-modal").modal('hide');
     });
   }
