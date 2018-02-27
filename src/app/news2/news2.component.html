@@ -1,4 +1,4 @@
-<app-header></app-header>
+<app-header [items]="items"></app-header>
 <!-- BEGIN #trending-items -->
 <div id="trending-items" class="section-container bg-white">
   <!-- BEGIN container -->
@@ -14,15 +14,18 @@
       <table class="table table-striped">
         <thead>
           <tr>
-            <!-- <th>#</th>
-            <th>วันที่</th>             -->
+            <th>#</th>
+            <!-- <th>วันที่</th> -->
             <th>ข่าว / ประกาศ</th>
           </tr>
         </thead>
         <tbody>
+          <tr *ngIf="(items | async)?.length <= 0">
+            <td colspan="100%" style="text-align: center;">ไม่พบข้อมูล</td>
+          </tr>
           <tr *ngFor="let item of items | async | slice: 0:limit; let i = index ">
-            <!-- <td>{{ i+1 }}</td>
-            <td>{{ item.date }}</td> -->
+            <td>{{ i+1 }}</td>
+            <!-- <td>{{ item.date }}</td> -->
             <td>
               <p class="news-title">
                 <a href="#">{{ item.topic }}</a>
@@ -36,7 +39,7 @@
             </h4> -->
     </div>
     <!-- END news item -->
-    <a href="javascript:;" class="btn btn-inverse pull-right" (click)="more()" *ngIf="(items | async)?.length >= limit">
+    <a href="javascript:;" class="btn btn-inverse pull-right" id="more" (click)="more()" *ngIf="(items | async)?.length >= limit">
       <i class="fas fa-plus"></i> More</a>
   </div>
   <!-- END container -->

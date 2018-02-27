@@ -1,0 +1,16 @@
+.product-img {
+    position: relative;
+    max-height: 300px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    margin-top: -100px;
+    border: 2px solid #fff;
+}
+.carousel-caption p {
+    margin-top: 10px;
+    border-radius: 10px;
+    background-color:rgba(0, 0, 0, 0.65);
+}
+.carousel-caption p a {
+    color: white;
+}
