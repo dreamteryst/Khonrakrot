@@ -4,24 +4,27 @@
     <div class="container">
         <!-- BEGIN checkout -->
         <div class="checkout">
-            <form action="http://localhost/api/news/insert.php" method="POST" name="form_shipping" class="form-horizontal"  enctype="multipart/form-data">
+            
+            <form method="POST" name="form_shipping" id="form_shipping" class="form-horizontal" enctype="multipart/form-data">
                 <!-- BEGIN checkout-header -->
                 <div class="checkout-header">
                     <!-- BEGIN row -->
                     <div class="row">
-                      <span class="title-form">Adding News</span>
+                        <span class="title-form">Adding News {{ date }}</span>
                     </div>
                     <!-- END row -->
                 </div>
                 <!-- END checkout-header -->
                 <!-- BEGIN checkout-body -->
                 <div class="checkout-body">
+                    <p [class]="returned.status ? 'alert alert-success' : 'alert alert-danger'" *ngIf="returned.message != ''">{{ returned.message }}</p>
                     <div class="form-group">
                         <label class="control-label col-md-2">
-                            Topic <span class="text-danger">*</span>
+                            Topic
+                            <span class="text-danger">*</span>
                         </label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" name="topic" value="" placeholder="หัวข้อเรื่อง" required>
+                            <input type="text" class="form-control" id="topic" name="topic" value="" [(ngModel)]="topic" placeholder="หัวข้อเรื่อง" required>
                         </div>
                     </div>
                     <div class="form-group">
@@ -34,7 +37,8 @@
                     </div>
                     <div class="form-group">
                         <label class="control-label col-md-2">
-                            Date <span class="text-danger">*</span>
+                            Date
+                            <span class="text-danger">*</span>
                         </label>
                         <div class="col-md-9">
                             <input type="text" class="form-control" id="date" name="date_post" value="" placeholder="dd/mm/yyyy" required>
@@ -53,12 +57,31 @@
                 <!-- END checkout-body -->
                 <!-- BEGIN checkout-footer -->
                 <div class="checkout-footer">
-                    <button type="submit" class="btn btn-inverse btn-lg p-l-30 p-r-30 m-l-10">Save</button>
+                    <button type="button" (click)="formConfirm()" class="btn btn-inverse btn-lg p-l-30 p-r-30 m-l-10">Save</button>
                 </div>
                 <!-- END checkout-footer -->
             </form>
         </div>
         <!-- END checkout -->
+        <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="confirm-modal">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-body text-center">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h2 class="modal-title" id="myModalLabel">ยืนยันการทำรายการ</h2>
+
+                        <!-- </div>
+                    <div class="modal-footer text-center"> -->
+                        <div>
+                            <button type="button" class="btn btn-primary" id="modal-btn-yes">ยืนยัน</button>
+                            <button type="button" class="btn btn-default" id="modal-btn-no">ยกเลิก</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <!-- END container -->
 </div>
