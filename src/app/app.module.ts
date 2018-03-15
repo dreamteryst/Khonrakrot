@@ -17,6 +17,7 @@ import { NewsComponent } from './news/news.component';
 import { AddNewsComponent } from './add-news/add-news.component';
 import { ErrorComponent } from './error/error.component';
 import { News2Component } from './news2/news2.component';
+import { RegisterComponent } from './register/register.component';
 
 const appRoutes: Routes = [
   { 
@@ -25,7 +26,8 @@ const appRoutes: Routes = [
     children: [
       { path: '', component: News2Component },
       { path: 'home', component: News2Component },
-      { path: 'addnews', component: AddNewsComponent }
+      { path: 'addnews', component: AddNewsComponent },
+      { path: 'register', component: RegisterComponent }
     ]
   },
   { path: 'home',
@@ -46,7 +48,8 @@ const appRoutes: Routes = [
     NewsComponent,
     AddNewsComponent,
     ErrorComponent,
-    News2Component
+    News2Component,
+    RegisterComponent
   ],
   imports: [
     RouterModule.forRoot(
