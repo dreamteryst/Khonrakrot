@@ -23,6 +23,8 @@ export class AddNewsComponent implements OnInit {
 
   ngOnInit() {
     $(function () {
+      $("#btnLogin").hide();
+      $("#btnRegister").hide();
       $('#summernote').summernote({
         height: 500
       });
