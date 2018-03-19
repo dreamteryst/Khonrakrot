@@ -13,7 +13,8 @@
     font-size: 12px;
 }
 .bg-image-phone {
-    background: url('../img/apple-cover.jpg');
+    background: url('../img/cover/img1.jpg');
+    background-position: bottom;
     background-size: cover;
 }
 .img-logo {
