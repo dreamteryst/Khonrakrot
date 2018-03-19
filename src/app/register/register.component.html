@@ -9,7 +9,7 @@
                 <div class="checkout-header">
                     <!-- BEGIN row -->
                     <div class="row">
-                      <span class="title-form">Adding News</span>
+                      <span class="title-form">Register</span>
                     </div>
                     <!-- END row -->
                 </div>
@@ -18,35 +18,116 @@
                 <div class="checkout-body">
                     <div class="form-group">
                         <label class="control-label col-md-2">
-                            Topic <span class="text-danger">*</span>
+                            Name - Surname <span class="text-danger">*</span>
                         </label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" name="topic" value="" placeholder="หัวข้อเรื่อง" required>
+                            <input type="text" class="form-control" name="name" id="name" placeholder="ชื่อ นามสกุล" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-md-2">
-                            Content
+                            ID Card/Passport ID <span class="text-danger">*</span>
                         </label>
                         <div class="col-md-9">
-                            <textarea id="summernote" name="content"></textarea>
+                            <input type="text" class="form-control" name="people_id" id="people_id" placeholder="รหัสบัตรประชาชน / หมายเลขหนังสือเดินทาง" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-md-2">
-                            Date <span class="text-danger">*</span>
+                            Copy of ID Card/Copy of Passport ID <span class="text-danger">*</span>
                         </label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" id="date" name="date_post" value="" placeholder="dd/mm/yyyy" required>
+                            <input type="file" class="form-control" name="copy" id="copy" placeholder="สำเนาบัตรประชาชน / สำเนาหนังสือเดินทาง" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-md-2">
-                            Cover Images
+                            Username <span class="text-danger">*</span>
                         </label>
                         <div class="col-md-9">
-                            <input type="file" class="form-control" value="" placeholder="">
-                            <input type="hidden" id="cover_image" name="cover_image">
+                            <input type="text" class="form-control" name="username" id="username" placeholder="ชื่อผู้ใช้" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-2">
+                            Password <span class="text-danger">*</span>
+                        </label>
+                        <div class="col-md-9">
+                            <input type="password" class="form-control" name="password" id="password" placeholder="รหัสผ่าน" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-2">
+                            Confirm Password <span class="text-danger">*</span>
+                        </label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" name="password_confirmation" id="password_confirmation" placeholder="ยืนยันรหัสผ่าน" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-2">
+                            Date of Birth <span class="text-danger">*</span>
+                        </label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" name="birthday" id="birthday" placeholder="วัน/เดือน/ปี" required>
+                        </div>
+                    </div>
+                    <legend>Question</legend>
+                    <div class="form-group">
+                        <label class="control-label col-md-2">
+                            Question 1 <span class="text-danger">*</span>
+                        </label>
+                        <div class="col-md-4">
+                            <select name="question1" id="question1" class="form-control">
+                                <option>พ่อชื่ออะไร</option>
+                                <option>แม่ชื่ออะไร</option>
+                                <option>เมียชื่ออะไร</option>
+                                <option>เมียน้อยชื่ออะไร</option>
+                            </select>
+                        </div>
+                        <label class="control-label col-md-2">
+                            Answer 1 <span class="text-danger">*</span>
+                        </label>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" name="answer1" id="answer1" placeholder="คำตอบ 1" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-2">
+                            Question 2 <span class="text-danger">*</span>
+                        </label>
+                        <div class="col-md-4">
+                            <select name="question2" id="question2" class="form-control">
+                                <option>พ่อชื่ออะไร</option>
+                                <option>แม่ชื่ออะไร</option>
+                                <option>เมียชื่ออะไร</option>
+                                <option>เมียน้อยชื่ออะไร</option>
+                            </select>
+                        </div>
+                        <label class="control-label col-md-2">
+                            Answer 2 <span class="text-danger">*</span>
+                        </label>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" name="answer2" id="answer2" placeholder="คำตอบ 2" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-2">
+                            Question 3 <span class="text-danger">*</span>
+                        </label>
+                        <div class="col-md-4">
+                            <select name="question3" id="question3" class="form-control">
+                                <option>พ่อชื่ออะไร</option>
+                                <option>แม่ชื่ออะไร</option>
+                                <option>เมียชื่ออะไร</option>
+                                <option>เมียน้อยชื่ออะไร</option>
+                            </select>
+                        </div>
+                        <label class="control-label col-md-2">
+                            Answer 3 <span class="text-danger">*</span>
+                        </label>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" name="answer3" id="answer3" placeholder="คำตอบ 3" required>
                         </div>
                     </div>
                 </div>
