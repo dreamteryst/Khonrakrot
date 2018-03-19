@@ -4,7 +4,7 @@
     <div class="container">
         <!-- BEGIN checkout -->
         <div class="checkout">
-            <form action="http://localhost/api/news/insert.php" method="POST" name="form_shipping" class="form-horizontal"  enctype="multipart/form-data">
+            <form action="http://localhost/api/" method="POST" name="form_shipping" class="form-horizontal"  enctype="multipart/form-data">
                 <!-- BEGIN checkout-header -->
                 <div class="checkout-header">
                     <!-- BEGIN row -->
@@ -78,18 +78,15 @@
                             Question 1 <span class="text-danger">*</span>
                         </label>
                         <div class="col-md-4">
-                            <select name="question1" id="question1" class="form-control">
-                                <option>พ่อชื่ออะไร</option>
-                                <option>แม่ชื่ออะไร</option>
-                                <option>เมียชื่ออะไร</option>
-                                <option>เมียน้อยชื่ออะไร</option>
+                            <select name="question1" id="question1" class="form-control" [(ngModel)]="question1">
+                                <option *ngFor="let question of questions" [value]="question.value">{{question.label}}</option>
                             </select>
                         </div>
                         <label class="control-label col-md-2">
                             Answer 1 <span class="text-danger">*</span>
                         </label>
                         <div class="col-md-4">
-                            <input type="text" class="form-control" name="answer1" id="answer1" placeholder="คำตอบ 1" required>
+                            <input type="text" class="form-control" name="answer1" id="answer1" [(ngModel)]="answer1" placeholder="คำตอบ 1" required>
                         </div>
                     </div>
                     <div class="form-group">
@@ -97,18 +94,15 @@
                             Question 2 <span class="text-danger">*</span>
                         </label>
                         <div class="col-md-4">
-                            <select name="question2" id="question2" class="form-control">
-                                <option>พ่อชื่ออะไร</option>
-                                <option>แม่ชื่ออะไร</option>
-                                <option>เมียชื่ออะไร</option>
-                                <option>เมียน้อยชื่ออะไร</option>
+                            <select name="question2" id="question2" class="form-control" [(ngModel)]="question2">
+                                <option *ngFor="let question of questions" [value]="question.value">{{question.label}}</option>
                             </select>
                         </div>
                         <label class="control-label col-md-2">
                             Answer 2 <span class="text-danger">*</span>
                         </label>
                         <div class="col-md-4">
-                            <input type="text" class="form-control" name="answer2" id="answer2" placeholder="คำตอบ 2" required>
+                            <input type="text" class="form-control" name="answer2" id="answer2" [(ngModel)]="answer2" placeholder="คำตอบ 2" required>
                         </div>
                     </div>
                     <div class="form-group">
@@ -116,18 +110,15 @@
                             Question 3 <span class="text-danger">*</span>
                         </label>
                         <div class="col-md-4">
-                            <select name="question3" id="question3" class="form-control">
-                                <option>พ่อชื่ออะไร</option>
-                                <option>แม่ชื่ออะไร</option>
-                                <option>เมียชื่ออะไร</option>
-                                <option>เมียน้อยชื่ออะไร</option>
+                            <select name="question3" id="question3" class="form-control" [(ngModel)]="question3">
+                                <option *ngFor="let question of questions" [value]="question.value">{{question.label}}</option>
                             </select>
                         </div>
                         <label class="control-label col-md-2">
                             Answer 3 <span class="text-danger">*</span>
                         </label>
                         <div class="col-md-4">
-                            <input type="text" class="form-control" name="answer3" id="answer3" placeholder="คำตอบ 3" required>
+                            <input type="text" class="form-control" name="answer3" id="answer3" [(ngModel)]="answer3" placeholder="คำตอบ 3" required>
                         </div>
                     </div>
                 </div>

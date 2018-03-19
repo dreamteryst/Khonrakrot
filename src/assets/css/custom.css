@@ -9,6 +9,13 @@
     font-weight: normal;
     font-style: normal;
 }
+.checkout-footer, .checkout-header {
+    background: #00acac;
+}
+.title-form {
+    color: white;
+    font-size: 30px;
+}
 .note-editor .btn {
     font-size: 12px;
 }
