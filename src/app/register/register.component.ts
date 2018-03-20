@@ -12,10 +12,10 @@ declare var $: any;
 export class RegisterComponent implements OnInit {
 
   questions = [
-    {'label':'รถคันแรกของคุณ', 'value': 'รถคันแรกของคุณ'}, 
-    {'label':'รถปัจจุบันของคุณ', 'value': 'รถปัจจุบันของคุณ'}, 
-    {'label':'เพลงโปรดของคุณ', 'value': 'เพลงโปรดของคุณ'}, 
-    {'label':'ชื่อโรงเรียนมัธยม', 'value': 'ชื่อโรงเรียนมัธยม'}
+    {'label':'What is your first car?', 'value': 'What is your first car?'}, 
+    {'label':'What is your current car?', 'value': 'What is your current car?'}, 
+    {'label':'What is your favorite song?', 'value': 'What is your favorite song?'}, 
+    {'label':'What is your high school?', 'value': 'What is your high school?'}
   ];
   name:string;
   people_id:string;
@@ -53,61 +53,61 @@ export class RegisterComponent implements OnInit {
     this.birthday = $("#birthday").val();
     var re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
     if (typeof this.name === 'undefined' || this.name == ''){
-      this.error = 'กรุณาระบุ ชื่อ นามสกุล';
+      this.error = 'Name Surname is require.';
       this.isError = true;
     } else if (typeof this.people_id === 'undefined' || this.people_id == '') {
-      this.error = 'กรุณาระบุ รหัสบัตรประชาชน / หมายเลขหนังสือเดินทาง';
+      this.error = 'Citizen ID/Passport ID is require.';
       this.isError = true;
     } else if (typeof this.copy === 'undefined' || this.copy == '') {
-      this.error = 'กรุณาระบุ สำเนาบัตรประชาชน / สำเนาหนังสือเดินทาง';
+      this.error = 'Copy of Citizen ID/Copy of Passport ID is require.';
       this.isError = true;
     } else if (typeof this.username === 'undefined' || this.username == '') {
-      this.error = 'กรุณาระบุ ชื่อผู้ใช้';
+      this.error = 'Username is require.';
       this.isError = true;
     } else if (typeof this.password === 'undefined' || this.password == '') {
-      this.error = 'กรุณาระบุ รหัสผ่าน';
+      this.error = 'Password is require.';
       this.isError = true;
     } else if (typeof this.birthday === 'undefined' || this.birthday == '') {
-      this.error = 'กรุณาระบุ วัน/เดือน/ปี';
+      this.error = 'Date of birth is require.';
       this.isError = true;
     } else if (typeof this.email === 'undefined' || this.email == '') {
-      this.error = 'กรุณาระบุ อีเมล';
+      this.error = 'Email is require.';
       this.isError = true;
     } else if (typeof this.question1 === 'undefined' || this.question1 == '') {
-      this.error = 'กรุณาเลือก คำถามที่ 1';
+      this.error = 'Question 1 is require.';
       this.isError = true;
     } else if (typeof this.question2 === 'undefined' || this.question2 == '') {
-      this.error = 'กรุณาเลือก คำถามที่ 2';
+      this.error = 'Question 2 is require.';
       this.isError = true;
     } else if (typeof this.question3 === 'undefined' || this.question3 == '') {
-      this.error = 'กรุณาเลือก คำถามที่ 3';
+      this.error = 'Question 3 is require.';
       this.isError = true;
     } else if (typeof this.answer1 === 'undefined' || this.answer1 == '') {
-      this.error = 'กรุณาระบุ คำตอบที่ 1';
+      this.error = 'Answer 1 is require.';
       this.isError = true;
     } else if (typeof this.answer2 === 'undefined' || this.answer2 == '') {
-      this.error = 'กรุณาระบุ คำตอบที่ 2';
+      this.error = 'Answer 2 is require.';
       this.isError = true;
     } else if (typeof this.answer3 === 'undefined' || this.answer3 == '') {
-      this.error = 'กรุณาระบุ คำตอบที่ 3';
+      this.error = 'Answer 3 is require.';
       this.isError = true;
     } else if (!re.test(String(this.email).toLowerCase())) {
-      this.error = 'กรุณาระบุ อีเมล ให้ถูกต้อง';
+      this.error = 'Please re-enter email.';
       this.isError = true;
-    } else if (!this.birthday.match(/^(0[1-9]|[12][0-9]|3[01])[\- \/.](?:(0[1-9]|1[012])[\- \/.](201)[2-9]{1})$/)) {
-      this.error = 'กรุณาระบุ วันเกิด ให้ถูกต้อง';
+    } else if (!this.birthday.match(/^(0[1-9]|[12][0-9]|3[01])[\- \/.](?:(0[1-9]|1[012])[\- \/.][1-2]{1}[0-9]{3})$/)) {
+      this.error = 'Please re-enter date of birth.';
       this.isError = true;
     } else if (!this.people_id.match(/[0-9]{8,13}/g)) {
-      this.error = 'กรุณาระบุ รหัสบัตรประชาชน / หมายเลขหนังสือเดินทาง ให้ถูกต้อง';
+      this.error = 'Please re-enter Citizen ID/Passport ID.';
       this.isError = true;
     } else if (this.password != this.password_confirmation) {
-      this.error = 'กรุณาระบุ รหัสผ่าน และ ยืนยันรหัสผ่าน ให้ตรงกัน';
+      this.error = 'Password do not match confirm password.';
       this.isError = true;
     } else if (this.question1 == this.question2 || this.question1 == this.question3 || this.question2 == this.question3) {
-      this.error = 'กรุณาเลือกคำถาม ที่ไม่ซ้ำกัน';
+      this.error = 'Please select a uniqe question.';
       this.isError = true;
     } else if (!this.agree) {
-      this.error = 'กรุณายอมรับข้อตกลง';
+      this.error = 'Please agree term and condition.';
       this.isError = true;
     } else {
       this.isError = false;
@@ -133,7 +133,7 @@ export class RegisterComponent implements OnInit {
 
     this.http.post(window['domain'] + '/api/register/insert.php', formData).subscribe(res => {
       if(res['status']) {
-        this.router.navigate(['register-success']);
+        this.router.navigate(['/register-success']);
       }
     });
   }

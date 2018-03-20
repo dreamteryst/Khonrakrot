@@ -20,6 +20,7 @@ import { ErrorComponent } from './error/error.component';
 import { News2Component } from './news2/news2.component';
 import { RegisterComponent } from './register/register.component';
 import { RegisterSuccessComponent } from './register-success/register-success.component';
+import { QuestionFilterPipe } from './question-filter.pipe';
 
 const appRoutes: Routes = [
   { 
@@ -53,7 +54,8 @@ const appRoutes: Routes = [
     ErrorComponent,
     News2Component,
     RegisterComponent,
-    RegisterSuccessComponent
+    RegisterSuccessComponent,
+    QuestionFilterPipe
   ],
   imports: [
     RouterModule.forRoot(
