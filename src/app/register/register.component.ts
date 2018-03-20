@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+declare var jquery: any;
+declare var $: any;
 
 @Component({
   selector: 'app-register',
@@ -13,6 +15,15 @@ export class RegisterComponent implements OnInit {
     {'label':'เพลงโปรดของคุณ', 'value': 'เพลงโปรดของคุณ'}, 
     {'label':'ชื่อโรงเรียนมัธยม', 'value': 'ชื่อโรงเรียนมัธยม'}
   ];
+  name:String;
+  people_id:String;
+  copy:any;
+  username:String;
+  password:String;
+  password_confirmation:String;
+  birthday:String;
+  email:String;
+  agree:boolean;
   question1:String;
   question2:String;
   question3:String;
@@ -23,6 +34,15 @@ export class RegisterComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
+    $(function () {
+      $("#birthday").datetimepicker({
+        format: 'DD/MM/Y'
+      });
+    });
+  }
+
+  submit() {
+    
   }
 
 }

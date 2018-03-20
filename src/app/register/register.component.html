@@ -21,7 +21,7 @@
                             Name - Surname <span class="text-danger">*</span>
                         </label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" name="name" id="name" placeholder="ชื่อ นามสกุล" required>
+                            <input type="text" class="form-control" name="name" id="name" placeholder="ชื่อ นามสกุล" [(ngModel)]="name" required>
                         </div>
                     </div>
                     <div class="form-group">
@@ -29,7 +29,7 @@
                             ID Card/Passport ID <span class="text-danger">*</span>
                         </label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" name="people_id" id="people_id" placeholder="รหัสบัตรประชาชน / หมายเลขหนังสือเดินทาง" required>
+                            <input type="text" class="form-control" name="people_id" id="people_id" placeholder="รหัสบัตรประชาชน / หมายเลขหนังสือเดินทาง" [(ngModel)]="people_id"  required>
                         </div>
                     </div>
                     <div class="form-group">
@@ -37,7 +37,7 @@
                             Copy of ID Card/Copy of Passport ID <span class="text-danger">*</span>
                         </label>
                         <div class="col-md-9">
-                            <input type="file" class="form-control" name="copy" id="copy" placeholder="สำเนาบัตรประชาชน / สำเนาหนังสือเดินทาง" required>
+                            <input type="file" class="form-control" name="copy" id="copy" placeholder="สำเนาบัตรประชาชน / สำเนาหนังสือเดินทาง" [(ngModel)]="copy" required>
                         </div>
                     </div>
                     <div class="form-group">
@@ -45,7 +45,7 @@
                             Username <span class="text-danger">*</span>
                         </label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" name="username" id="username" placeholder="ชื่อผู้ใช้" required>
+                            <input type="text" class="form-control" name="username" id="username" placeholder="ชื่อผู้ใช้" [(ngModel)]="username" required>
                         </div>
                     </div>
                     <div class="form-group">
@@ -53,7 +53,7 @@
                             Password <span class="text-danger">*</span>
                         </label>
                         <div class="col-md-9">
-                            <input type="password" class="form-control" name="password" id="password" placeholder="รหัสผ่าน" required>
+                            <input type="password" class="form-control" name="password" id="password" placeholder="รหัสผ่าน" [(ngModel)]="password" required>
                         </div>
                     </div>
                     <div class="form-group">
@@ -61,7 +61,7 @@
                             Confirm Password <span class="text-danger">*</span>
                         </label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" name="password_confirmation" id="password_confirmation" placeholder="ยืนยันรหัสผ่าน" required>
+                            <input type="text" class="form-control" name="password_confirmation" id="password_confirmation" placeholder="ยืนยันรหัสผ่าน" [(ngModel)]="password_confirmation" required>
                         </div>
                     </div>
                     <div class="form-group">
@@ -69,15 +69,7 @@
                             Date of Birth <span class="text-danger">*</span>
                         </label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" name="birthday" id="birthday" placeholder="วัน/เดือน/ปี" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-md-2">
-                            E-mail <span class="text-danger">*</span>
-                        </label>
-                        <div class="col-md-9">
-                            <input type="email" class="form-control" name="email" id="email" placeholder="อีเมล" required>
+                            <input type="text" class="form-control" name="birthday" id="birthday" placeholder="วัน/เดือน/ปี" [(ngModel)]="birthday" required>
                         </div>
                     </div>
                     <legend>Question</legend>
@@ -130,16 +122,25 @@
                         </div>
                     </div>
                 </div>
-                
                 <div class="form-group">
-                    <div class="col-md-8">
-                        <input type="checkbox" name="agree" id="agree" required><a href="#">I Agree</a>
+                    <label class="control-label col-md-2">
+                        E-mail <span class="text-danger">*</span>
+                    </label>
+                    <div class="col-md-9">
+                        <input type="email" class="form-control" name="email" id="email" placeholder="อีเมล" [(ngModel)]="email" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2">
+                    </label>
+                    <div class="col-md-9">
+                        <input type="checkbox" name="agree" id="agree" [(ngModel)]="agree" required><label for="agree">&nbsp;I Agree</label>
                     </div>
                 </div>
                 <!-- END checkout-body -->
                 <!-- BEGIN checkout-footer -->
                 <div class="checkout-footer">
-                    <button type="submit" class="btn btn-inverse btn-lg p-l-30 p-r-30 m-l-10">Register</button>
+                    <button type="button" (click)="submit()" class="btn btn-inverse btn-lg p-l-30 p-r-30 m-l-10">Register</button>
                 </div>
                 <!-- END checkout-footer -->
             </form>
