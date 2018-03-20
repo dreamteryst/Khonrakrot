@@ -4,7 +4,7 @@
     <div class="container">
         <!-- BEGIN checkout -->
         <div class="checkout">
-            <form action="http://localhost/api/" method="POST" name="form_shipping" class="form-horizontal"  enctype="multipart/form-data">
+            <form action="http://localhost/api/register/insert.php" method="POST" name="form_shipping" id="form_shipping" class="form-horizontal"  enctype="multipart/form-data">
                 <!-- BEGIN checkout-header -->
                 <div class="checkout-header">
                     <!-- BEGIN row -->
@@ -16,6 +16,7 @@
                 <!-- END checkout-header -->
                 <!-- BEGIN checkout-body -->
                 <div class="checkout-body">
+                    <div class="alert alert-danger" role="alert" *ngIf="isError"><strong>Error !</strong> <i class="fa fa-times-circle"></i> {{error}}</div>
                     <div class="form-group">
                         <label class="control-label col-md-2">
                             Name - Surname <span class="text-danger">*</span>
@@ -37,7 +38,7 @@
                             Copy of Citizen ID/Copy of Passport ID <span class="text-danger">*</span>
                         </label>
                         <div class="col-md-9">
-                            <input type="file" class="form-control" name="copy" id="copy" placeholder="สำเนาบัตรประชาชน / สำเนาหนังสือเดินทาง" [(ngModel)]="copy" required>
+                            <input type="file" class="form-control" name="copy" id="copy" placeholder="สำเนาบัตรประชาชน / สำเนาหนังสือเดินทาง" (change)="handleFileInput($event.target.files)" required>
                         </div>
                     </div>
                     <div class="form-group">
@@ -58,10 +59,10 @@
                     </div>
                     <div class="form-group">
                         <label class="control-label col-md-2">
-                            Confirm Password <span class="text-danger">*</span>
+                            Confirm Password
                         </label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" name="password_confirmation" id="password_confirmation" placeholder="ยืนยันรหัสผ่าน" [(ngModel)]="password_confirmation" required>
+                            <input type="password" class="form-control" name="password_confirmation" id="password_confirmation" placeholder="ยืนยันรหัสผ่าน" [(ngModel)]="password_confirmation">
                         </div>
                     </div>
                     <div class="form-group">
@@ -140,7 +141,7 @@
                 <!-- END checkout-body -->
                 <!-- BEGIN checkout-footer -->
                 <div class="checkout-footer">
-                    <button type="button" (click)="submit()" class="btn btn-inverse btn-lg p-l-30 p-r-30 m-l-10">Register</button>
+                    <button type="button" (click)="submit()" name="submit" id="register" class="btn btn-inverse btn-lg p-l-30 p-r-30 m-l-10">Register</button>
                 </div>
                 <!-- END checkout-footer -->
             </form>
