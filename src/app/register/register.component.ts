@@ -51,6 +51,7 @@ export class RegisterComponent implements OnInit {
 
   submit() {
     this.birthday = $("#birthday").val();
+    var age = 2018 - parseInt(this.birthday.split('/')[2]);
     var re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
     if (typeof this.name === 'undefined' || this.name == ''){
       this.error = 'Name Surname is require.';
@@ -109,6 +110,9 @@ export class RegisterComponent implements OnInit {
     } else if (!this.agree) {
       this.error = 'Please agree term and condition.';
       this.isError = true;
+    } else if (age < 15) {
+      this.error = 'Please re-enter date of birth';
+      this.isError = true;
     } else {
       this.isError = false;
     }
@@ -132,6 +136,7 @@ export class RegisterComponent implements OnInit {
     formData.append('answer3', this.answer3);
 
     this.http.post(window['domain'] + '/api/register/insert.php', formData).subscribe(res => {
+      // console.log(res);
       if(res['status']) {
         this.router.navigate(['/register-success']);
       }
