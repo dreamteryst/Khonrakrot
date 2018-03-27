@@ -1,0 +1,376 @@
+﻿*** Settings ***
+Library    Selenium2Library
+
+*** Variables ***
+${BROWSER}        Chrome
+${Home URL}    http://localhost:4200/
+${REG URL}    http://localhost:4200/register
+@{valid name}    somjai    jaidee
+${valid people_id}    1409962548794
+${valid passport id}    AF1234567
+${pathfile}    ${CURDIR}/test.png
+${username}    somjai123
+${password}    1234567890abcqweq
+${date}    15/02/1997
+${answer1}    BMW
+${answer2}    with you
+${answer3}    tonrose school
+${email}    somjai@gmail.com
+${sleep}    sleep    5s
+*** Testcases ***
+Open Register Page(1)
+    Open Browser    ${Home URL}    ${BROWSER}
+    Click link     btnRegister
+    Wait until page contains    Register
+
+have name or surname only one(16)
+	Go to    ${Home URL}
+    Click link     btnRegister
+    Wait until page contains    Register
+    Input Text    name    @{valid name}[1]
+    Input Text    people_id   ${valid people_id}
+    Choose File    id=copy    ${pathfile}
+    Input Text    username    ${username}
+    Input Text    password    ${password}
+    Input Text    password_confirmation    ${password}
+    Input Text    birthday    ${date}
+    Select From List    xpath=//select[@id="question1"]    What is your first car?
+    Input Text    answer1    ${answer1}
+    Select From List    xpath=//select[@id="question2"]    What is your favorite song?
+    Input Text    answer2    ${answer2}
+    Select From List    xpath=//select[@id="question3"]    What is your high school?
+    Input Text    answer3    ${answer3}
+    Input Text    email    ${email}
+    Select Checkbox    agree
+    click button    register
+    Wait until page contains    Please re-enter Name Surname.
+
+input name just spacebar(17)
+	Go to    ${Home URL}
+    Click link     btnRegister
+    Wait until page contains    Register
+    Input Text    name    ${SPACE}
+    Input Text    people_id   ${valid people_id}
+    Choose File    id=copy    ${pathfile}
+    Input Text    username    ${username}
+    Input Text    password    ${password}
+    Input Text    password_confirmation    ${password}
+    Input Text    birthday    ${date}
+    Select From List    xpath=//select[@id="question1"]    What is your first car?
+    Input Text    answer1    ${answer1}
+    Select From List    xpath=//select[@id="question2"]    What is your favorite song?
+    Input Text    answer2    ${answer2}
+    Select From List    xpath=//select[@id="question3"]    What is your high school?
+    Input Text    answer3    ${answer3}
+    Input Text    email    ${email}
+    Select Checkbox    agree
+    click button    register
+    Wait until page contains    Please re-enter Name Surname.
+
+Citizen ID less than 13 digit(18)
+    Go to    ${Home URL}
+    Click link     btnRegister
+    Wait until page contains    Register
+    Input Text    name    @{valid name}[0] @{valid name}[1]
+    Input Text    people_id   14099625
+    Choose File    id=copy    ${pathfile}
+    Input Text    username    ${username}
+    Input Text    password    ${password}
+    Input Text    password_confirmation    ${password}
+    Input Text    birthday    ${date}
+    Select From List    xpath=//select[@id="question1"]    What is your first car?
+    Input Text    answer1    ${answer1}
+    Select From List    xpath=//select[@id="question2"]    What is your favorite song?
+    Input Text    answer2    ${answer2}
+    Select From List    xpath=//select[@id="question3"]    What is your high school?
+    Input Text    answer3    ${answer3}
+    Input Text    email    ${email}
+    Select Checkbox    agree
+    click button    register
+	Wait until page contains    Please re-enter Citizen ID/Passport ID.
+
+Citizen ID over 13 digit(19)
+    Go to    ${Home URL}
+    Click link     btnRegister
+    Wait until page contains    Register
+    Input Text    name    @{valid name}[0] @{valid name}[1]
+    Input Text    people_id   14099625487943213333
+    Choose File    id=copy    ${pathfile}
+    Input Text    username    ${username}
+    Input Text    password    ${password}
+    Input Text    password_confirmation    ${password}
+    Input Text    birthday    ${date}
+    Select From List    xpath=//select[@id="question1"]    What is your first car?
+    Input Text    answer1    ${answer1}
+    Select From List    xpath=//select[@id="question2"]    What is your favorite song?
+    Input Text    answer2    ${answer2}
+    Select From List    xpath=//select[@id="question3"]    What is your high school?
+    Input Text    answer3    ${answer3}
+    Input Text    email    ${email}
+    Select Checkbox    agree
+    click button    register
+	Wait until page contains    Please re-enter Citizen ID/Passport ID.
+
+passport id character 2 number 6 is wrong(20)
+    Go to    ${Home URL}
+    Click link     btnRegister
+    Wait until page contains    Register
+    Input Text    name    @{valid name}[0] @{valid name}[1]
+    Input Text    people_id   AF123456
+    Choose File    id=copy    ${pathfile}
+    Input Text    username    ${username}
+    Input Text    password    ${password}
+    Input Text    password_confirmation    ${password}
+    Input Text    birthday    ${date}
+    Select From List    xpath=//select[@id="question1"]    What is your first car?
+    Input Text    answer1    ${answer1}
+    Select From List    xpath=//select[@id="question2"]    What is your favorite song?
+    Input Text    answer2    ${answer2}
+    Select From List    xpath=//select[@id="question3"]    What is your high school?
+    Input Text    answer3    ${answer3}
+    Input Text    email    ${email}
+    Select Checkbox    agree
+    click button    register
+	Wait until page contains    Please re-enter Citizen ID/Passport ID.
+
+passport id character 2 number 8 is wrong(21)
+    Go to    ${Home URL}
+    Click link     btnRegister
+    Wait until page contains    Register
+    Input Text    name    @{valid name}[0] @{valid name}[1]
+    Input Text    people_id   AF12345678
+    Choose File    id=copy    ${pathfile}
+    Input Text    username    ${username}
+    Input Text    password    ${password}
+    Input Text    password_confirmation    ${password}
+    Input Text    birthday    ${date}
+    Select From List    xpath=//select[@id="question1"]    What is your first car?
+    Input Text    answer1    ${answer1}
+    Select From List    xpath=//select[@id="question2"]    What is your favorite song?
+    Input Text    answer2    ${answer2}
+    Select From List    xpath=//select[@id="question3"]    What is your high school?
+    Input Text    answer3    ${answer3}
+    Input Text    email    ${email}
+    Select Checkbox    agree
+    click button    register
+	Wait until page contains    Please re-enter Citizen ID/Passport ID.
+
+passport id character 1 number 7 is wrong(22)
+    Go to    ${Home URL}
+    Click link     btnRegister
+    Wait until page contains    Register
+    Input Text    name    @{valid name}[0] @{valid name}[1]
+    Input Text    people_id   A1234567
+    Choose File    id=copy    ${pathfile}
+    Input Text    username    ${username}
+    Input Text    password    ${password}
+    Input Text    password_confirmation    ${password}
+    Input Text    birthday    ${date}
+    Select From List    xpath=//select[@id="question1"]    What is your first car?
+    Input Text    answer1    ${answer1}
+    Select From List    xpath=//select[@id="question2"]    What is your favorite song?
+    Input Text    answer2    ${answer2}
+    Select From List    xpath=//select[@id="question3"]    What is your high school?
+    Input Text    answer3    ${answer3}
+    Input Text    email    ${email}
+    Select Checkbox    agree
+    click button    register
+	Wait until page contains    Please re-enter Citizen ID/Passport ID.
+
+passport id character 1 number 8 is wrong(23)
+    Go to    ${Home URL}
+    Click link     btnRegister
+    Wait until page contains    Register
+    Input Text    name    @{valid name}[0] @{valid name}[1]
+    Input Text    people_id   A12345678
+    Choose File    id=copy    ${pathfile}
+    Input Text    username    ${username}
+    Input Text    password    ${password}
+    Input Text    password_confirmation    ${password}
+    Input Text    birthday    ${date}
+    Select From List    xpath=//select[@id="question1"]    What is your first car?
+    Input Text    answer1    ${answer1}
+    Select From List    xpath=//select[@id="question2"]    What is your favorite song?
+    Input Text    answer2    ${answer2}
+    Select From List    xpath=//select[@id="question3"]    What is your high school?
+    Input Text    answer3    ${answer3}
+    Input Text    email    ${email}
+    Select Checkbox    agree
+    click button    register
+	Wait until page contains    Please re-enter Citizen ID/Passport ID.
+
+passport id character 9 is wrong(24)
+    Go to    ${Home URL}
+    Click link     btnRegister
+    Wait until page contains    Register
+    Input Text    name    @{valid name}[0] @{valid name}[1]
+    Input Text    people_id   AFQWEASDZ
+    Choose File    id=copy    ${pathfile}
+    Input Text    username    ${username}
+    Input Text    password    ${password}
+    Input Text    password_confirmation    ${password}
+    Input Text    birthday    ${date}
+    Select From List    xpath=//select[@id="question1"]    What is your first car?
+    Input Text    answer1    ${answer1}
+    Select From List    xpath=//select[@id="question2"]    What is your favorite song?
+    Input Text    answer2    ${answer2}
+    Select From List    xpath=//select[@id="question3"]    What is your high school?
+    Input Text    answer3    ${answer3}
+    Input Text    email    ${email}
+    Select Checkbox    agree
+    click button    register
+	Wait until page contains    Please re-enter Citizen ID/Passport ID.
+
+username have special alphabet(25)
+    Go to    ${Home URL}
+    Click link     btnRegister
+    Wait until page contains    Register
+    Input Text    name    @{valid name}[0] @{valid name}[1]
+    Input Text    people_id   ${valid people_id}
+    Choose File    id=copy    ${pathfile}
+    Input Text    username    £"@somjai123
+    Input Text    password    ${password}
+    Input Text    password_confirmation    ${password}
+    Input Text    birthday    ${date}
+    Select From List    xpath=//select[@id="question1"]    What is your first car?
+    Input Text    answer1    ${answer1}
+    Select From List    xpath=//select[@id="question2"]    What is your favorite song?
+    Input Text    answer2    ${answer2}
+    Select From List    xpath=//select[@id="question3"]    What is your high school?
+    Input Text    answer3    ${answer3}
+    Input Text    email    ${email}
+    Select Checkbox    agree
+    click button    register
+	Wait until page contains    Please re-enter Username.
+
+password less than 16 digit(26)
+    Go to    ${Home URL}
+    Click link     btnRegister
+    Wait until page contains    Register
+    Input Text    name    @{valid name}[0] @{valid name}[1]
+    Input Text    people_id   ${valid people_id}
+    Choose File    id=copy    ${pathfile}
+    Input Text    username    ${username}
+    Input Text    password    123456
+    Input Text    password_confirmation    123456
+    Input Text    birthday    ${date}
+    Select From List    xpath=//select[@id="question1"]    What is your first car?
+    Input Text    answer1    ${answer1}
+    Select From List    xpath=//select[@id="question2"]    What is your favorite song?
+    Input Text    answer2    ${answer2}
+    Select From List    xpath=//select[@id="question3"]    What is your high school?
+    Input Text    answer3    ${answer3}
+    Input Text    email    ${email}
+    Select Checkbox    agree
+    click button    register
+    Wait until page contains    Password length must more than 15.
+
+Password do not match confirm password(27)
+    Go to    ${Home URL}
+    Click link     btnRegister
+    Wait until page contains    Register
+    Input Text    name    @{valid name}[0] @{valid name}[1]
+    Input Text    people_id   ${valid people_id}
+    Choose File    id=copy    ${pathfile}
+    Input Text    username    ${username}
+    Input Text    password    1234567890abcqweq
+    Input Text    password_confirmation    1234567890abcqweqaaaaaa
+    Input Text    birthday    ${date}
+    Select From List    xpath=//select[@id="question1"]    What is your first car?
+    Input Text    answer1    ${answer1}
+    Select From List    xpath=//select[@id="question2"]    What is your favorite song?
+    Input Text    answer2    ${answer2}
+    Select From List    xpath=//select[@id="question3"]    What is your high school?
+    Input Text    answer3    ${answer3}
+    Input Text    email    ${email}
+    Select Checkbox    agree
+    click button    register
+    Wait until page contains    Password do not match confirm password.
+
+Email Incorrect not @(40)
+    Go to    ${Home URL}
+    Click link     btnRegister
+    Wait until page contains    Register
+    Input Text    name    @{valid name}[0] @{valid name}[1]
+    Input Text    people_id   ${valid people_id}
+    Choose File    id=copy    ${pathfile}
+    Input Text    username    ${username}
+    Input Text    password    ${password}
+    Input Text    password_confirmation    ${password}
+    Input Text    birthday    ${date}
+    Select From List    xpath=//select[@id="question1"]    What is your first car?
+    Input Text    answer1    ${answer1}
+    Select From List    xpath=//select[@id="question2"]    What is your favorite song?
+    Input Text    answer2    ${answer2}
+    Select From List    xpath=//select[@id="question3"]    What is your high school?
+    Input Text    answer3    ${answer3}
+    Input Text    email    somjaigmail.com
+    Select Checkbox    agree
+    click button    register
+    Wait until page contains    Please re-enter email.
+
+Email Incorrect not .com(41)
+    Go to    ${Home URL}
+    Click link     btnRegister
+    Wait until page contains    Register
+    Input Text    name    @{valid name}[0] @{valid name}[1]
+    Input Text    people_id   ${valid people_id}
+    Choose File    id=copy    ${pathfile}
+    Input Text    username    ${username}
+    Input Text    password    ${password}
+    Input Text    password_confirmation    ${password}
+    Input Text    birthday    ${date}
+    Select From List    xpath=//select[@id="question1"]    What is your first car?
+    Input Text    answer1    ${answer1}
+    Select From List    xpath=//select[@id="question2"]    What is your favorite song?
+    Input Text    answer2    ${answer2}
+    Select From List    xpath=//select[@id="question3"]    What is your high school?
+    Input Text    answer3    ${answer3}
+    Input Text    email    somjai@gmail
+    Select Checkbox    agree
+    click button    register
+    Wait until page contains    Please re-enter email.
+
+Email Incorrect not .com and not @(41)
+    Go to    ${Home URL}
+    Click link     btnRegister
+    Wait until page contains    Register
+    Input Text    name    @{valid name}[0] @{valid name}[1]
+    Input Text    people_id   ${valid people_id}
+    Choose File    id=copy    ${pathfile}
+    Input Text    username    ${username}
+    Input Text    password    ${password}
+    Input Text    password_confirmation    ${password}
+    Input Text    birthday    ${date}
+    Select From List    xpath=//select[@id="question1"]    What is your first car?
+    Input Text    answer1    ${answer1}
+    Select From List    xpath=//select[@id="question2"]    What is your favorite song?
+    Input Text    answer2    ${answer2}
+    Select From List    xpath=//select[@id="question3"]    What is your high school?
+    Input Text    answer3    ${answer3}
+    Input Text    email    somjaigmail
+    Select Checkbox    agree
+    click button    register
+    Wait until page contains    Please re-enter email.
+
+Not click I agree(42)
+    Go to    ${Home URL}
+    Click link     btnRegister
+    Wait until page contains    Register
+    Input Text    name    @{valid name}[0] @{valid name}[1]
+    Input Text    people_id   ${valid people_id}
+    Choose File    id=copy    ${pathfile}
+    Input Text    username    ${username}
+    Input Text    password    ${password}
+    Input Text    password_confirmation    ${password}
+    Input Text    birthday    ${date}
+    Select From List    xpath=//select[@id="question1"]    What is your first car?
+    Input Text    answer1    ${answer1}
+    Select From List    xpath=//select[@id="question2"]    What is your favorite song?
+    Input Text    answer2    ${answer2}
+    Select From List    xpath=//select[@id="question3"]    What is your high school?
+    Input Text    answer3    ${answer3}
+    Input Text    email    ${email}
+    click button    register
+    Wait until page contains    Please agree term and condition.
+    [Teardown]    close Browser
