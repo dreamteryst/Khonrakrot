@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20180327 23:45:37.692" generator="Robot 3.0.2 (Python 2.7.14 on win32)">
-<suite source="C:\WorkSpace\Web\Khonrakrot\test\test_add_incorrect.robot" id="s1" name="Test Add Incorrect">
+<robot generated="20180328 00:28:28.033" generator="Robot 3.0.2 (Python 2.7.14 on win32)">
+<suite source="C:\WorkSpace\Web\Khonrakrot\test\test_card_2.robot" id="s1" name="Test Card 2">
 <test id="s1-t1" name="Open ADD Page">
 <kw name="Open Browser" library="Selenium2Library">
 <doc>Opens a new browser instance to the given ``url``.</doc>
@@ -8,358 +8,83 @@
 <arg>${Home URL}</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20180327 23:45:38.482" level="INFO">Opening browser 'Chrome' to base url 'http://127.0.0.1:4200/'.</msg>
-<status status="PASS" endtime="20180327 23:45:47.725" starttime="20180327 23:45:38.481"></status>
+<msg timestamp="20180328 00:28:29.855" level="INFO">Opening browser 'Chrome' to base url 'http://127.0.0.1:4200/'.</msg>
+<status status="PASS" endtime="20180328 00:28:38.931" starttime="20180328 00:28:29.854"></status>
 </kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>คนรักรถ</arg>
+</arguments>
+<status status="PASS" endtime="20180328 00:28:38.980" starttime="20180328 00:28:38.932"></status>
+</kw>
+<status status="PASS" endtime="20180328 00:28:38.981" critical="yes" starttime="20180328 00:28:29.853"></status>
+</test>
+<test id="s1-t2" name="Open News">
 <kw name="Click Link" library="Selenium2Library">
 <doc>Clicks a link identified by ``locator``.</doc>
 <arguments>
-<arg>${Link}</arg>
+<arg>/show-news/2</arg>
 </arguments>
-<msg timestamp="20180327 23:45:47.726" level="INFO">Clicking link '/addnews'.</msg>
-<status status="PASS" endtime="20180327 23:45:48.036" starttime="20180327 23:45:47.725"></status>
+<msg timestamp="20180328 00:28:38.986" level="INFO">Clicking link '/show-news/2'.</msg>
+<status status="PASS" endtime="20180328 00:28:39.185" starttime="20180328 00:28:38.985"></status>
 </kw>
 <kw name="Wait Until Page Contains" library="Selenium2Library">
 <doc>Waits until ``text`` appears on current page.</doc>
 <arguments>
-<arg>Adding News</arg>
+<arg>จอดรถขวางหน้าบ้านคนอื่น เอาผิดได้ไหม?</arg>
 </arguments>
-<status status="PASS" endtime="20180327 23:45:48.054" starttime="20180327 23:45:48.036"></status>
+<status status="PASS" endtime="20180328 00:28:40.455" starttime="20180328 00:28:39.185"></status>
 </kw>
-<status status="PASS" endtime="20180327 23:45:48.055" critical="yes" starttime="20180327 23:45:38.480"></status>
+<status status="PASS" endtime="20180328 00:28:40.455" critical="yes" starttime="20180328 00:28:38.983"></status>
 </test>
-<test id="s1-t2" name="No topic">
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>topic</arg>
-<arg>${EMPTY}</arg>
-</arguments>
-<msg timestamp="20180327 23:45:48.057" level="INFO">Typing text '' into text field 'topic'.</msg>
-<status status="PASS" endtime="20180327 23:45:48.129" starttime="20180327 23:45:48.057"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>xpath=//div[@class="note-editable"]</arg>
-<arg>${content}</arg>
-</arguments>
-<msg timestamp="20180327 23:45:48.130" level="INFO">Typing text 'test213' into text field 'xpath=//div[@class="note-editable"]'.</msg>
-<status status="PASS" endtime="20180327 23:45:48.276" starttime="20180327 23:45:48.129"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>date</arg>
-<arg>${date}</arg>
-</arguments>
-<msg timestamp="20180327 23:45:48.277" level="INFO">Typing text '27/02/2018' into text field 'date'.</msg>
-<status status="PASS" endtime="20180327 23:45:48.407" starttime="20180327 23:45:48.277"></status>
-</kw>
-<kw name="Choose File" library="Selenium2Library">
-<doc>Inputs the ``file_path`` into file input field ``locator``.</doc>
-<arguments>
-<arg>id=cover_img</arg>
-<arg>${cover}</arg>
-</arguments>
-<status status="PASS" endtime="20180327 23:45:48.443" starttime="20180327 23:45:48.407"></status>
-</kw>
+<test id="s1-t3" name="Next Button">
 <kw name="Click Button" library="Selenium2Library">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
-<arg>//button[.//text() = 'Save']</arg>
+<arg>next</arg>
 </arguments>
-<msg timestamp="20180327 23:45:48.444" level="INFO">Clicking button '//button[.//text() = 'Save']'.</msg>
-<status status="PASS" endtime="20180327 23:45:48.539" starttime="20180327 23:45:48.443"></status>
+<msg timestamp="20180328 00:28:40.458" level="INFO">Clicking button 'next'.</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20180328 00:28:40.828" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20180328 00:28:40.829" starttime="20180328 00:28:40.490"></status>
 </kw>
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>1s</arg>
-</arguments>
-<msg timestamp="20180327 23:45:49.541" level="INFO">Slept 1 second</msg>
-<status status="PASS" endtime="20180327 23:45:49.541" starttime="20180327 23:45:48.540"></status>
+<msg timestamp="20180328 00:28:40.832" level="FAIL">Button with locator 'next' not found.</msg>
+<status status="FAIL" endtime="20180328 00:28:40.832" starttime="20180328 00:28:40.458"></status>
 </kw>
-<kw name="Click Button" library="Selenium2Library">
-<doc>Clicks button identified by ``locator``.</doc>
-<arguments>
-<arg>modal-btn-yes</arg>
-</arguments>
-<msg timestamp="20180327 23:45:49.542" level="INFO">Clicking button 'modal-btn-yes'.</msg>
-<status status="PASS" endtime="20180327 23:45:49.623" starttime="20180327 23:45:49.542"></status>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>2s</arg>
-</arguments>
-<msg timestamp="20180327 23:45:51.624" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" endtime="20180327 23:45:51.624" starttime="20180327 23:45:49.624"></status>
-</kw>
-<kw name="Wait Until Page Contains" library="Selenium2Library">
-<doc>Waits until ``text`` appears on current page.</doc>
-<arguments>
-<arg>กรุณาระบุหัวข้อ</arg>
-</arguments>
-<status status="PASS" endtime="20180327 23:45:51.641" starttime="20180327 23:45:51.625"></status>
-</kw>
-<status status="PASS" endtime="20180327 23:45:51.642" critical="yes" starttime="20180327 23:45:48.056"></status>
+<status status="FAIL" endtime="20180328 00:28:40.833" critical="yes" starttime="20180328 00:28:40.457">Button with locator 'next' not found.</status>
 </test>
-<test id="s1-t3" name="No date">
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>topic</arg>
-<arg>${topic}</arg>
-</arguments>
-<msg timestamp="20180327 23:45:51.645" level="INFO">Typing text 'hello' into text field 'topic'.</msg>
-<status status="PASS" endtime="20180327 23:45:51.705" starttime="20180327 23:45:51.645"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>xpath=//div[@class="note-editable"]</arg>
-<arg>${content}</arg>
-</arguments>
-<msg timestamp="20180327 23:45:51.706" level="INFO">Typing text 'test213' into text field 'xpath=//div[@class="note-editable"]'.</msg>
-<status status="PASS" endtime="20180327 23:45:51.791" starttime="20180327 23:45:51.706"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>date</arg>
-<arg>${EMPTY}</arg>
-</arguments>
-<msg timestamp="20180327 23:45:51.792" level="INFO">Typing text '' into text field 'date'.</msg>
-<status status="PASS" endtime="20180327 23:45:51.829" starttime="20180327 23:45:51.792"></status>
-</kw>
-<kw name="Choose File" library="Selenium2Library">
-<doc>Inputs the ``file_path`` into file input field ``locator``.</doc>
-<arguments>
-<arg>id=cover_img</arg>
-<arg>${cover}</arg>
-</arguments>
-<status status="PASS" endtime="20180327 23:45:51.848" starttime="20180327 23:45:51.830"></status>
-</kw>
+<test id="s1-t4" name="Previous Button">
 <kw name="Click Button" library="Selenium2Library">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
-<arg>//button[.//text() = 'Save']</arg>
+<arg>previous</arg>
 </arguments>
-<msg timestamp="20180327 23:45:51.849" level="INFO">Clicking button '//button[.//text() = 'Save']'.</msg>
-<status status="PASS" endtime="20180327 23:45:51.904" starttime="20180327 23:45:51.849"></status>
+<msg timestamp="20180328 00:28:40.835" level="INFO">Clicking button 'previous'.</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20180328 00:28:41.160" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20180328 00:28:41.161" starttime="20180328 00:28:40.868"></status>
 </kw>
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>1s</arg>
-</arguments>
-<msg timestamp="20180327 23:45:52.905" level="INFO">Slept 1 second</msg>
-<status status="PASS" endtime="20180327 23:45:52.905" starttime="20180327 23:45:51.905"></status>
+<msg timestamp="20180328 00:28:41.161" level="FAIL">Button with locator 'previous' not found.</msg>
+<status status="FAIL" endtime="20180328 00:28:41.161" starttime="20180328 00:28:40.835"></status>
 </kw>
-<kw name="Click Button" library="Selenium2Library">
-<doc>Clicks button identified by ``locator``.</doc>
-<arguments>
-<arg>modal-btn-yes</arg>
-</arguments>
-<msg timestamp="20180327 23:45:52.906" level="INFO">Clicking button 'modal-btn-yes'.</msg>
-<status status="PASS" endtime="20180327 23:45:52.951" starttime="20180327 23:45:52.906"></status>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>2s</arg>
-</arguments>
-<msg timestamp="20180327 23:45:54.951" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" endtime="20180327 23:45:54.951" starttime="20180327 23:45:52.951"></status>
-</kw>
-<kw name="Wait Until Page Contains" library="Selenium2Library">
-<doc>Waits until ``text`` appears on current page.</doc>
-<arguments>
-<arg>กรุณาระบุวันที่</arg>
-</arguments>
-<status status="PASS" endtime="20180327 23:45:54.967" starttime="20180327 23:45:54.951"></status>
-</kw>
-<status status="PASS" endtime="20180327 23:45:54.968" critical="yes" starttime="20180327 23:45:51.644"></status>
+<status status="FAIL" endtime="20180328 00:28:41.162" critical="yes" starttime="20180328 00:28:40.834">Button with locator 'previous' not found.</status>
 </test>
-<test id="s1-t4" name="No image">
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>topic</arg>
-<arg>${topic}</arg>
-</arguments>
-<msg timestamp="20180327 23:45:54.970" level="INFO">Typing text 'hello' into text field 'topic'.</msg>
-<status status="PASS" endtime="20180327 23:45:55.031" starttime="20180327 23:45:54.970"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>xpath=//div[@class="note-editable"]</arg>
-<arg>${content}</arg>
-</arguments>
-<msg timestamp="20180327 23:45:55.032" level="INFO">Typing text 'test213' into text field 'xpath=//div[@class="note-editable"]'.</msg>
-<status status="PASS" endtime="20180327 23:45:55.111" starttime="20180327 23:45:55.032"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>date</arg>
-<arg>${date}</arg>
-</arguments>
-<msg timestamp="20180327 23:45:55.112" level="INFO">Typing text '27/02/2018' into text field 'date'.</msg>
-<status status="PASS" endtime="20180327 23:45:55.186" starttime="20180327 23:45:55.112"></status>
-</kw>
-<kw name="Click Button" library="Selenium2Library">
-<doc>Clicks button identified by ``locator``.</doc>
-<arguments>
-<arg>//button[.//text() = 'Save']</arg>
-</arguments>
-<msg timestamp="20180327 23:45:55.187" level="INFO">Clicking button '//button[.//text() = 'Save']'.</msg>
-<status status="PASS" endtime="20180327 23:45:55.253" starttime="20180327 23:45:55.186"></status>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>1s</arg>
-</arguments>
-<msg timestamp="20180327 23:45:56.254" level="INFO">Slept 1 second</msg>
-<status status="PASS" endtime="20180327 23:45:56.254" starttime="20180327 23:45:55.254"></status>
-</kw>
-<kw name="Click Button" library="Selenium2Library">
-<doc>Clicks button identified by ``locator``.</doc>
-<arguments>
-<arg>modal-btn-yes</arg>
-</arguments>
-<msg timestamp="20180327 23:45:56.255" level="INFO">Clicking button 'modal-btn-yes'.</msg>
-<status status="PASS" endtime="20180327 23:45:56.300" starttime="20180327 23:45:56.255"></status>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>2s</arg>
-</arguments>
-<msg timestamp="20180327 23:45:58.301" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" endtime="20180327 23:45:58.301" starttime="20180327 23:45:56.300"></status>
-</kw>
-<kw name="Wait Until Page Contains" library="Selenium2Library">
-<doc>Waits until ``text`` appears on current page.</doc>
-<arguments>
-<arg>เพิ่มข้อมูลสำเร็จ</arg>
-</arguments>
-<status status="PASS" endtime="20180327 23:45:58.317" starttime="20180327 23:45:58.302"></status>
-</kw>
-<status status="PASS" endtime="20180327 23:45:58.318" critical="yes" starttime="20180327 23:45:54.969"></status>
-</test>
-<test id="s1-t5" name="Date format error y/m/d">
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>topic</arg>
-<arg>${topic}</arg>
-</arguments>
-<msg timestamp="20180327 23:45:58.320" level="INFO">Typing text 'hello' into text field 'topic'.</msg>
-<status status="PASS" endtime="20180327 23:45:58.377" starttime="20180327 23:45:58.320"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>xpath=//div[@class="note-editable"]</arg>
-<arg>${content}</arg>
-</arguments>
-<msg timestamp="20180327 23:45:58.378" level="INFO">Typing text 'test213' into text field 'xpath=//div[@class="note-editable"]'.</msg>
-<status status="PASS" endtime="20180327 23:45:58.464" starttime="20180327 23:45:58.378"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>date</arg>
-<arg>2018/03/27</arg>
-</arguments>
-<msg timestamp="20180327 23:45:58.465" level="INFO">Typing text '2018/03/27' into text field 'date'.</msg>
-<status status="PASS" endtime="20180327 23:45:58.538" starttime="20180327 23:45:58.465"></status>
-</kw>
-<kw name="Choose File" library="Selenium2Library">
-<doc>Inputs the ``file_path`` into file input field ``locator``.</doc>
-<arguments>
-<arg>id=cover_img</arg>
-<arg>${cover}</arg>
-</arguments>
-<status status="PASS" endtime="20180327 23:45:58.555" starttime="20180327 23:45:58.538"></status>
-</kw>
-<kw name="Click Button" library="Selenium2Library">
-<doc>Clicks button identified by ``locator``.</doc>
-<arguments>
-<arg>//button[.//text() = 'Save']</arg>
-</arguments>
-<msg timestamp="20180327 23:45:58.556" level="INFO">Clicking button '//button[.//text() = 'Save']'.</msg>
-<status status="PASS" endtime="20180327 23:45:58.619" starttime="20180327 23:45:58.556"></status>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>1s</arg>
-</arguments>
-<msg timestamp="20180327 23:45:59.620" level="INFO">Slept 1 second</msg>
-<status status="PASS" endtime="20180327 23:45:59.620" starttime="20180327 23:45:58.620"></status>
-</kw>
-<kw name="Click Button" library="Selenium2Library">
-<doc>Clicks button identified by ``locator``.</doc>
-<arguments>
-<arg>modal-btn-yes</arg>
-</arguments>
-<msg timestamp="20180327 23:45:59.620" level="INFO">Clicking button 'modal-btn-yes'.</msg>
-<status status="PASS" endtime="20180327 23:45:59.665" starttime="20180327 23:45:59.620"></status>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>2s</arg>
-</arguments>
-<msg timestamp="20180327 23:46:01.666" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" endtime="20180327 23:46:01.666" starttime="20180327 23:45:59.666"></status>
-</kw>
-<kw name="Wait Until Page Contains" library="Selenium2Library">
-<doc>Waits until ``text`` appears on current page.</doc>
-<arguments>
-<arg>รูปแบบวันที่ไม่ถูกต้อง</arg>
-</arguments>
-<status status="PASS" endtime="20180327 23:46:01.684" starttime="20180327 23:46:01.666"></status>
-</kw>
-<status status="PASS" endtime="20180327 23:46:01.685" critical="yes" starttime="20180327 23:45:58.319"></status>
-</test>
-<test id="s1-t6" name="Date format error y/d/m">
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>topic</arg>
-<arg>${topic}</arg>
-</arguments>
-<msg timestamp="20180327 23:46:01.687" level="INFO">Typing text 'hello' into text field 'topic'.</msg>
-<status status="PASS" endtime="20180327 23:46:01.748" starttime="20180327 23:46:01.687"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>xpath=//div[@class="note-editable"]</arg>
-<arg>${content}</arg>
-</arguments>
-<msg timestamp="20180327 23:46:01.749" level="INFO">Typing text 'test213' into text field 'xpath=//div[@class="note-editable"]'.</msg>
-<status status="PASS" endtime="20180327 23:46:01.833" starttime="20180327 23:46:01.749"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>date</arg>
-<arg>2018/27/03</arg>
-</arguments>
-<msg timestamp="20180327 23:46:01.833" level="INFO">Typing text '2018/27/03' into text field 'date'.</msg>
-<status status="PASS" endtime="20180327 23:46:01.909" starttime="20180327 23:46:01.833"></status>
-</kw>
-<kw name="Choose File" library="Selenium2Library">
-<doc>Inputs the ``file_path`` into file input field ``locator``.</doc>
-<arguments>
-<arg>id=cover_img</arg>
-<arg>${cover}</arg>
-</arguments>
-<status status="PASS" endtime="20180327 23:46:01.927" starttime="20180327 23:46:01.909">
+<status status="FAIL" endtime="20180328 00:28:41.164" starttime="20180328 00:28:28.036"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="2" pass="2">Critical Tests</stat>
+<stat fail="2" pass="2">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="2" id="s1" name="Test Card 2" pass="2">Test Card 2</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
