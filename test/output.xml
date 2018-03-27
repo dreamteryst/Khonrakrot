@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20180327 23:32:18.910" generator="Robot 3.0.2 (Python 2.7.14 on win32)">
-<suite source="C:\WorkSpace\Web\Khonrakrot\test\test_add_incorrect.txt" id="s1" name="Test Add Incorrect">
+<robot generated="20180327 23:45:37.692" generator="Robot 3.0.2 (Python 2.7.14 on win32)">
+<suite source="C:\WorkSpace\Web\Khonrakrot\test\test_add_incorrect.robot" id="s1" name="Test Add Incorrect">
 <test id="s1-t1" name="Open ADD Page">
 <kw name="Open Browser" library="Selenium2Library">
 <doc>Opens a new browser instance to the given ``url``.</doc>
@@ -8,25 +8,25 @@
 <arg>${Home URL}</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20180327 23:32:20.825" level="INFO">Opening browser 'Chrome' to base url 'http://127.0.0.1:4200/'.</msg>
-<status status="PASS" endtime="20180327 23:32:30.555" starttime="20180327 23:32:20.824"></status>
+<msg timestamp="20180327 23:45:38.482" level="INFO">Opening browser 'Chrome' to base url 'http://127.0.0.1:4200/'.</msg>
+<status status="PASS" endtime="20180327 23:45:47.725" starttime="20180327 23:45:38.481"></status>
 </kw>
 <kw name="Click Link" library="Selenium2Library">
 <doc>Clicks a link identified by ``locator``.</doc>
 <arguments>
 <arg>${Link}</arg>
 </arguments>
-<msg timestamp="20180327 23:32:30.557" level="INFO">Clicking link '/addnews'.</msg>
-<status status="PASS" endtime="20180327 23:32:30.937" starttime="20180327 23:32:30.556"></status>
+<msg timestamp="20180327 23:45:47.726" level="INFO">Clicking link '/addnews'.</msg>
+<status status="PASS" endtime="20180327 23:45:48.036" starttime="20180327 23:45:47.725"></status>
 </kw>
 <kw name="Wait Until Page Contains" library="Selenium2Library">
 <doc>Waits until ``text`` appears on current page.</doc>
 <arguments>
 <arg>Adding News</arg>
 </arguments>
-<status status="PASS" endtime="20180327 23:32:30.955" starttime="20180327 23:32:30.938"></status>
+<status status="PASS" endtime="20180327 23:45:48.054" starttime="20180327 23:45:48.036"></status>
 </kw>
-<status status="PASS" endtime="20180327 23:32:30.956" critical="yes" starttime="20180327 23:32:20.823"></status>
+<status status="PASS" endtime="20180327 23:45:48.055" critical="yes" starttime="20180327 23:45:38.480"></status>
 </test>
 <test id="s1-t2" name="No topic">
 <kw name="Input Text" library="Selenium2Library">
@@ -35,8 +35,8 @@
 <arg>topic</arg>
 <arg>${EMPTY}</arg>
 </arguments>
-<msg timestamp="20180327 23:32:30.959" level="INFO">Typing text '' into text field 'topic'.</msg>
-<status status="PASS" endtime="20180327 23:32:31.029" starttime="20180327 23:32:30.959"></status>
+<msg timestamp="20180327 23:45:48.057" level="INFO">Typing text '' into text field 'topic'.</msg>
+<status status="PASS" endtime="20180327 23:45:48.129" starttime="20180327 23:45:48.057"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
@@ -44,8 +44,8 @@
 <arg>xpath=//div[@class="note-editable"]</arg>
 <arg>${content}</arg>
 </arguments>
-<msg timestamp="20180327 23:32:31.030" level="INFO">Typing text 'test213' into text field 'xpath=//div[@class="note-editable"]'.</msg>
-<status status="PASS" endtime="20180327 23:32:31.178" starttime="20180327 23:32:31.030"></status>
+<msg timestamp="20180327 23:45:48.130" level="INFO">Typing text 'test213' into text field 'xpath=//div[@class="note-editable"]'.</msg>
+<status status="PASS" endtime="20180327 23:45:48.276" starttime="20180327 23:45:48.129"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
@@ -53,8 +53,8 @@
 <arg>date</arg>
 <arg>${date}</arg>
 </arguments>
-<msg timestamp="20180327 23:32:31.179" level="INFO">Typing text '27/02/2018' into text field 'date'.</msg>
-<status status="PASS" endtime="20180327 23:32:31.323" starttime="20180327 23:32:31.179"></status>
+<msg timestamp="20180327 23:45:48.277" level="INFO">Typing text '27/02/2018' into text field 'date'.</msg>
+<status status="PASS" endtime="20180327 23:45:48.407" starttime="20180327 23:45:48.277"></status>
 </kw>
 <kw name="Choose File" library="Selenium2Library">
 <doc>Inputs the ``file_path`` into file input field ``locator``.</doc>
@@ -62,182 +62,58 @@
 <arg>id=cover_img</arg>
 <arg>${cover}</arg>
 </arguments>
-<kw name="Capture Page Screenshot" library="Selenium2Library">
-<doc>Takes screenshot of the current page and embeds it into log file.</doc>
-<msg timestamp="20180327 23:32:31.649" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" endtime="20180327 23:32:31.649" starttime="20180327 23:32:31.324"></status>
-</kw>
-<msg timestamp="20180327 23:32:31.651" level="FAIL">ValueError: File 'C:\WorkSpace\Web\Khonrakrot\test/1.JPG' does not exist on the local file system.</msg>
-<status status="FAIL" endtime="20180327 23:32:31.651" starttime="20180327 23:32:31.323"></status>
-</kw>
-<status status="FAIL" endtime="20180327 23:32:31.652" critical="yes" starttime="20180327 23:32:30.958">ValueError: File 'C:\WorkSpace\Web\Khonrakrot\test/1.JPG' does not exist on the local file system.</status>
-</test>
-<test id="s1-t3" name="No content">
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>topic</arg>
-<arg>${topic}</arg>
-</arguments>
-<msg timestamp="20180327 23:32:31.654" level="INFO">Typing text 'hello' into text field 'topic'.</msg>
-<status status="PASS" endtime="20180327 23:32:31.722" starttime="20180327 23:32:31.654"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>xpath=//div[@class="note-editable"]</arg>
-<arg>${EMPTY}</arg>
-</arguments>
-<msg timestamp="20180327 23:32:31.723" level="INFO">Typing text '' into text field 'xpath=//div[@class="note-editable"]'.</msg>
-<status status="PASS" endtime="20180327 23:32:31.756" starttime="20180327 23:32:31.722"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>date</arg>
-<arg>${date}</arg>
-</arguments>
-<msg timestamp="20180327 23:32:31.757" level="INFO">Typing text '27/02/2018' into text field 'date'.</msg>
-<status status="PASS" endtime="20180327 23:32:31.838" starttime="20180327 23:32:31.756"></status>
-</kw>
-<kw name="Choose File" library="Selenium2Library">
-<doc>Inputs the ``file_path`` into file input field ``locator``.</doc>
-<arguments>
-<arg>id=cover_img</arg>
-<arg>${cover}</arg>
-</arguments>
-<kw name="Capture Page Screenshot" library="Selenium2Library">
-<doc>Takes screenshot of the current page and embeds it into log file.</doc>
-<msg timestamp="20180327 23:32:32.124" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" endtime="20180327 23:32:32.124" starttime="20180327 23:32:31.840"></status>
-</kw>
-<msg timestamp="20180327 23:32:32.125" level="FAIL">ValueError: File 'C:\WorkSpace\Web\Khonrakrot\test/1.JPG' does not exist on the local file system.</msg>
-<status status="FAIL" endtime="20180327 23:32:32.125" starttime="20180327 23:32:31.839"></status>
-</kw>
-<status status="FAIL" endtime="20180327 23:32:32.125" critical="yes" starttime="20180327 23:32:31.653">ValueError: File 'C:\WorkSpace\Web\Khonrakrot\test/1.JPG' does not exist on the local file system.</status>
-</test>
-<test id="s1-t4" name="No date">
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>topic</arg>
-<arg>${topic}</arg>
-</arguments>
-<msg timestamp="20180327 23:32:32.128" level="INFO">Typing text 'hello' into text field 'topic'.</msg>
-<status status="PASS" endtime="20180327 23:32:32.188" starttime="20180327 23:32:32.127"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>xpath=//div[@class="note-editable"]</arg>
-<arg>${content}</arg>
-</arguments>
-<msg timestamp="20180327 23:32:32.189" level="INFO">Typing text 'test213' into text field 'xpath=//div[@class="note-editable"]'.</msg>
-<status status="PASS" endtime="20180327 23:32:32.280" starttime="20180327 23:32:32.189"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>date</arg>
-<arg>${EMPTY}</arg>
-</arguments>
-<msg timestamp="20180327 23:32:32.280" level="INFO">Typing text '' into text field 'date'.</msg>
-<status status="PASS" endtime="20180327 23:32:32.317" starttime="20180327 23:32:32.280"></status>
-</kw>
-<kw name="Choose File" library="Selenium2Library">
-<doc>Inputs the ``file_path`` into file input field ``locator``.</doc>
-<arguments>
-<arg>id=cover_img</arg>
-<arg>${cover}</arg>
-</arguments>
-<kw name="Capture Page Screenshot" library="Selenium2Library">
-<doc>Takes screenshot of the current page and embeds it into log file.</doc>
-<msg timestamp="20180327 23:32:32.590" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-8.png"&gt;&lt;img src="selenium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" endtime="20180327 23:32:32.590" starttime="20180327 23:32:32.319"></status>
-</kw>
-<msg timestamp="20180327 23:32:32.590" level="FAIL">ValueError: File 'C:\WorkSpace\Web\Khonrakrot\test/1.JPG' does not exist on the local file system.</msg>
-<status status="FAIL" endtime="20180327 23:32:32.590" starttime="20180327 23:32:32.318"></status>
-</kw>
-<status status="FAIL" endtime="20180327 23:32:32.591" critical="yes" starttime="20180327 23:32:32.127">ValueError: File 'C:\WorkSpace\Web\Khonrakrot\test/1.JPG' does not exist on the local file system.</status>
-</test>
-<test id="s1-t5" name="No image">
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>topic</arg>
-<arg>${topic}</arg>
-</arguments>
-<msg timestamp="20180327 23:32:32.593" level="INFO">Typing text 'hello' into text field 'topic'.</msg>
-<status status="PASS" endtime="20180327 23:32:32.655" starttime="20180327 23:32:32.593"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>xpath=//div[@class="note-editable"]</arg>
-<arg>${content}</arg>
-</arguments>
-<msg timestamp="20180327 23:32:32.657" level="INFO">Typing text 'test213' into text field 'xpath=//div[@class="note-editable"]'.</msg>
-<status status="PASS" endtime="20180327 23:32:32.753" starttime="20180327 23:32:32.656"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>date</arg>
-<arg>${date}</arg>
-</arguments>
-<msg timestamp="20180327 23:32:32.754" level="INFO">Typing text '27/02/2018' into text field 'date'.</msg>
-<status status="PASS" endtime="20180327 23:32:32.830" starttime="20180327 23:32:32.754"></status>
+<status status="PASS" endtime="20180327 23:45:48.443" starttime="20180327 23:45:48.407"></status>
 </kw>
 <kw name="Click Button" library="Selenium2Library">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>//button[.//text() = 'Save']</arg>
 </arguments>
-<msg timestamp="20180327 23:32:32.831" level="INFO">Clicking button '//button[.//text() = 'Save']'.</msg>
-<status status="PASS" endtime="20180327 23:32:32.914" starttime="20180327 23:32:32.831"></status>
+<msg timestamp="20180327 23:45:48.444" level="INFO">Clicking button '//button[.//text() = 'Save']'.</msg>
+<status status="PASS" endtime="20180327 23:45:48.539" starttime="20180327 23:45:48.443"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>1s</arg>
 </arguments>
-<msg timestamp="20180327 23:32:33.914" level="INFO">Slept 1 second</msg>
-<status status="PASS" endtime="20180327 23:32:33.914" starttime="20180327 23:32:32.914"></status>
+<msg timestamp="20180327 23:45:49.541" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20180327 23:45:49.541" starttime="20180327 23:45:48.540"></status>
 </kw>
 <kw name="Click Button" library="Selenium2Library">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>modal-btn-yes</arg>
 </arguments>
-<msg timestamp="20180327 23:32:33.915" level="INFO">Clicking button 'modal-btn-yes'.</msg>
-<status status="PASS" endtime="20180327 23:32:33.995" starttime="20180327 23:32:33.915"></status>
+<msg timestamp="20180327 23:45:49.542" level="INFO">Clicking button 'modal-btn-yes'.</msg>
+<status status="PASS" endtime="20180327 23:45:49.623" starttime="20180327 23:45:49.542"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>2s</arg>
 </arguments>
-<msg timestamp="20180327 23:32:35.996" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" endtime="20180327 23:32:35.996" starttime="20180327 23:32:33.996"></status>
+<msg timestamp="20180327 23:45:51.624" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20180327 23:45:51.624" starttime="20180327 23:45:49.624"></status>
 </kw>
 <kw name="Wait Until Page Contains" library="Selenium2Library">
 <doc>Waits until ``text`` appears on current page.</doc>
 <arguments>
-<arg>เพิ่มข้อมูลสำเร็จ</arg>
+<arg>กรุณาระบุหัวข้อ</arg>
 </arguments>
-<status status="PASS" endtime="20180327 23:32:36.014" starttime="20180327 23:32:35.996"></status>
+<status status="PASS" endtime="20180327 23:45:51.641" starttime="20180327 23:45:51.625"></status>
 </kw>
-<status status="PASS" endtime="20180327 23:32:36.014" critical="yes" starttime="20180327 23:32:32.592"></status>
+<status status="PASS" endtime="20180327 23:45:51.642" critical="yes" starttime="20180327 23:45:48.056"></status>
 </test>
-<test id="s1-t6" name="Date format error y/m/d">
+<test id="s1-t3" name="No date">
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
 <arguments>
 <arg>topic</arg>
 <arg>${topic}</arg>
 </arguments>
-<msg timestamp="20180327 23:32:36.017" level="INFO">Typing text 'hello' into text field 'topic'.</msg>
-<status status="PASS" endtime="20180327 23:32:36.082" starttime="20180327 23:32:36.016"></status>
+<msg timestamp="20180327 23:45:51.645" level="INFO">Typing text 'hello' into text field 'topic'.</msg>
+<status status="PASS" endtime="20180327 23:45:51.705" starttime="20180327 23:45:51.645"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
@@ -245,8 +121,154 @@
 <arg>xpath=//div[@class="note-editable"]</arg>
 <arg>${content}</arg>
 </arguments>
-<msg timestamp="20180327 23:32:36.083" level="INFO">Typing text 'test213' into text field 'xpath=//div[@class="note-editable"]'.</msg>
-<status status="PASS" endtime="20180327 23:32:36.193" starttime="20180327 23:32:36.082"></status>
+<msg timestamp="20180327 23:45:51.706" level="INFO">Typing text 'test213' into text field 'xpath=//div[@class="note-editable"]'.</msg>
+<status status="PASS" endtime="20180327 23:45:51.791" starttime="20180327 23:45:51.706"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>date</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<msg timestamp="20180327 23:45:51.792" level="INFO">Typing text '' into text field 'date'.</msg>
+<status status="PASS" endtime="20180327 23:45:51.829" starttime="20180327 23:45:51.792"></status>
+</kw>
+<kw name="Choose File" library="Selenium2Library">
+<doc>Inputs the ``file_path`` into file input field ``locator``.</doc>
+<arguments>
+<arg>id=cover_img</arg>
+<arg>${cover}</arg>
+</arguments>
+<status status="PASS" endtime="20180327 23:45:51.848" starttime="20180327 23:45:51.830"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>//button[.//text() = 'Save']</arg>
+</arguments>
+<msg timestamp="20180327 23:45:51.849" level="INFO">Clicking button '//button[.//text() = 'Save']'.</msg>
+<status status="PASS" endtime="20180327 23:45:51.904" starttime="20180327 23:45:51.849"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20180327 23:45:52.905" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20180327 23:45:52.905" starttime="20180327 23:45:51.905"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>modal-btn-yes</arg>
+</arguments>
+<msg timestamp="20180327 23:45:52.906" level="INFO">Clicking button 'modal-btn-yes'.</msg>
+<status status="PASS" endtime="20180327 23:45:52.951" starttime="20180327 23:45:52.906"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20180327 23:45:54.951" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20180327 23:45:54.951" starttime="20180327 23:45:52.951"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>กรุณาระบุวันที่</arg>
+</arguments>
+<status status="PASS" endtime="20180327 23:45:54.967" starttime="20180327 23:45:54.951"></status>
+</kw>
+<status status="PASS" endtime="20180327 23:45:54.968" critical="yes" starttime="20180327 23:45:51.644"></status>
+</test>
+<test id="s1-t4" name="No image">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>topic</arg>
+<arg>${topic}</arg>
+</arguments>
+<msg timestamp="20180327 23:45:54.970" level="INFO">Typing text 'hello' into text field 'topic'.</msg>
+<status status="PASS" endtime="20180327 23:45:55.031" starttime="20180327 23:45:54.970"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//div[@class="note-editable"]</arg>
+<arg>${content}</arg>
+</arguments>
+<msg timestamp="20180327 23:45:55.032" level="INFO">Typing text 'test213' into text field 'xpath=//div[@class="note-editable"]'.</msg>
+<status status="PASS" endtime="20180327 23:45:55.111" starttime="20180327 23:45:55.032"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>date</arg>
+<arg>${date}</arg>
+</arguments>
+<msg timestamp="20180327 23:45:55.112" level="INFO">Typing text '27/02/2018' into text field 'date'.</msg>
+<status status="PASS" endtime="20180327 23:45:55.186" starttime="20180327 23:45:55.112"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>//button[.//text() = 'Save']</arg>
+</arguments>
+<msg timestamp="20180327 23:45:55.187" level="INFO">Clicking button '//button[.//text() = 'Save']'.</msg>
+<status status="PASS" endtime="20180327 23:45:55.253" starttime="20180327 23:45:55.186"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20180327 23:45:56.254" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20180327 23:45:56.254" starttime="20180327 23:45:55.254"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>modal-btn-yes</arg>
+</arguments>
+<msg timestamp="20180327 23:45:56.255" level="INFO">Clicking button 'modal-btn-yes'.</msg>
+<status status="PASS" endtime="20180327 23:45:56.300" starttime="20180327 23:45:56.255"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20180327 23:45:58.301" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20180327 23:45:58.301" starttime="20180327 23:45:56.300"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>เพิ่มข้อมูลสำเร็จ</arg>
+</arguments>
+<status status="PASS" endtime="20180327 23:45:58.317" starttime="20180327 23:45:58.302"></status>
+</kw>
+<status status="PASS" endtime="20180327 23:45:58.318" critical="yes" starttime="20180327 23:45:54.969"></status>
+</test>
+<test id="s1-t5" name="Date format error y/m/d">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>topic</arg>
+<arg>${topic}</arg>
+</arguments>
+<msg timestamp="20180327 23:45:58.320" level="INFO">Typing text 'hello' into text field 'topic'.</msg>
+<status status="PASS" endtime="20180327 23:45:58.377" starttime="20180327 23:45:58.320"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//div[@class="note-editable"]</arg>
+<arg>${content}</arg>
+</arguments>
+<msg timestamp="20180327 23:45:58.378" level="INFO">Typing text 'test213' into text field 'xpath=//div[@class="note-editable"]'.</msg>
+<status status="PASS" endtime="20180327 23:45:58.464" starttime="20180327 23:45:58.378"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
@@ -254,8 +276,8 @@
 <arg>date</arg>
 <arg>2018/03/27</arg>
 </arguments>
-<msg timestamp="20180327 23:32:36.194" level="INFO">Typing text '2018/03/27' into text field 'date'.</msg>
-<status status="PASS" endtime="20180327 23:32:36.285" starttime="20180327 23:32:36.194"></status>
+<msg timestamp="20180327 23:45:58.465" level="INFO">Typing text '2018/03/27' into text field 'date'.</msg>
+<status status="PASS" endtime="20180327 23:45:58.538" starttime="20180327 23:45:58.465"></status>
 </kw>
 <kw name="Choose File" library="Selenium2Library">
 <doc>Inputs the ``file_path`` into file input field ``locator``.</doc>
@@ -263,25 +285,58 @@
 <arg>id=cover_img</arg>
 <arg>${cover}</arg>
 </arguments>
-<kw name="Capture Page Screenshot" library="Selenium2Library">
-<doc>Takes screenshot of the current page and embeds it into log file.</doc>
-<msg timestamp="20180327 23:32:36.543" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-9.png"&gt;&lt;img src="selenium-screenshot-9.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" endtime="20180327 23:32:36.543" starttime="20180327 23:32:36.286"></status>
+<status status="PASS" endtime="20180327 23:45:58.555" starttime="20180327 23:45:58.538"></status>
 </kw>
-<msg timestamp="20180327 23:32:36.543" level="FAIL">ValueError: File 'C:\WorkSpace\Web\Khonrakrot\test/1.JPG' does not exist on the local file system.</msg>
-<status status="FAIL" endtime="20180327 23:32:36.543" starttime="20180327 23:32:36.286"></status>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>//button[.//text() = 'Save']</arg>
+</arguments>
+<msg timestamp="20180327 23:45:58.556" level="INFO">Clicking button '//button[.//text() = 'Save']'.</msg>
+<status status="PASS" endtime="20180327 23:45:58.619" starttime="20180327 23:45:58.556"></status>
 </kw>
-<status status="FAIL" endtime="20180327 23:32:36.544" critical="yes" starttime="20180327 23:32:36.016">ValueError: File 'C:\WorkSpace\Web\Khonrakrot\test/1.JPG' does not exist on the local file system.</status>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20180327 23:45:59.620" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20180327 23:45:59.620" starttime="20180327 23:45:58.620"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>modal-btn-yes</arg>
+</arguments>
+<msg timestamp="20180327 23:45:59.620" level="INFO">Clicking button 'modal-btn-yes'.</msg>
+<status status="PASS" endtime="20180327 23:45:59.665" starttime="20180327 23:45:59.620"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20180327 23:46:01.666" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20180327 23:46:01.666" starttime="20180327 23:45:59.666"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>รูปแบบวันที่ไม่ถูกต้อง</arg>
+</arguments>
+<status status="PASS" endtime="20180327 23:46:01.684" starttime="20180327 23:46:01.666"></status>
+</kw>
+<status status="PASS" endtime="20180327 23:46:01.685" critical="yes" starttime="20180327 23:45:58.319"></status>
 </test>
-<test id="s1-t7" name="Date format error y/d/m">
+<test id="s1-t6" name="Date format error y/d/m">
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
 <arguments>
 <arg>topic</arg>
 <arg>${topic}</arg>
 </arguments>
-<msg timestamp="20180327 23:32:36.547" level="INFO">Typing text 'hello' into text field 'topic'.</msg>
-<status status="PASS" endtime="20180327 23:32:36.612" starttime="20180327 23:32:36.546"></status>
+<msg timestamp="20180327 23:46:01.687" level="INFO">Typing text 'hello' into text field 'topic'.</msg>
+<status status="PASS" endtime="20180327 23:46:01.748" starttime="20180327 23:46:01.687"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
@@ -289,8 +344,8 @@
 <arg>xpath=//div[@class="note-editable"]</arg>
 <arg>${content}</arg>
 </arguments>
-<msg timestamp="20180327 23:32:36.613" level="INFO">Typing text 'test213' into text field 'xpath=//div[@class="note-editable"]'.</msg>
-<status status="PASS" endtime="20180327 23:32:36.706" starttime="20180327 23:32:36.613"></status>
+<msg timestamp="20180327 23:46:01.749" level="INFO">Typing text 'test213' into text field 'xpath=//div[@class="note-editable"]'.</msg>
+<status status="PASS" endtime="20180327 23:46:01.833" starttime="20180327 23:46:01.749"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
@@ -298,8 +353,8 @@
 <arg>date</arg>
 <arg>2018/27/03</arg>
 </arguments>
-<msg timestamp="20180327 23:32:36.707" level="INFO">Typing text '2018/27/03' into text field 'date'.</msg>
-<status status="PASS" endtime="20180327 23:32:36.794" starttime="20180327 23:32:36.707"></status>
+<msg timestamp="20180327 23:46:01.833" level="INFO">Typing text '2018/27/03' into text field 'date'.</msg>
+<status status="PASS" endtime="20180327 23:46:01.909" starttime="20180327 23:46:01.833"></status>
 </kw>
 <kw name="Choose File" library="Selenium2Library">
 <doc>Inputs the ``file_path`` into file input field ``locator``.</doc>
@@ -307,517 +362,4 @@
 <arg>id=cover_img</arg>
 <arg>${cover}</arg>
 </arguments>
-<kw name="Capture Page Screenshot" library="Selenium2Library">
-<doc>Takes screenshot of the current page and embeds it into log file.</doc>
-<msg timestamp="20180327 23:32:37.059" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-10.png"&gt;&lt;img src="selenium-screenshot-10.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" endtime="20180327 23:32:37.059" starttime="20180327 23:32:36.796"></status>
-</kw>
-<msg timestamp="20180327 23:32:37.060" level="FAIL">ValueError: File 'C:\WorkSpace\Web\Khonrakrot\test/1.JPG' does not exist on the local file system.</msg>
-<status status="FAIL" endtime="20180327 23:32:37.060" starttime="20180327 23:32:36.795"></status>
-</kw>
-<status status="FAIL" endtime="20180327 23:32:37.061" critical="yes" starttime="20180327 23:32:36.546">ValueError: File 'C:\WorkSpace\Web\Khonrakrot\test/1.JPG' does not exist on the local file system.</status>
-</test>
-<test id="s1-t8" name="Date format error m/d/y">
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>topic</arg>
-<arg>${topic}</arg>
-</arguments>
-<msg timestamp="20180327 23:32:37.064" level="INFO">Typing text 'hello' into text field 'topic'.</msg>
-<status status="PASS" endtime="20180327 23:32:37.128" starttime="20180327 23:32:37.063"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>xpath=//div[@class="note-editable"]</arg>
-<arg>${content}</arg>
-</arguments>
-<msg timestamp="20180327 23:32:37.129" level="INFO">Typing text 'test213' into text field 'xpath=//div[@class="note-editable"]'.</msg>
-<status status="PASS" endtime="20180327 23:32:37.218" starttime="20180327 23:32:37.129"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>date</arg>
-<arg>03/27/2018</arg>
-</arguments>
-<msg timestamp="20180327 23:32:37.219" level="INFO">Typing text '03/27/2018' into text field 'date'.</msg>
-<status status="PASS" endtime="20180327 23:32:37.300" starttime="20180327 23:32:37.219"></status>
-</kw>
-<kw name="Choose File" library="Selenium2Library">
-<doc>Inputs the ``file_path`` into file input field ``locator``.</doc>
-<arguments>
-<arg>id=cover_img</arg>
-<arg>${cover}</arg>
-</arguments>
-<kw name="Capture Page Screenshot" library="Selenium2Library">
-<doc>Takes screenshot of the current page and embeds it into log file.</doc>
-<msg timestamp="20180327 23:32:37.565" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-11.png"&gt;&lt;img src="selenium-screenshot-11.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" endtime="20180327 23:32:37.566" starttime="20180327 23:32:37.302"></status>
-</kw>
-<msg timestamp="20180327 23:32:37.566" level="FAIL">ValueError: File 'C:\WorkSpace\Web\Khonrakrot\test/1.JPG' does not exist on the local file system.</msg>
-<status status="FAIL" endtime="20180327 23:32:37.566" starttime="20180327 23:32:37.301"></status>
-</kw>
-<status status="FAIL" endtime="20180327 23:32:37.567" critical="yes" starttime="20180327 23:32:37.062">ValueError: File 'C:\WorkSpace\Web\Khonrakrot\test/1.JPG' does not exist on the local file system.</status>
-</test>
-<test id="s1-t9" name="Date format error m/y/d">
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>topic</arg>
-<arg>${topic}</arg>
-</arguments>
-<msg timestamp="20180327 23:32:37.571" level="INFO">Typing text 'hello' into text field 'topic'.</msg>
-<status status="PASS" endtime="20180327 23:32:37.641" starttime="20180327 23:32:37.571"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>xpath=//div[@class="note-editable"]</arg>
-<arg>${content}</arg>
-</arguments>
-<msg timestamp="20180327 23:32:37.642" level="INFO">Typing text 'test213' into text field 'xpath=//div[@class="note-editable"]'.</msg>
-<status status="PASS" endtime="20180327 23:32:37.739" starttime="20180327 23:32:37.641"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>date</arg>
-<arg>03/2018/27</arg>
-</arguments>
-<msg timestamp="20180327 23:32:37.740" level="INFO">Typing text '03/2018/27' into text field 'date'.</msg>
-<status status="PASS" endtime="20180327 23:32:37.848" starttime="20180327 23:32:37.740"></status>
-</kw>
-<kw name="Choose File" library="Selenium2Library">
-<doc>Inputs the ``file_path`` into file input field ``locator``.</doc>
-<arguments>
-<arg>id=cover_img</arg>
-<arg>${cover}</arg>
-</arguments>
-<kw name="Capture Page Screenshot" library="Selenium2Library">
-<doc>Takes screenshot of the current page and embeds it into log file.</doc>
-<msg timestamp="20180327 23:32:38.117" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-12.png"&gt;&lt;img src="selenium-screenshot-12.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" endtime="20180327 23:32:38.117" starttime="20180327 23:32:37.850"></status>
-</kw>
-<msg timestamp="20180327 23:32:38.118" level="FAIL">ValueError: File 'C:\WorkSpace\Web\Khonrakrot\test/1.JPG' does not exist on the local file system.</msg>
-<status status="FAIL" endtime="20180327 23:32:38.118" starttime="20180327 23:32:37.849"></status>
-</kw>
-<status status="FAIL" endtime="20180327 23:32:38.119" critical="yes" starttime="20180327 23:32:37.570">ValueError: File 'C:\WorkSpace\Web\Khonrakrot\test/1.JPG' does not exist on the local file system.</status>
-</test>
-<test id="s1-t10" name="Date format error d/y/m">
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>topic</arg>
-<arg>${topic}</arg>
-</arguments>
-<msg timestamp="20180327 23:32:38.122" level="INFO">Typing text 'hello' into text field 'topic'.</msg>
-<status status="PASS" endtime="20180327 23:32:38.200" starttime="20180327 23:32:38.122"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>xpath=//div[@class="note-editable"]</arg>
-<arg>${content}</arg>
-</arguments>
-<msg timestamp="20180327 23:32:38.201" level="INFO">Typing text 'test213' into text field 'xpath=//div[@class="note-editable"]'.</msg>
-<status status="PASS" endtime="20180327 23:32:38.306" starttime="20180327 23:32:38.201"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>date</arg>
-<arg>27/2018/03</arg>
-</arguments>
-<msg timestamp="20180327 23:32:38.307" level="INFO">Typing text '27/2018/03' into text field 'date'.</msg>
-<status status="PASS" endtime="20180327 23:32:38.396" starttime="20180327 23:32:38.306"></status>
-</kw>
-<kw name="Choose File" library="Selenium2Library">
-<doc>Inputs the ``file_path`` into file input field ``locator``.</doc>
-<arguments>
-<arg>id=cover_img</arg>
-<arg>${cover}</arg>
-</arguments>
-<kw name="Capture Page Screenshot" library="Selenium2Library">
-<doc>Takes screenshot of the current page and embeds it into log file.</doc>
-<msg timestamp="20180327 23:32:38.669" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-13.png"&gt;&lt;img src="selenium-screenshot-13.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" endtime="20180327 23:32:38.670" starttime="20180327 23:32:38.397"></status>
-</kw>
-<msg timestamp="20180327 23:32:38.670" level="FAIL">ValueError: File 'C:\WorkSpace\Web\Khonrakrot\test/1.JPG' does not exist on the local file system.</msg>
-<status status="FAIL" endtime="20180327 23:32:38.670" starttime="20180327 23:32:38.397"></status>
-</kw>
-<status status="FAIL" endtime="20180327 23:32:38.671" critical="yes" starttime="20180327 23:32:38.121">ValueError: File 'C:\WorkSpace\Web\Khonrakrot\test/1.JPG' does not exist on the local file system.</status>
-</test>
-<test id="s1-t11" name="Date format error Day over">
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>topic</arg>
-<arg>${topic}</arg>
-</arguments>
-<msg timestamp="20180327 23:32:38.674" level="INFO">Typing text 'hello' into text field 'topic'.</msg>
-<status status="PASS" endtime="20180327 23:32:38.740" starttime="20180327 23:32:38.674"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>xpath=//div[@class="note-editable"]</arg>
-<arg>${content}</arg>
-</arguments>
-<msg timestamp="20180327 23:32:38.741" level="INFO">Typing text 'test213' into text field 'xpath=//div[@class="note-editable"]'.</msg>
-<status status="PASS" endtime="20180327 23:32:38.837" starttime="20180327 23:32:38.740"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>date</arg>
-<arg>35/03/2018</arg>
-</arguments>
-<msg timestamp="20180327 23:32:38.838" level="INFO">Typing text '35/03/2018' into text field 'date'.</msg>
-<status status="PASS" endtime="20180327 23:32:38.931" starttime="20180327 23:32:38.838"></status>
-</kw>
-<kw name="Choose File" library="Selenium2Library">
-<doc>Inputs the ``file_path`` into file input field ``locator``.</doc>
-<arguments>
-<arg>id=cover_img</arg>
-<arg>${cover}</arg>
-</arguments>
-<kw name="Capture Page Screenshot" library="Selenium2Library">
-<doc>Takes screenshot of the current page and embeds it into log file.</doc>
-<msg timestamp="20180327 23:32:39.188" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-14.png"&gt;&lt;img src="selenium-screenshot-14.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" endtime="20180327 23:32:39.189" starttime="20180327 23:32:38.932"></status>
-</kw>
-<msg timestamp="20180327 23:32:39.189" level="FAIL">ValueError: File 'C:\WorkSpace\Web\Khonrakrot\test/1.JPG' does not exist on the local file system.</msg>
-<status status="FAIL" endtime="20180327 23:32:39.189" starttime="20180327 23:32:38.931"></status>
-</kw>
-<status status="FAIL" endtime="20180327 23:32:39.190" critical="yes" starttime="20180327 23:32:38.673">ValueError: File 'C:\WorkSpace\Web\Khonrakrot\test/1.JPG' does not exist on the local file system.</status>
-</test>
-<test id="s1-t12" name="Date format error month over">
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>topic</arg>
-<arg>${topic}</arg>
-</arguments>
-<msg timestamp="20180327 23:32:39.193" level="INFO">Typing text 'hello' into text field 'topic'.</msg>
-<status status="PASS" endtime="20180327 23:32:39.251" starttime="20180327 23:32:39.193"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>xpath=//div[@class="note-editable"]</arg>
-<arg>${content}</arg>
-</arguments>
-<msg timestamp="20180327 23:32:39.252" level="INFO">Typing text 'test213' into text field 'xpath=//div[@class="note-editable"]'.</msg>
-<status status="PASS" endtime="20180327 23:32:39.335" starttime="20180327 23:32:39.252"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>date</arg>
-<arg>27/13/2018</arg>
-</arguments>
-<msg timestamp="20180327 23:32:39.336" level="INFO">Typing text '27/13/2018' into text field 'date'.</msg>
-<status status="PASS" endtime="20180327 23:32:39.415" starttime="20180327 23:32:39.336"></status>
-</kw>
-<kw name="Choose File" library="Selenium2Library">
-<doc>Inputs the ``file_path`` into file input field ``locator``.</doc>
-<arguments>
-<arg>id=cover_img</arg>
-<arg>${cover}</arg>
-</arguments>
-<kw name="Capture Page Screenshot" library="Selenium2Library">
-<doc>Takes screenshot of the current page and embeds it into log file.</doc>
-<msg timestamp="20180327 23:32:39.688" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-15.png"&gt;&lt;img src="selenium-screenshot-15.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" endtime="20180327 23:32:39.688" starttime="20180327 23:32:39.416"></status>
-</kw>
-<msg timestamp="20180327 23:32:39.689" level="FAIL">ValueError: File 'C:\WorkSpace\Web\Khonrakrot\test/1.JPG' does not exist on the local file system.</msg>
-<status status="FAIL" endtime="20180327 23:32:39.689" starttime="20180327 23:32:39.415"></status>
-</kw>
-<status status="FAIL" endtime="20180327 23:32:39.689" critical="yes" starttime="20180327 23:32:39.192">ValueError: File 'C:\WorkSpace\Web\Khonrakrot\test/1.JPG' does not exist on the local file system.</status>
-</test>
-<test id="s1-t13" name="Date format error year over">
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>topic</arg>
-<arg>${topic}</arg>
-</arguments>
-<msg timestamp="20180327 23:32:39.692" level="INFO">Typing text 'hello' into text field 'topic'.</msg>
-<status status="PASS" endtime="20180327 23:32:39.758" starttime="20180327 23:32:39.692"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>xpath=//div[@class="note-editable"]</arg>
-<arg>${content}</arg>
-</arguments>
-<msg timestamp="20180327 23:32:39.759" level="INFO">Typing text 'test213' into text field 'xpath=//div[@class="note-editable"]'.</msg>
-<status status="PASS" endtime="20180327 23:32:39.880" starttime="20180327 23:32:39.759"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>date</arg>
-<arg>27/03/2019</arg>
-</arguments>
-<msg timestamp="20180327 23:32:39.881" level="INFO">Typing text '27/03/2019' into text field 'date'.</msg>
-<status status="PASS" endtime="20180327 23:32:39.990" starttime="20180327 23:32:39.880"></status>
-</kw>
-<kw name="Choose File" library="Selenium2Library">
-<doc>Inputs the ``file_path`` into file input field ``locator``.</doc>
-<arguments>
-<arg>id=cover_img</arg>
-<arg>${cover}</arg>
-</arguments>
-<kw name="Capture Page Screenshot" library="Selenium2Library">
-<doc>Takes screenshot of the current page and embeds it into log file.</doc>
-<msg timestamp="20180327 23:32:40.252" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-16.png"&gt;&lt;img src="selenium-screenshot-16.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" endtime="20180327 23:32:40.252" starttime="20180327 23:32:39.992"></status>
-</kw>
-<msg timestamp="20180327 23:32:40.253" level="FAIL">ValueError: File 'C:\WorkSpace\Web\Khonrakrot\test/1.JPG' does not exist on the local file system.</msg>
-<status status="FAIL" endtime="20180327 23:32:40.253" starttime="20180327 23:32:39.991"></status>
-</kw>
-<status status="FAIL" endtime="20180327 23:32:40.254" critical="yes" starttime="20180327 23:32:39.691">ValueError: File 'C:\WorkSpace\Web\Khonrakrot\test/1.JPG' does not exist on the local file system.</status>
-</test>
-<test id="s1-t14" name="Date format error february day over">
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>topic</arg>
-<arg>${topic}</arg>
-</arguments>
-<msg timestamp="20180327 23:32:40.258" level="INFO">Typing text 'hello' into text field 'topic'.</msg>
-<status status="PASS" endtime="20180327 23:32:40.337" starttime="20180327 23:32:40.258"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>xpath=//div[@class="note-editable"]</arg>
-<arg>${content}</arg>
-</arguments>
-<msg timestamp="20180327 23:32:40.339" level="INFO">Typing text 'test213' into text field 'xpath=//div[@class="note-editable"]'.</msg>
-<status status="PASS" endtime="20180327 23:32:40.447" starttime="20180327 23:32:40.338"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>date</arg>
-<arg>30/02/2019</arg>
-</arguments>
-<msg timestamp="20180327 23:32:40.448" level="INFO">Typing text '30/02/2019' into text field 'date'.</msg>
-<status status="PASS" endtime="20180327 23:32:40.557" starttime="20180327 23:32:40.448"></status>
-</kw>
-<kw name="Choose File" library="Selenium2Library">
-<doc>Inputs the ``file_path`` into file input field ``locator``.</doc>
-<arguments>
-<arg>id=cover_img</arg>
-<arg>${cover}</arg>
-</arguments>
-<kw name="Capture Page Screenshot" library="Selenium2Library">
-<doc>Takes screenshot of the current page and embeds it into log file.</doc>
-<msg timestamp="20180327 23:32:40.813" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-17.png"&gt;&lt;img src="selenium-screenshot-17.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" endtime="20180327 23:32:40.814" starttime="20180327 23:32:40.558"></status>
-</kw>
-<msg timestamp="20180327 23:32:40.814" level="FAIL">ValueError: File 'C:\WorkSpace\Web\Khonrakrot\test/1.JPG' does not exist on the local file system.</msg>
-<status status="FAIL" endtime="20180327 23:32:40.814" starttime="20180327 23:32:40.557"></status>
-</kw>
-<status status="FAIL" endtime="20180327 23:32:40.815" critical="yes" starttime="20180327 23:32:40.256">ValueError: File 'C:\WorkSpace\Web\Khonrakrot\test/1.JPG' does not exist on the local file system.</status>
-</test>
-<test id="s1-t15" name="Date format error day overspend">
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>topic</arg>
-<arg>${topic}</arg>
-</arguments>
-<msg timestamp="20180327 23:32:40.817" level="INFO">Typing text 'hello' into text field 'topic'.</msg>
-<status status="PASS" endtime="20180327 23:32:40.877" starttime="20180327 23:32:40.817"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>xpath=//div[@class="note-editable"]</arg>
-<arg>${content}</arg>
-</arguments>
-<msg timestamp="20180327 23:32:40.877" level="INFO">Typing text 'test213' into text field 'xpath=//div[@class="note-editable"]'.</msg>
-<status status="PASS" endtime="20180327 23:32:40.961" starttime="20180327 23:32:40.877"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>date</arg>
-<arg>-1/03/2018</arg>
-</arguments>
-<msg timestamp="20180327 23:32:40.962" level="INFO">Typing text '-1/03/2018' into text field 'date'.</msg>
-<status status="PASS" endtime="20180327 23:32:41.042" starttime="20180327 23:32:40.962"></status>
-</kw>
-<kw name="Choose File" library="Selenium2Library">
-<doc>Inputs the ``file_path`` into file input field ``locator``.</doc>
-<arguments>
-<arg>id=cover_img</arg>
-<arg>${cover}</arg>
-</arguments>
-<kw name="Capture Page Screenshot" library="Selenium2Library">
-<doc>Takes screenshot of the current page and embeds it into log file.</doc>
-<msg timestamp="20180327 23:32:41.293" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-18.png"&gt;&lt;img src="selenium-screenshot-18.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" endtime="20180327 23:32:41.293" starttime="20180327 23:32:41.043"></status>
-</kw>
-<msg timestamp="20180327 23:32:41.293" level="FAIL">ValueError: File 'C:\WorkSpace\Web\Khonrakrot\test/1.JPG' does not exist on the local file system.</msg>
-<status status="FAIL" endtime="20180327 23:32:41.293" starttime="20180327 23:32:41.043"></status>
-</kw>
-<status status="FAIL" endtime="20180327 23:32:41.294" critical="yes" starttime="20180327 23:32:40.816">ValueError: File 'C:\WorkSpace\Web\Khonrakrot\test/1.JPG' does not exist on the local file system.</status>
-</test>
-<test id="s1-t16" name="Date format error month overspend">
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>topic</arg>
-<arg>${topic}</arg>
-</arguments>
-<msg timestamp="20180327 23:32:41.297" level="INFO">Typing text 'hello' into text field 'topic'.</msg>
-<status status="PASS" endtime="20180327 23:32:41.358" starttime="20180327 23:32:41.297"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>xpath=//div[@class="note-editable"]</arg>
-<arg>${content}</arg>
-</arguments>
-<msg timestamp="20180327 23:32:41.359" level="INFO">Typing text 'test213' into text field 'xpath=//div[@class="note-editable"]'.</msg>
-<status status="PASS" endtime="20180327 23:32:41.442" starttime="20180327 23:32:41.358"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>date</arg>
-<arg>27/-3/2018</arg>
-</arguments>
-<msg timestamp="20180327 23:32:41.443" level="INFO">Typing text '27/-3/2018' into text field 'date'.</msg>
-<status status="PASS" endtime="20180327 23:32:41.520" starttime="20180327 23:32:41.443"></status>
-</kw>
-<kw name="Choose File" library="Selenium2Library">
-<doc>Inputs the ``file_path`` into file input field ``locator``.</doc>
-<arguments>
-<arg>id=cover_img</arg>
-<arg>${cover}</arg>
-</arguments>
-<kw name="Capture Page Screenshot" library="Selenium2Library">
-<doc>Takes screenshot of the current page and embeds it into log file.</doc>
-<msg timestamp="20180327 23:32:41.770" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-19.png"&gt;&lt;img src="selenium-screenshot-19.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" endtime="20180327 23:32:41.770" starttime="20180327 23:32:41.521"></status>
-</kw>
-<msg timestamp="20180327 23:32:41.771" level="FAIL">ValueError: File 'C:\WorkSpace\Web\Khonrakrot\test/1.JPG' does not exist on the local file system.</msg>
-<status status="FAIL" endtime="20180327 23:32:41.771" starttime="20180327 23:32:41.521"></status>
-</kw>
-<status status="FAIL" endtime="20180327 23:32:41.772" critical="yes" starttime="20180327 23:32:41.296">ValueError: File 'C:\WorkSpace\Web\Khonrakrot\test/1.JPG' does not exist on the local file system.</status>
-</test>
-<test id="s1-t17" name="Date format error year overspend">
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>topic</arg>
-<arg>${topic}</arg>
-</arguments>
-<msg timestamp="20180327 23:32:41.776" level="INFO">Typing text 'hello' into text field 'topic'.</msg>
-<status status="PASS" endtime="20180327 23:32:41.833" starttime="20180327 23:32:41.775"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>xpath=//div[@class="note-editable"]</arg>
-<arg>${content}</arg>
-</arguments>
-<msg timestamp="20180327 23:32:41.834" level="INFO">Typing text 'test213' into text field 'xpath=//div[@class="note-editable"]'.</msg>
-<status status="PASS" endtime="20180327 23:32:41.912" starttime="20180327 23:32:41.834"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>date</arg>
-<arg>27/03/-2018</arg>
-</arguments>
-<msg timestamp="20180327 23:32:41.912" level="INFO">Typing text '27/03/-2018' into text field 'date'.</msg>
-<status status="PASS" endtime="20180327 23:32:41.996" starttime="20180327 23:32:41.912"></status>
-</kw>
-<kw name="Choose File" library="Selenium2Library">
-<doc>Inputs the ``file_path`` into file input field ``locator``.</doc>
-<arguments>
-<arg>id=cover_img</arg>
-<arg>${cover}</arg>
-</arguments>
-<kw name="Capture Page Screenshot" library="Selenium2Library">
-<doc>Takes screenshot of the current page and embeds it into log file.</doc>
-<msg timestamp="20180327 23:32:42.263" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-20.png"&gt;&lt;img src="selenium-screenshot-20.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" endtime="20180327 23:32:42.263" starttime="20180327 23:32:41.997"></status>
-</kw>
-<msg timestamp="20180327 23:32:42.263" level="FAIL">ValueError: File 'C:\WorkSpace\Web\Khonrakrot\test/1.JPG' does not exist on the local file system.</msg>
-<status status="FAIL" endtime="20180327 23:32:42.263" starttime="20180327 23:32:41.996"></status>
-</kw>
-<status status="FAIL" endtime="20180327 23:32:42.264" critical="yes" starttime="20180327 23:32:41.774">ValueError: File 'C:\WorkSpace\Web\Khonrakrot\test/1.JPG' does not exist on the local file system.</status>
-</test>
-<test id="s1-t18" name="Date format error">
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>topic</arg>
-<arg>${topic}</arg>
-</arguments>
-<msg timestamp="20180327 23:32:42.276" level="INFO">Typing text 'hello' into text field 'topic'.</msg>
-<status status="PASS" endtime="20180327 23:32:42.341" starttime="20180327 23:32:42.275"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>xpath=//div[@class="note-editable"]</arg>
-<arg>${content}</arg>
-</arguments>
-<msg timestamp="20180327 23:32:42.342" level="INFO">Typing text 'test213' into text field 'xpath=//div[@class="note-editable"]'.</msg>
-<status status="PASS" endtime="20180327 23:32:42.423" starttime="20180327 23:32:42.342"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>date</arg>
-<arg>27-03*2018</arg>
-</arguments>
-<msg timestamp="20180327 23:32:42.424" level="INFO">Typing text '27-03*2018' into text field 'date'.</msg>
-<status status="PASS" endtime="20180327 23:32:42.497" starttime="20180327 23:32:42.423"></status>
-</kw>
-<kw name="Choose File" library="Selenium2Library">
-<doc>Inputs the ``file_path`` into file input field ``locator``.</doc>
-<arguments>
-<arg>id=cover_img</arg>
-<arg>${cover}</arg>
-</arguments>
-<kw name="Capture Page Screenshot" library="Selenium2Library">
-<doc>Takes screenshot of the current page and embeds it into log file.</doc>
-<msg timestamp="20180327 23:32:42.762" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-21.png"&gt;&lt;img src="selenium-screenshot-21.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" endtime="20180327 23:32:42.762" starttime="20180327 23:32:42.498"></status>
-</kw>
-<msg timestamp="20180327 23:32:42.763" level="FAIL">ValueError: File 'C:\WorkSpace\Web\Khonrakrot\test/1.JPG' does not exist on the local file system.</msg>
-<status status="FAIL" endtime="20180327 23:32:42.763" starttime="20180327 23:32:42.498"></status>
-</kw>
-<kw type="teardown" name="Close Browser" library="Selenium2Library">
-<doc>Closes the current browser.</doc>
-<status status="PASS" endtime="20180327 23:32:45.856" starttime="20180327 23:32:42.764"></status>
-</kw>
-<status status="FAIL" endtime="20180327 23:32:45.857" critical="yes" starttime="20180327 23:32:42.270">ValueError: File 'C:\WorkSpace\Web\Khonrakrot\test/1.JPG' does not exist on the local file system.</status>
-</test>
-<status status="FAIL" endtime="20180327 23:32:45.861" starttime="20180327 23:32:18.912"></status>
-</suite>
-<statistics>
-<total>
-<stat fail="16" pass="2">Critical Tests</stat>
-<stat fail="16" pass="2">All Tests</stat>
-</total>
-<tag>
-</tag>
-<suite>
-<stat fail="16" id="s1" name="Test Add Incorrect" pass="2">Test Add Incorrect</stat>
-</suite>
-</statistics>
-<errors>
-</errors>
-</robot>
+<status status="PASS" endtime="20180327 23:46:01.927" starttime="20180327 23:46:01.909">
