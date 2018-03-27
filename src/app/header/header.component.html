@@ -19,10 +19,9 @@
                 </div> -->
                 <div class="carousel-caption carousel-caption-left">
                     <div class="container" style="text-align: center">
-                        <img src="{{ item.cover }}" *ngIf="item.cover != ''" class="product-img fadeInDownBig animated" alt="" />
-                        <br/>
-                        <br/>
-                        <br/>
+                        <div class="product-img">
+                            <img src="{{ item.cover }}" *ngIf="item.cover != ''" class="fadeInDownBig animated" alt="" />
+                        </div>
                         <!-- <h3 class="title m-b-5 fadeInDownBig animated">iMac</h3>  -->
                         <p class="m-b-15 fadeInUpBig animated"><a href="#">{{ item.topic }}</a></p>
                         <!-- <div class="price m-b-30 fadeInDownBig animated"><small>from</small> <span>$649.00</span></div> -->
