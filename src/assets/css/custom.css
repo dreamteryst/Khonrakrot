@@ -24,9 +24,19 @@
     background-position: bottom;
     background-size: cover;
 }
+.div-logo {
+    float: left;
+    line-height: 130px;
+    text-align: center;
+    width: 290px;
+}
+.div-logo > span {
+    font-size: 38px;
+    color: white;
+}
 .img-logo {
     height: 130px;
-    float: left;
+    float: right;
 }
 .item {
     background-color: transparent;
