@@ -60,4 +60,11 @@ export class ShowNewsComponent implements OnInit {
       this.loadData();
     });
   }
+
+  goNext(){
+    this.router.navigate(['/show-news/' + this.next])
+    .then(() => {
+      this.loadData();
+    });
+  }
 }
