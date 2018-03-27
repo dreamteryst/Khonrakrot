@@ -54,8 +54,10 @@ export class ShowNewsComponent implements OnInit {
     
   }
 
-  goPrevious(previous){
-    this.router.navigate(['/show-news/'+previous]);
-    this.loadData();
+  goPrevious(){
+    this.router.navigate(['/show-news/' + this.previous])
+    .then(() => {
+      this.loadData();
+    });
   }
 }
