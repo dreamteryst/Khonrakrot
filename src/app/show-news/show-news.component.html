@@ -8,5 +8,9 @@
       {{ date_post }}<br/>
     </p>
     <div class="multi_lines_text">{{ content }}</div>
+    <div>
+      <a class="btn btn-info" id="previous" *ngIf="isPrevious" (click)="loadData(previous)">Previous</a>
+      <a class="btn btn-info" id="next" routerLink="/show-news/{{ this.next }}" (click)="ngOnInit()"  style="text-align:right;">Next</a>
+    </div>
   </div>
 </div>

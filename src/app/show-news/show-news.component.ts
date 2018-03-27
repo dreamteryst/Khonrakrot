@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
@@ -15,10 +15,22 @@ export class ShowNewsComponent implements OnInit {
   topic:string;
   date_post:string;
   content:string;
+  next:number;
+  previous:number;
+  isPrevious:boolean;
 
-  constructor(private route: ActivatedRoute, private http: HttpClient) {}
+  constructor(private route: ActivatedRoute, private http: HttpClient, private router: Router) {}
 
   ngOnInit() {
+    this.loadData();
+  }
+  
+  nl2br (str, is_xhtml) {   
+      var breakTag = (is_xhtml || typeof is_xhtml === 'undefined') ? '<br />' : '<br>';    
+      return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1'+ breakTag +'$2');
+  }
+
+  loadData(){
     this.route.params.subscribe( params => {
       this.id = params.id;
     });
@@ -34,11 +46,16 @@ export class ShowNewsComponent implements OnInit {
       this.content = this.item['content'];
       this.date_post = this.item['date_post'];
     });
+    this.next = this.id*1 + 1*1;
+    this.previous = this.id*1 - 1*1;
+    
+    this.isPrevious = !(this.previous < 1);
+    console.log(this.next+" "+this.previous);
+    
   }
 
-  nl2br (str, is_xhtml) {   
-      var breakTag = (is_xhtml || typeof is_xhtml === 'undefined') ? '<br />' : '<br>';    
-      return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1'+ breakTag +'$2');
+  goPrevious(previous){
+    this.router.navigate(['/show-news/'+previous]);
+    this.loadData();
   }
-
 }
