@@ -39,9 +39,9 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
     $(function () {
-      $("#birthday").datetimepicker({
-        format: 'DD/MM/Y'
-      });
+      // $("#birthday").datetimepicker({
+      //   format: 'DD/MM/Y'
+      // });
     });
   }
 
@@ -53,6 +53,9 @@ export class RegisterComponent implements OnInit {
     this.birthday = $("#birthday").val();
     var age = 2018 - parseInt(this.birthday.split('/')[2]);
     var re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    const rePassport = /^(([a-zA-Z]{2}[0-9]{7})|([0-9]{13}))$/i;
+    const reName =  /^((\S+) (\S+))$/i;
+    const reUsername = /^([a-zA-Z0-9]{1,200})$/i;
     if (typeof this.name === 'undefined' || this.name == ''){
       this.error = 'Name Surname is require.';
       this.isError = true;
@@ -98,8 +101,14 @@ export class RegisterComponent implements OnInit {
     } else if (!this.birthday.match(/^(0[1-9]|[12][0-9]|3[01])[\- \/.](?:(0[1-9]|1[012])[\- \/.][1-2]{1}[0-9]{3})$/)) {
       this.error = 'Please re-enter date of birth.';
       this.isError = true;
-    } else if (!this.people_id.match(/[0-9]{8,13}/g)) {
+    } else if (!rePassport.test(this.people_id)) {
       this.error = 'Please re-enter Citizen ID/Passport ID.';
+      this.isError = true;
+    } else if (!reName.test(this.name)) {
+      this.error = 'Please re-enter Name Surname.';
+      this.isError = true;
+    } else if (!reUsername.test(this.username)) {
+      this.error = 'Please re-enter Username.';
       this.isError = true;
     } else if (this.password != this.password_confirmation) {
       this.error = 'Password do not match confirm password.';
@@ -110,8 +119,17 @@ export class RegisterComponent implements OnInit {
     } else if (!this.agree) {
       this.error = 'Please agree term and condition.';
       this.isError = true;
-    } else if (age < 15) {
-      this.error = 'Please re-enter date of birth';
+    } else if (age < 20) {
+      this.error = 'Please re-enter date of birth.';
+      this.isError = true;
+    } else if (this.password.length < 16) {
+      this.error = 'Password length must more than 15.';
+      this.isError = true;
+    } else if(parseInt(this.birthday.split('/')[2]) < 1970) {
+      this.error = 'Please re-enter date of birth.';
+      this.isError = true;
+    } else if(parseInt(this.birthday.split('/')[1]) == 2 && parseInt(this.birthday.split('/')[0]) > 29) {
+      this.error = 'Please re-enter date of birth.';
       this.isError = true;
     } else {
       this.isError = false;
