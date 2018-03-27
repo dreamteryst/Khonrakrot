@@ -28,9 +28,9 @@ export class AddNewsComponent implements OnInit {
       $('#summernote').summernote({
         height: 500
       });
-      $("#date").datetimepicker({
-        format: 'DD/MM/Y'
-      });
+      // $("#date").datetimepicker({
+      //   format: 'DD/MM/Y'
+      // });
       $('input[type=file]').change(function () {
         readURL(this);
       });
