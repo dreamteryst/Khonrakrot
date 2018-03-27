@@ -10,11 +10,11 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./show-news.component.css']
 })
 export class ShowNewsComponent implements OnInit {
-  private id:number;
-  private item:any;
-  private topic:string;
-  private date_post:string;
-  private content:string;
+  id:number;
+  item:any;
+  topic:string;
+  date_post:string;
+  content:string;
 
   constructor(private route: ActivatedRoute, private http: HttpClient) {}
 
