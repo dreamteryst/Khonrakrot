@@ -4,13 +4,18 @@
   <!-- BEGIN container -->
   <div class="container">
     <p>
-      {{ topic }} <br/>
-      {{ date_post }}<br/>
+      {{ topic }}
+      <br/> {{ date_post }}
+      <br/>
     </p>
     <div class="multi_lines_text">{{ content }}</div>
-      <div class="flex-item">
+    <div class="flex-item">
+      <span>
         <a class="btn btn-info" id="previous" *ngIf="isPrevious" (click)="goPrevious()">Previous</a>
-        <a class="btn btn-info" id="next" *ngIf="isPrevious"(click)="goNext()">Next</a>
-      </div>
+      </span>
+      <span>
+        <a class="btn btn-info" id="next" (click)="goNext()">Next</a>
+      </span>
+    </div>
   </div>
 </div>
