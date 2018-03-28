@@ -3,6 +3,7 @@
 <div id="trending-items" class="section-container bg-white">
   <!-- BEGIN container -->
   <div class="container">
+    <h2>{{ topic }}</h2>
     <p>
       {{ topic }}
       <br/> {{ date_post }}
@@ -11,10 +12,10 @@
     <div class="multi_lines_text">{{ content }}</div>
     <div class="flex-item">
       <span>
-        <a class="btn btn-info" id="previous" *ngIf="isPrevious" (click)="goPrevious()">Previous</a>
+        <button type="button" class="btn btn-info" id="previous" *ngIf="isPrevious" (click)="goPrevious()">Previous</button>
       </span>
       <span>
-        <a class="btn btn-info" id="next" (click)="goNext()">Next</a>
+        <button type="button" class="btn btn-info" id="next" (click)="goNext()">Next</button>
       </span>
     </div>
   </div>
