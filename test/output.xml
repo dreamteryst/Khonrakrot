@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20180328 00:28:28.033" generator="Robot 3.0.2 (Python 2.7.14 on win32)">
+<robot generated="20180328 10:12:35.216" generator="Robot 3.0.2 (Python 2.7.14 on win32)">
 <suite source="C:\WorkSpace\Web\Khonrakrot\test\test_card_2.robot" id="s1" name="Test Card 2">
 <test id="s1-t1" name="Open ADD Page">
 <kw name="Open Browser" library="Selenium2Library">
@@ -8,17 +8,17 @@
 <arg>${Home URL}</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20180328 00:28:29.855" level="INFO">Opening browser 'Chrome' to base url 'http://127.0.0.1:4200/'.</msg>
-<status status="PASS" endtime="20180328 00:28:38.931" starttime="20180328 00:28:29.854"></status>
+<msg timestamp="20180328 10:12:35.352" level="INFO">Opening browser 'Chrome' to base url 'http://127.0.0.1:4200/'.</msg>
+<status status="PASS" endtime="20180328 10:12:43.197" starttime="20180328 10:12:35.352"></status>
 </kw>
 <kw name="Wait Until Page Contains" library="Selenium2Library">
 <doc>Waits until ``text`` appears on current page.</doc>
 <arguments>
 <arg>คนรักรถ</arg>
 </arguments>
-<status status="PASS" endtime="20180328 00:28:38.980" starttime="20180328 00:28:38.932"></status>
+<status status="PASS" endtime="20180328 10:12:43.235" starttime="20180328 10:12:43.198"></status>
 </kw>
-<status status="PASS" endtime="20180328 00:28:38.981" critical="yes" starttime="20180328 00:28:29.853"></status>
+<status status="PASS" endtime="20180328 10:12:43.236" critical="yes" starttime="20180328 10:12:35.351"></status>
 </test>
 <test id="s1-t2" name="Open News">
 <kw name="Click Link" library="Selenium2Library">
@@ -26,17 +26,17 @@
 <arguments>
 <arg>/show-news/2</arg>
 </arguments>
-<msg timestamp="20180328 00:28:38.986" level="INFO">Clicking link '/show-news/2'.</msg>
-<status status="PASS" endtime="20180328 00:28:39.185" starttime="20180328 00:28:38.985"></status>
+<msg timestamp="20180328 10:12:43.241" level="INFO">Clicking link '/show-news/2'.</msg>
+<status status="PASS" endtime="20180328 10:12:43.403" starttime="20180328 10:12:43.239"></status>
 </kw>
 <kw name="Wait Until Page Contains" library="Selenium2Library">
 <doc>Waits until ``text`` appears on current page.</doc>
 <arguments>
 <arg>จอดรถขวางหน้าบ้านคนอื่น เอาผิดได้ไหม?</arg>
 </arguments>
-<status status="PASS" endtime="20180328 00:28:40.455" starttime="20180328 00:28:39.185"></status>
+<status status="PASS" endtime="20180328 10:12:44.658" starttime="20180328 10:12:43.403"></status>
 </kw>
-<status status="PASS" endtime="20180328 00:28:40.455" critical="yes" starttime="20180328 00:28:38.983"></status>
+<status status="PASS" endtime="20180328 10:12:44.659" critical="yes" starttime="20180328 10:12:43.238"></status>
 </test>
 <test id="s1-t3" name="Next Button">
 <kw name="Click Button" library="Selenium2Library">
@@ -44,16 +44,17 @@
 <arguments>
 <arg>next</arg>
 </arguments>
-<msg timestamp="20180328 00:28:40.458" level="INFO">Clicking button 'next'.</msg>
-<kw name="Capture Page Screenshot" library="Selenium2Library">
-<doc>Takes screenshot of the current page and embeds it into log file.</doc>
-<msg timestamp="20180328 00:28:40.828" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" endtime="20180328 00:28:40.829" starttime="20180328 00:28:40.490"></status>
+<msg timestamp="20180328 10:12:44.662" level="INFO">Clicking button 'next'.</msg>
+<status status="PASS" endtime="20180328 10:12:44.798" starttime="20180328 10:12:44.662"></status>
 </kw>
-<msg timestamp="20180328 00:28:40.832" level="FAIL">Button with locator 'next' not found.</msg>
-<status status="FAIL" endtime="20180328 00:28:40.832" starttime="20180328 00:28:40.458"></status>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>น้ำฉีดกระจก ไม่ออกมา เกิดขึ้นเพราะอะไร???</arg>
+</arguments>
+<status status="PASS" endtime="20180328 10:12:46.054" starttime="20180328 10:12:44.798"></status>
 </kw>
-<status status="FAIL" endtime="20180328 00:28:40.833" critical="yes" starttime="20180328 00:28:40.457">Button with locator 'next' not found.</status>
+<status status="PASS" endtime="20180328 10:12:46.055" critical="yes" starttime="20180328 10:12:44.661"></status>
 </test>
 <test id="s1-t4" name="Previous Button">
 <kw name="Click Button" library="Selenium2Library">
@@ -61,28 +62,33 @@
 <arguments>
 <arg>previous</arg>
 </arguments>
-<msg timestamp="20180328 00:28:40.835" level="INFO">Clicking button 'previous'.</msg>
-<kw name="Capture Page Screenshot" library="Selenium2Library">
-<doc>Takes screenshot of the current page and embeds it into log file.</doc>
-<msg timestamp="20180328 00:28:41.160" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" endtime="20180328 00:28:41.161" starttime="20180328 00:28:40.868"></status>
+<msg timestamp="20180328 10:12:46.058" level="INFO">Clicking button 'previous'.</msg>
+<status status="PASS" endtime="20180328 10:12:46.188" starttime="20180328 10:12:46.058"></status>
 </kw>
-<msg timestamp="20180328 00:28:41.161" level="FAIL">Button with locator 'previous' not found.</msg>
-<status status="FAIL" endtime="20180328 00:28:41.161" starttime="20180328 00:28:40.835"></status>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>จอดรถขวางหน้าบ้านคนอื่น เอาผิดได้ไหม?</arg>
+</arguments>
+<status status="PASS" endtime="20180328 10:12:47.437" starttime="20180328 10:12:46.188"></status>
 </kw>
-<status status="FAIL" endtime="20180328 00:28:41.162" critical="yes" starttime="20180328 00:28:40.834">Button with locator 'previous' not found.</status>
+<kw type="teardown" name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20180328 10:12:50.527" starttime="20180328 10:12:47.438"></status>
+</kw>
+<status status="PASS" endtime="20180328 10:12:50.527" critical="yes" starttime="20180328 10:12:46.057"></status>
 </test>
-<status status="FAIL" endtime="20180328 00:28:41.164" starttime="20180328 00:28:28.036"></status>
+<status status="PASS" endtime="20180328 10:12:50.530" starttime="20180328 10:12:35.219"></status>
 </suite>
 <statistics>
 <total>
-<stat fail="2" pass="2">Critical Tests</stat>
-<stat fail="2" pass="2">All Tests</stat>
+<stat fail="0" pass="4">Critical Tests</stat>
+<stat fail="0" pass="4">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat fail="2" id="s1" name="Test Card 2" pass="2">Test Card 2</stat>
+<stat fail="0" id="s1" name="Test Card 2" pass="4">Test Card 2</stat>
 </suite>
 </statistics>
 <errors>
