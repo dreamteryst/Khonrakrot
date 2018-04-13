@@ -9,16 +9,34 @@
     font-weight: normal;
     font-style: normal;
 }
+.checkout-footer, .checkout-header {
+    background: #00acac;
+}
+.title-form {
+    color: white;
+    font-size: 30px;
+}
 .note-editor .btn {
     font-size: 12px;
 }
 .bg-image-phone {
-    background: url('../img/apple-cover.jpg');
+    background: url('../img/cover/img1.jpg');
+    background-position: bottom;
     background-size: cover;
+}
+.div-logo {
+    float: left;
+    line-height: 130px;
+    text-align: center;
+    width: 290px;
+}
+.div-logo > span {
+    font-size: 38px;
+    color: white;
 }
 .img-logo {
     height: 130px;
-    float: left;
+    float: right;
 }
 .item {
     background-color: transparent;

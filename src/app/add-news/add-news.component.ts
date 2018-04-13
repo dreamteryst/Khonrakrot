@@ -23,12 +23,14 @@ export class AddNewsComponent implements OnInit {
 
   ngOnInit() {
     $(function () {
+      $("#btnLogin").hide();
+      $("#btnRegister").hide();
       $('#summernote').summernote({
         height: 500
       });
-      $("#date").datetimepicker({
-        format: 'DD/MM/Y'
-      });
+      // $("#date").datetimepicker({
+      //   format: 'DD/MM/Y'
+      // });
       $('input[type=file]').change(function () {
         readURL(this);
       });
@@ -54,35 +56,27 @@ export class AddNewsComponent implements OnInit {
       })
     };
     var self = this;
-    $("#confirm-modal").modal('show');
-    $("#modal-btn-yes").on("click", function () {
-      self.topic = $("#topic").val();
-      self.date = $("#date").val();
-      self.content = $('#summernote').val();
-      self.cover = $("#cover_image").val();
-      $("#confirm-modal").modal('hide');
-      self.http.post(window['domain'] + '/api/news/insert.php', {
-        topic: self.topic,
-        content: self.content,
-        cover_image: self.cover,
-        date_post: self.date
-      }, httpOptions).subscribe(
-        res => {
-          self.returned = res;
-          $("#topic").val('');
-          $("#date").val('');
-          $('#summernote').summernote('code', '');
-          $("#cover_image").val('');
-        },
-        err => {
-          console.log(err);
-        }
-      );
-      // $("#form_shipping").submit();
-    });
-    $("#modal-btn-no").on("click", function () {
-      $("#confirm-modal").modal('hide');
-    });
+    self.topic = $("#topic").val();
+    self.date = $("#date").val();
+    self.content = $('#summernote').val();
+    self.cover = $("#cover_img").val();
+    self.http.post(window['domain'] + '/api/news/insert.php', {
+      topic: self.topic,
+      content: self.content,
+      cover_image: self.cover,
+      date_post: self.date
+    }, httpOptions).subscribe(
+      res => {
+        self.returned = res;
+        $("#topic").val('');
+        $("#date").val('');
+        $('#summernote').summernote('code', '');
+        $("#cover_image").val('');
+      },
+      err => {
+        console.log(err);
+      }
+    );
   }
 
 }

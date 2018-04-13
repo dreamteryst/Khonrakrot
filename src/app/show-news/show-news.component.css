@@ -1,0 +1,6 @@
+.multi_lines_text { white-space: pre-line; }
+.flex-item {
+    margin:5%; 
+    display: flex; 
+    justify-content: space-between;
+}

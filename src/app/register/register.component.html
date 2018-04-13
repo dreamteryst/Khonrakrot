@@ -1,0 +1,184 @@
+<app-navbar></app-navbar>
+<div class="section-container" id="checkout-info">
+    <!-- BEGIN container -->
+    <div class="container">
+        <!-- BEGIN checkout -->
+        <div class="checkout">
+            <form action="http://localhost/api/register/insert.php" method="POST" name="form_shipping" id="form_shipping" class="form-horizontal"  enctype="multipart/form-data">
+                <!-- BEGIN checkout-header -->
+                <div class="checkout-header">
+                    <!-- BEGIN row -->
+                    <div class="row text-center">
+                      <span class="title-form">Registration</span>
+                    </div>
+                    <!-- END row -->
+                </div>
+                <!-- END checkout-header -->
+                <!-- BEGIN checkout-body -->
+                <div class="checkout-body">
+                    <div class="alert alert-danger" role="alert" *ngIf="isError"><strong>Error !</strong> <i class="fa fa-times-circle"></i> {{error}}</div>
+                    <div class="form-group">
+                        <label class="control-label col-md-2">
+                            Name - Surname <span class="text-danger">*</span>
+                        </label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" name="name" id="name" placeholder="Name Surname" [(ngModel)]="name" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-2">
+                            Citizen ID/Passport ID <span class="text-danger">*</span>
+                        </label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" name="people_id" id="people_id" placeholder="Citizen ID/Passport ID" [(ngModel)]="people_id"  required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-2">
+                            Copy of Citizen ID/Copy of Passport ID <span class="text-danger">*</span>
+                        </label>
+                        <div class="col-md-9">
+                            <input type="file" class="form-control" name="copy" id="copy" placeholder="Copy of Citizen ID/Copy of Passport ID" (change)="handleFileInput($event.target.files)" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-2">
+                            Username <span class="text-danger">*</span>
+                        </label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" name="username" id="username" placeholder="Username" [(ngModel)]="username" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-2">
+                            Password <span class="text-danger">*</span>
+                        </label>
+                        <div class="col-md-9">
+                            <input type="password" class="form-control" name="password" id="password" placeholder="Password" [(ngModel)]="password" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-2">
+                            Confirm Password
+                        </label>
+                        <div class="col-md-9">
+                            <input type="password" class="form-control" name="password_confirmation" id="password_confirmation" placeholder="Confirm password" [(ngModel)]="password_confirmation">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-2">
+                            Date of Birth <span class="text-danger">*</span>
+                        </label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" name="birthday" id="birthday" placeholder="DD/MM/YYYY" [(ngModel)]="birthday" required>
+                        </div>
+                    </div>
+                    <legend>Question</legend>
+                    <div class="form-group">
+                        <label class="control-label col-md-2">
+                            Question 1 <span class="text-danger">*</span>
+                        </label>
+                        <div class="col-md-4">
+                            <select name="question1" id="question1" class="form-control" [(ngModel)]="question1">
+                                <option *ngFor="let question of questions | questionFilter:question2:question3" [value]="question.value">{{question.label}}</option>
+                            </select>
+                        </div>
+                        <label class="control-label col-md-2">
+                            Answer 1 <span class="text-danger">*</span>
+                        </label>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" name="answer1" id="answer1" [(ngModel)]="answer1" placeholder="Answer 1" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-2">
+                            Question 2 <span class="text-danger">*</span>
+                        </label>
+                        <div class="col-md-4">
+                            <select name="question2" id="question2" class="form-control" [(ngModel)]="question2">
+                                <option *ngFor="let question of questions | questionFilter:question1:question3" [value]="question.value">{{question.label}}</option>
+                            </select>
+                        </div>
+                        <label class="control-label col-md-2">
+                            Answer 2 <span class="text-danger">*</span>
+                        </label>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" name="answer2" id="answer2" [(ngModel)]="answer2" placeholder="Answer 2" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-2">
+                            Question 3 <span class="text-danger">*</span>
+                        </label>
+                        <div class="col-md-4">
+                            <select name="question3" id="question3" class="form-control" [(ngModel)]="question3">
+                                <option *ngFor="let question of questions | questionFilter:question2:question1" [value]="question.value">{{question.label}}</option>
+                            </select>
+                        </div>
+                        <label class="control-label col-md-2">
+                            Answer 3 <span class="text-danger">*</span>
+                        </label>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" name="answer3" id="answer3" [(ngModel)]="answer3" placeholder="Answer 3" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2">
+                        E-mail <span class="text-danger">*</span>
+                    </label>
+                    <div class="col-md-9">
+                        <input type="email" class="form-control" name="email" id="email" placeholder="Email" [(ngModel)]="email" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2">
+                    </label>
+                    <div class="col-md-9">
+                        <input type="checkbox" name="agree" id="agree" [(ngModel)]="agree" required><label for="agree">&nbsp;
+                        <!-- Button trigger modal -->
+                            <a href="javascript:;" data-toggle="modal" data-target="#myModal">
+                                    I agree
+                            </a>
+                        </label>
+                    </div>
+                </div>
+                <!-- END checkout-body -->
+                <!-- BEGIN checkout-footer -->
+                <div class="checkout-footer">
+                    <button type="button" (click)="submit()" name="submit" id="register" class="btn btn-inverse btn-lg p-l-30 p-r-30 m-l-10">Register</button>
+                </div>
+                <!-- END checkout-footer -->
+            </form>
+        </div>
+        <!-- END checkout -->
+    </div>
+    <!-- END container -->
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h3 class="modal-title" id="myModalLabel" style="text-align:center;">Policy of Dharma initiative lovers</h3>
+                </div>
+                <div class="modal-body">
+                    <p style="padding:20px;">
+                        &nbsp;&nbsp;&nbsp;&nbsp;This forum is established for people who interested in Dharma. Registration to this forum is free. We do insist that you abide by the rules and policy detailed below. I you agree to the terms, please check ‘I agree’ box below. If you would like to cancel the registration, click cancel to return to the forums index.
+                        <br> &nbsp;&nbsp;&nbsp;&nbsp;1.	Do not post any massage, content and news that against or allusion royal family, prophet and religion.
+                        <br> &nbsp;&nbsp;&nbsp;&nbsp;2.	Do not post any massage, content and news that are obscene, vulgar, sexually-oriented hateful, threating and otherwise violative of any law.
+                        <br> &nbsp;&nbsp;&nbsp;&nbsp;3.	Do not post any massage, content and news that are about marketing.
+                        <br> &nbsp;&nbsp;&nbsp;&nbsp;4.	 You must be 15 years of age or older to register.
+                        <br> &nbsp;&nbsp;&nbsp;&nbsp;5.	 You have to use your real information to register.
+                        <br> &nbsp;&nbsp;&nbsp;&nbsp;6.	 Administrators can delete or edit your massage, content or news. 
+                        <br> &nbsp;&nbsp;&nbsp;&nbsp;7.	 Administration can deny or approve your request’s registration. 
+                    </p>
+                        
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

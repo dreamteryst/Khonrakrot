@@ -10,7 +10,7 @@
                 <div class="checkout-header">
                     <!-- BEGIN row -->
                     <div class="row">
-                        <span class="title-form">Adding News {{ date }}</span>
+                        <span class="title-form">Adding News</span>
                     </div>
                     <!-- END row -->
                 </div>
@@ -49,7 +49,7 @@
                             Cover Images
                         </label>
                         <div class="col-md-9">
-                            <input type="file" class="form-control" value="" placeholder="">
+                            <input type="file" class="form-control" value="" placeholder="" id="cover_img" name="cover_img">
                             <input type="hidden" id="cover_image" name="cover_image">
                         </div>
                     </div>
@@ -63,25 +63,6 @@
             </form>
         </div>
         <!-- END checkout -->
-        <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="confirm-modal">
-            <div class="modal-dialog modal-sm">
-                <div class="modal-content">
-                    <div class="modal-body text-center">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                        <h2 class="modal-title" id="myModalLabel">ยืนยันการทำรายการ</h2>
-
-                        <!-- </div>
-                    <div class="modal-footer text-center"> -->
-                        <div>
-                            <button type="button" class="btn btn-primary" id="modal-btn-yes">ยืนยัน</button>
-                            <button type="button" class="btn btn-default" id="modal-btn-no">ยกเลิก</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
     <!-- END container -->
 </div>

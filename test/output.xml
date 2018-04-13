@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180328 10:12:35.216" generator="Robot 3.0.2 (Python 2.7.14 on win32)">
+<suite source="C:\WorkSpace\Web\Khonrakrot\test\test_card_2.robot" id="s1" name="Test Card 2">
+<test id="s1-t1" name="Open ADD Page">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${Home URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20180328 10:12:35.352" level="INFO">Opening browser 'Chrome' to base url 'http://127.0.0.1:4200/'.</msg>
+<status status="PASS" endtime="20180328 10:12:43.197" starttime="20180328 10:12:35.352"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>คนรักรถ</arg>
+</arguments>
+<status status="PASS" endtime="20180328 10:12:43.235" starttime="20180328 10:12:43.198"></status>
+</kw>
+<status status="PASS" endtime="20180328 10:12:43.236" critical="yes" starttime="20180328 10:12:35.351"></status>
+</test>
+<test id="s1-t2" name="Open News">
+<kw name="Click Link" library="Selenium2Library">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>/show-news/2</arg>
+</arguments>
+<msg timestamp="20180328 10:12:43.241" level="INFO">Clicking link '/show-news/2'.</msg>
+<status status="PASS" endtime="20180328 10:12:43.403" starttime="20180328 10:12:43.239"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>จอดรถขวางหน้าบ้านคนอื่น เอาผิดได้ไหม?</arg>
+</arguments>
+<status status="PASS" endtime="20180328 10:12:44.658" starttime="20180328 10:12:43.403"></status>
+</kw>
+<status status="PASS" endtime="20180328 10:12:44.659" critical="yes" starttime="20180328 10:12:43.238"></status>
+</test>
+<test id="s1-t3" name="Next Button">
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>next</arg>
+</arguments>
+<msg timestamp="20180328 10:12:44.662" level="INFO">Clicking button 'next'.</msg>
+<status status="PASS" endtime="20180328 10:12:44.798" starttime="20180328 10:12:44.662"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>น้ำฉีดกระจก ไม่ออกมา เกิดขึ้นเพราะอะไร???</arg>
+</arguments>
+<status status="PASS" endtime="20180328 10:12:46.054" starttime="20180328 10:12:44.798"></status>
+</kw>
+<status status="PASS" endtime="20180328 10:12:46.055" critical="yes" starttime="20180328 10:12:44.661"></status>
+</test>
+<test id="s1-t4" name="Previous Button">
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>previous</arg>
+</arguments>
+<msg timestamp="20180328 10:12:46.058" level="INFO">Clicking button 'previous'.</msg>
+<status status="PASS" endtime="20180328 10:12:46.188" starttime="20180328 10:12:46.058"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>จอดรถขวางหน้าบ้านคนอื่น เอาผิดได้ไหม?</arg>
+</arguments>
+<status status="PASS" endtime="20180328 10:12:47.437" starttime="20180328 10:12:46.188"></status>
+</kw>
+<kw type="teardown" name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20180328 10:12:50.527" starttime="20180328 10:12:47.438"></status>
+</kw>
+<status status="PASS" endtime="20180328 10:12:50.527" critical="yes" starttime="20180328 10:12:46.057"></status>
+</test>
+<status status="PASS" endtime="20180328 10:12:50.530" starttime="20180328 10:12:35.219"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="4">Critical Tests</stat>
+<stat fail="0" pass="4">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Test Card 2" pass="4">Test Card 2</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

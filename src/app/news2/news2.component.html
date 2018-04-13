@@ -1,22 +1,18 @@
+<app-navbar></app-navbar>
 <app-header [items]="items"></app-header>
+
 <!-- BEGIN #trending-items -->
 <div id="trending-items" class="section-container bg-white">
   <!-- BEGIN container -->
   <div class="container">
-    <!-- BEGIN section-title -->
-    <h4 class="section-title clearfix">
-      News
-      <small>ข่าวล่าสุด</small>
-    </h4>
-    <!-- END section-title -->
     <!-- BEGIN news item -->
     <div class="row row-space-10">
       <table class="table table-striped">
         <thead>
           <tr>
-            <th>#</th>
+            <!-- <th>#</th> -->
             <!-- <th>วันที่</th> -->
-            <th>ข่าว / ประกาศ</th>
+            <th>ข่าวและประกาศ</th>
           </tr>
         </thead>
         <tbody>
@@ -24,11 +20,11 @@
             <td colspan="100%" style="text-align: center;">ไม่พบข้อมูล</td>
           </tr>
           <tr *ngFor="let item of items | async | slice: 0:limit; let i = index ">
-            <td>{{ i+1 }}</td>
+            <!-- <td>{{ i+1 }}</td> -->
             <!-- <td>{{ item.date }}</td> -->
             <td>
               <p class="news-title">
-                <a href="#">{{ item.topic }}</a>
+                <a routerLink="/show-news/{{ item.id_news }}" id="show-news-{{ item.id_news }}">{{ item.topic }}</a>
               </p>
             </td>
           </tr>

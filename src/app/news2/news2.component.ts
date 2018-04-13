@@ -4,6 +4,9 @@ import { Observable } from 'rxjs/Observable';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 
+declare var jquery: any;
+declare var $: any;
+
 @Component({
   selector: 'app-news2',
   templateUrl: './news2.component.html',
@@ -18,10 +21,15 @@ export class News2Component implements OnInit {
   }
 
   ngOnInit() {
-    this.items = this.http.get(window['domain']+'/api/news/read.php').pipe(
-    // this.items = this.http.get('http://10.199.66.227/SoftEn2018/Sec01_Flop/api/news/read.php').pipe(
-      map(res => res['message']) // or any other operator
-    );
+    $(function () {
+      $("#btnLogin").show();
+      $("#btnRegister").show();
+    });
+      this.items = this.http.get(window['domain'] + '/api/news/read.php')
+        .share()
+        .pipe(
+          map(res => res['message']) // or any other operator
+        );
   }
 
   more() {

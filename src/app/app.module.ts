@@ -18,6 +18,10 @@ import { NewsComponent } from './news/news.component';
 import { AddNewsComponent } from './add-news/add-news.component';
 import { ErrorComponent } from './error/error.component';
 import { News2Component } from './news2/news2.component';
+import { RegisterComponent } from './register/register.component';
+import { RegisterSuccessComponent } from './register-success/register-success.component';
+import { QuestionFilterPipe } from './question-filter.pipe';
+import { ShowNewsComponent } from './show-news/show-news.component';
 
 const appRoutes: Routes = [
   { 
@@ -26,7 +30,10 @@ const appRoutes: Routes = [
     children: [
       { path: '', component: News2Component },
       { path: 'home', component: News2Component },
-      { path: 'addnews', component: AddNewsComponent }
+      { path: 'addnews', component: AddNewsComponent },
+      { path: 'register', component: RegisterComponent },
+      { path: 'register-success', component: RegisterSuccessComponent },
+      { path: 'show-news/:id', component: ShowNewsComponent }
     ]
   },
   { path: 'home',
@@ -47,7 +54,11 @@ const appRoutes: Routes = [
     NewsComponent,
     AddNewsComponent,
     ErrorComponent,
-    News2Component
+    News2Component,
+    RegisterComponent,
+    RegisterSuccessComponent,
+    QuestionFilterPipe,
+    ShowNewsComponent
   ],
   imports: [
     RouterModule.forRoot(
