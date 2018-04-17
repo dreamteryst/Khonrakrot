@@ -51,6 +51,7 @@ export class RegisterComponent implements OnInit {
 
   submit() {
     this.birthday = $("#birthday").val();
+    // password : length [a-zA-Z0-9-_]{16,}
     var age = 2018 - parseInt(this.birthday.split('/')[2]);
     var re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
     const rePassport = /^(([a-zA-Z]{2}[0-9]{7})|([0-9]{13}))$/i;
