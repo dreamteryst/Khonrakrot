@@ -15,7 +15,6 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { MainComponent } from './main/main.component';
 import { TopNavComponent } from './top-nav/top-nav.component';
-import { NewsComponent } from './news/news.component';
 import { AddNewsComponent } from './add-news/add-news.component';
 import { ErrorComponent } from './error/error.component';
 import { News2Component } from './news2/news2.component';
@@ -52,7 +51,6 @@ const appRoutes: Routes = [
     FooterComponent,
     MainComponent,
     TopNavComponent,
-    NewsComponent,
     AddNewsComponent,
     ErrorComponent,
     News2Component,
