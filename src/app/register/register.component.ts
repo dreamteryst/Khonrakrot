@@ -198,13 +198,19 @@ export class RegisterComponent implements OnInit {
       if (!this.checkID(this.people_id)) {
         this.error = 'Please re-enter Citizen ID/Passport ID.';
         this.isError = true;
+        console.log('re peo '+this.people_id);
         return;
+      }else{
+        console.log(this.people_id);
       }
     }else if (this.people_id.length >= 8) {
       if(!rePassport.test(this.people_id)) {
         this.error = 'Please re-enter Citizen ID/Passport ID.';
         this.isError = true;
+        console.log('re pass '+this.people_id);
         return;
+      }else {
+        console.log("==" + this.people_id);
       }
     }else if(this.people_id.length < 8) {
       this.error = 'Please re-enter Citizen ID/Passport ID.';
