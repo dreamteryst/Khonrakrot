@@ -23,11 +23,6 @@ export class TopNavComponent implements OnInit {
   signin() {
     var self = this;
     $("#signin-modal").modal('show');
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
-      })
-    };
     $("#modal-btn-yes").click(function () {
       if(!self.isConfirm){
         
@@ -36,13 +31,10 @@ export class TopNavComponent implements OnInit {
       }
       this.username = $("#username").val();
       this.password = $("#password").val();
-      self.http.post(window['domain'] + '/api/signin/signin.php', {
-      // self.http.post('https://www.google.com/recaptcha/api/siteverify', {
-        // secret: '6LeOvlEUAAAAABOT5FzC5FVa2VrEEUOLd0-whV1w',
-        // response: self.token,
-        username: this.username,
-        password: this.password
-      }, httpOptions).subscribe(
+      var formData = new FormData();
+      formData.append('username', this.username);
+      formData.append('password', this.password);
+      self.http.post(window['domain'] + '/api/signin/signin.php', formData).subscribe(
         res => {
           self.returned = res;
           $("#username").val('');
