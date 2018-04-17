@@ -49,12 +49,28 @@ export class RegisterComponent implements OnInit {
     this.copy = files.item(0);
   }
 
+  checkID(id)
+  {
+    let sum = 0;
+    if(id.length != 13) {
+      return false;
+    }
+    for(let i=0, sum=0; i < 12; i++) {
+      sum += parseFloat(id.charAt(i))*(13-i); 
+      if((11-sum%11)%10!=parseFloat(id.charAt(12))) {
+        return false; 
+      }
+      return true;
+    }
+  }
+
   submit() {
     this.birthday = $("#birthday").val();
     // password : length [a-zA-Z0-9-_]{16,}
     var age = 2018 - parseInt(this.birthday.split('/')[2]);
     var re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-    const rePassport = /^(([a-zA-Z]{2}[0-9]{7})|([0-9]{13}))$/i;
+    const rePassport = /^([a-zA-Z]{2}[0-9]{6})$/i;
+    const rePassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[-_])[A-Za-z\d-_]{16,}$/i;
     const reName =  /^((\S+) (\S+))$/i;
     const reUsername = /^([a-zA-Z0-9]{1,200})$/i;
     if (typeof this.name === 'undefined' || this.name == ''){
@@ -102,9 +118,16 @@ export class RegisterComponent implements OnInit {
     } else if (!this.birthday.match(/^(0[1-9]|[12][0-9]|3[01])[\- \/.](?:(0[1-9]|1[012])[\- \/.][1-2]{1}[0-9]{3})$/)) {
       this.error = 'Please re-enter date of birth.';
       this.isError = true;
-    } else if (!rePassport.test(this.people_id)) {
-      this.error = 'Please re-enter Citizen ID/Passport ID.';
-      this.isError = true;
+    } else if (this.people_id.length >= 13) {
+      if (!this.checkID(this.people_id)) {
+        this.error = 'Please re-enter Citizen ID/Passport ID.';
+        this.isError = true;
+      }
+    } else if (this.people_id.length >= 8) {
+      if(!rePassport.test(this.people_id)) {
+        this.error = 'Please re-enter Citizen ID/Passport ID.';
+        this.isError = true;
+      }
     } else if (!reName.test(this.name)) {
       this.error = 'Please re-enter Name Surname.';
       this.isError = true;
@@ -123,8 +146,8 @@ export class RegisterComponent implements OnInit {
     } else if (age < 20) {
       this.error = 'Please re-enter date of birth.';
       this.isError = true;
-    } else if (this.password.length < 16) {
-      this.error = 'Password length must more than 15.';
+    } else if (!rePassword.test(this.password)) {
+      this.error = 'Minimum 16 characters, at least one uppercase letter, one lowercase letter and one number';
       this.isError = true;
     } else if(parseInt(this.birthday.split('/')[2]) < 1970) {
       this.error = 'Please re-enter date of birth.';
