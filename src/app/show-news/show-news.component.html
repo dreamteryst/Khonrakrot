@@ -9,7 +9,7 @@
       <br/> {{ date_post }}
       <br/>
     </p>
-    <div class="multi_lines_text">{{ content }}</div>
+    <div class="multi_lines_text" ng-bind-html="content"></div>
     <div class="flex-item">
       <span>
         <button type="button" class="btn btn-info" id="previous" *ngIf="isPrevious" (click)="goPrevious()">Previous</button>

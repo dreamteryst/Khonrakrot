@@ -31,7 +31,7 @@ export class TopNavComponent implements OnInit {
     $("#modal-btn-yes").click(function () {
       if(!self.isConfirm){
         
-        self.returned.message = "*** กรุณายืนยันว่าท่านไม่ใช่โปรแกรมอัตโนมัติ ***";
+        self.returned.message = "* กรุณายืนยันว่าท่านไม่ใช่โปรแกรมอัตโนมัติ *";
         return;
       }
       this.username = $("#username").val();
