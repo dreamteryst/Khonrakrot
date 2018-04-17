@@ -15,7 +15,7 @@
         <button type="button" class="btn btn-info" id="previous" *ngIf="isPrevious" (click)="goPrevious()">Previous</button>
       </span>
       <span>
-        <button type="button" class="btn btn-info" id="next" (click)="goNext()">Next</button>
+        <button type="button" class="btn btn-info" id="next" *ngIf="isNext" (click)="goNext()">Next</button>
       </span>
     </div>
   </div>

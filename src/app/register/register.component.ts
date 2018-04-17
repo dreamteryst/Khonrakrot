@@ -49,19 +49,45 @@ export class RegisterComponent implements OnInit {
     this.copy = files.item(0);
   }
 
-  checkID(id)
-  {
-    let sum = 0;
-    if(id.length != 13) {
+  check_idcard(idcard){
+    if(idcard.value == ""){ return false;}
+    if(idcard.length < 13){ return false;}
+    if(idcard.length > 13){ return false;}
+  
+  let num = this.str_split(idcard, 1); // function เพิ่มเติม
+  let sum = 0;
+  let total = 0;
+  let digi = 13;
+  
+    for(let i=0;i<12;i++){
+      sum = sum + (num[i] * digi);
+      digi--;
+    }
+    total = ((11 - (sum % 11)) % 10);
+    
+    if(total == num[12]){ //	alert('รหัสหมายเลขประจำตัวประชาชนถูกต้อง');
+      return true;
+    }else{ //	alert('รหัสหมายเลขประจำตัวประชาชนไม่ถูกต้อง');
       return false;
     }
-    for(let i=0, sum=0; i < 12; i++) {
-      sum += parseFloat(id.charAt(i))*(13-i); 
-      if((11-sum%11)%10!=parseFloat(id.charAt(12))) {
-        return false; 
+  }
+  
+  
+  str_split ( f_string, f_split_length){
+      f_string += '';
+      if (f_split_length == undefined) {
+          f_split_length = 1;
       }
-      return true;
-    }
+      if(f_split_length > 0){
+          var result = [];
+          while(f_string.length > f_split_length) {
+              result[result.length] = f_string.substring(0, f_split_length);
+              f_string = f_string.substring(f_split_length);
+          }
+          result[result.length] = f_string;
+          return result;
+      }
+      return false;
   }
 
   submit() {
@@ -72,6 +98,7 @@ export class RegisterComponent implements OnInit {
     const rePassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[-_])[A-Za-z\d-_]{16,}$/i;
     const reName =  /^((\S+) (\S+))$/i;
     const reUsername = /^([a-zA-Z0-9]{1,200})$/i;
+    
     if (typeof this.name === 'undefined' || this.name == ''){
       this.error = 'Name Surname is require.';
       this.isError = true;
@@ -118,7 +145,7 @@ export class RegisterComponent implements OnInit {
       this.error = 'Please re-enter date of birth.';
       this.isError = true;
     } else if (this.people_id.length >= 13) {
-      if (!this.checkID(this.people_id)) {
+      if (!this.check_idcard(this.people_id)) {
         this.error = 'Please re-enter Citizen ID/Passport ID.';
         this.isError = true;
       }
@@ -127,6 +154,9 @@ export class RegisterComponent implements OnInit {
         this.error = 'Please re-enter Citizen ID/Passport ID.';
         this.isError = true;
       }
+    } else if(this.people_id.length < 8) {
+      this.error = 'Please re-enter Citizen ID/Passport ID.';
+      this.isError = true;
     } else if (!reName.test(this.name)) {
       this.error = 'Please re-enter Name Surname.';
       this.isError = true;
@@ -154,6 +184,9 @@ export class RegisterComponent implements OnInit {
     } else if(parseInt(this.birthday.split('/')[1]) == 2 && parseInt(this.birthday.split('/')[0]) > 29) {
       this.error = 'Please re-enter date of birth.';
       this.isError = true;
+    } else if(this.copy.type != 'image/png' || this.copy.type != 'image/jpeg' || this.copy.type != 'image/gif' || this.copy.type != 'application/pdf') {
+      this.error = 'Please enter image or pdf format';
+      this.isError = true;
     } else {
       this.isError = false;
     }
@@ -180,6 +213,9 @@ export class RegisterComponent implements OnInit {
       // console.log(res);
       if(res['status']) {
         this.router.navigate(['/register-success']);
+      } else {
+        this.error = res['message'];
+        this.isError = true;
       }
     });
   }
