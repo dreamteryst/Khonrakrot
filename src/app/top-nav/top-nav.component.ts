@@ -10,22 +10,29 @@ declare var $: any;
 export class TopNavComponent implements OnInit {
   username: string;
   password: string;
-  returned: any = { message: '' };
+  returned: any = {status:true, message: '' };
   token: string;
-  // alert: string;
   isConfirm: boolean;
+  isSignin: boolean;
+  user: string;
 
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
     this.isConfirm = false;
+    if(localStorage.getItem('loginSessId')==null){
+      this.isSignin = false;
+    }else{
+      this.user = localStorage.getItem('loginSessId');
+      this.isSignin = true;
+    }
   }
   signin() {
     var self = this;
     $("#signin-modal").modal('show');
     $("#modal-btn-yes").click(function () {
       if(!self.isConfirm){
-        
+        self.returned.status = false;
         self.returned.message = "* กรุณายืนยันว่าท่านไม่ใช่โปรแกรมอัตโนมัติ *";
         return;
       }
@@ -37,8 +44,10 @@ export class TopNavComponent implements OnInit {
       self.http.post(window['domain'] + '/api/signin/signin.php', formData).subscribe(
         res => {
           self.returned = res;
-          $("#username").val('');
-          $("#password").val('');
+          if(res['status']){
+            localStorage.setItem('loginSessId',  this.username);
+            window.location.reload();
+          }
         },
         err => {
           console.log(err);
@@ -46,6 +55,11 @@ export class TopNavComponent implements OnInit {
       );
     });
 
+  }
+  
+  signout(){
+    localStorage.clear();
+    window.location.reload();
   }
 
   resolved(captchaResponse: string) {

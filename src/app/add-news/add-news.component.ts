@@ -59,7 +59,7 @@ export class AddNewsComponent implements OnInit {
     self.topic = $("#topic").val();
     self.date = $("#date").val();
     self.content = $('#summernote').val();
-    self.cover = $("#cover_img").val();
+    self.cover = $("#cover_image").val();
     self.http.post(window['domain'] + '/api/news/insert.php', {
       topic: self.topic,
       content: self.content,

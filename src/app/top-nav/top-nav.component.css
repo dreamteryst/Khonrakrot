@@ -4,3 +4,13 @@
 .pointer {
   cursor:pointer;
 }
+.helloUser{
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: stretch; 
+  /* margin-top:-70px; */
+  font-size: 1.33em;
+  text-align: center;
+  line-height: 1em;
+}
