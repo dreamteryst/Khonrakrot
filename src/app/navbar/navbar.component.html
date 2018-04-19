@@ -27,7 +27,20 @@
                                 <li><a routerLink="/">News and Announcment</a></li>
                             </ul>
                         </li>
-                        <li ><a href="javascript:;">Knowledge Resource</a></li>
+                        <li class="dropdown dropdown-hover">
+                            <a href="javascript:;" data-toggle="dropdown">
+                                Knowledge Resource
+                                <i class="fa fa-angle-down"></i> 
+                                <span class="arrow top"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="javascript:;">สาระน่ารู้</a></li>
+                                <li><a href="javascript:;">How to</a></li>
+                                <li><a href="javascript:;">อุปกรณ์แต่งรถ</a></li>
+                                <li><a href="javascript:;">xxxxx</a></li>
+                                <li><a routerLink="/my-article" *ngIf="isSignin">My Article</a></li>
+                            </ul>
+                        </li>
                         <li ><a href="javascript:;">Events</a></li>
                         <li ><a routerLink="/addnews">About us</a></li>
                         <li class="dropdown dropdown-hover" *ngIf="isAdmin">
