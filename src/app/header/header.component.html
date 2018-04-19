@@ -12,7 +12,7 @@
         <!-- BEGIN carousel-inner -->
         <div class="carousel-inner"> 
             <!-- BEGIN item -->
-            <div [class]="i == 0 ? 'item active' : 'item'" *ngFor="let item of items | async | slice: 0:5; let i = index ">
+            <div [class]="i == 0 ? 'item active' : 'item'" *ngFor="let item of items | async; let i = index ">
                 <!-- <img src="assets/img/apple-cover.jpg" class="bg-cover-img" alt="" /> -->
                 <!-- <div class="container">
                     <img src="assets/img/slider-1-product.png" class="product-img right bottom fadeInRight animated" alt="" />
