@@ -14,10 +14,10 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.items = this.http.get(window['domain'] + '/api/news/read.php?type=cover')
-        .share()
-        .pipe(
-          map(res => res['message']) // or any other operator
-        );
+      .share()
+      .pipe(
+        map(res => res['message']) // or any other operator
+      );
   }
 
 }

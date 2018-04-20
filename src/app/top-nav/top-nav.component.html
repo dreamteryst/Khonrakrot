@@ -20,7 +20,7 @@
             </div>
             <div class="sign-content" *ngIf="isSignin">
                 <div class="helloUser">
-                    <span style="color:white;">สวัสดีคุณ {{ user }}</span>
+                    <span style="color:white;">สวัสดีคุณ <a routerLink="/profile" routerLinkActive="active" style="color:white; text-decoration: underline;">{{ user }}</a></span>
                     <br>
                     <a routerLinkActive="active" id="btnSignOut" (click)="signout()" style="color:white;" class="pointer">
                         Sign out</a>
