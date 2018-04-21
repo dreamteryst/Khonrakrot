@@ -14,6 +14,7 @@ declare var $: any;
   styleUrls: ['./my-article.component.css']
 })
 export class MyArticleComponent implements OnInit {
+  items: Observable<Object>;
 
   constructor(private router: Router, private http: HttpClient) { }
 
@@ -22,10 +23,11 @@ export class MyArticleComponent implements OnInit {
       this.router.navigate(['/']);
       return;
     }
-    this.http.get(window['domain'] + '/api/article/read.php?username=' + localStorage.getItem('loginSessId'))
-      .subscribe(data => {
-        console.log(data);
-      });
+    this.items = this.http.get(window['domain'] + '/api/article/read.php?username=' + localStorage.getItem('loginSessId'))
+      .share()
+      .pipe(
+        map(res => res['message']) // or any other operator
+      );
   }
 
 }

@@ -5,43 +5,55 @@
   <!-- BEGIN container -->
   <div class="container">
     <!-- BEGIN news item -->
-      <div class="row text-right">
-      </div>
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th style="width: auto;"></th>
-            <th style="width: 2%"></th>
-            <th style="width: 5%"></th>
-            <th style="width: 10%"></th>
-          </tr>
-          <tr>
-            <th colspan="2"  class="text-center">
-              <h1 style="display: inline;">My Article</h1>
-            </th>
-          </tr>
-          <tr>
-            <th></th>
-            <th colspan="3" class="text-center">
-              <a routerLink="/add-article"><i class="fas fa-plus-circle"></i></a>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><a href="javascript:;">วิธีทำความสะอาดที่ถูกต้อง</a></td>
-            <td><a routerLink="/edit-article" class="action">Edit</a></td>
-            <td><a href="javascript:;" class="action">Remove</a></td>
-            <td><a href="javascript:;" class="action">Change Status</a></td>
-          </tr>
-          <tr>
-              <td><a href="javascript:;">เมื่อรถมีเสียงดังผิดปกติควรทำอย่างไร</a></td>
-              <td><a routerLink="/edit-article/id=1" class="action">Edit</a></td>
-              <td><a href="javascript:;" class="action">Remove</a></td>
-              <td><a href="javascript:;" class="action">Change Status</a></td>
-            </tr>
-        </tbody>
-      </table>
+    <div class="row text-right">
+    </div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th style="width: auto;"></th>
+          <th style="width: 2%"></th>
+          <th style="width: 5%"></th>
+          <th style="width: 10%"></th>
+        </tr>
+        <tr>
+          <th colspan="2" class="text-center">
+            <h1 style="display: inline;">My Article</h1>
+          </th>
+        </tr>
+        <tr>
+          <th></th>
+          <th colspan="3" class="text-center">
+            <a routerLink="/add-article">
+              <i class="fas fa-plus-circle"></i>
+            </a>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngIf="(items | async)?.length <= 0">
+          <td colspan="100%" style="text-align: center;">ไม่พบข้อมูล</td>
+        </tr>
+
+        <tr *ngFor="let item of items | async">
+          <!-- <td>{{ i+1 }}</td> -->
+          <!-- <td>{{ item.date }}</td> -->
+          <td>
+            <p class="article-title">
+              <a href="javascript:;" id="show-article-{{ item.id_article }}">{{ item.topic }}</a>
+            </p>
+          </td>
+          <td>
+            <a routerLink="/edit-article?id={{ item.id_article }}" class="action">Edit</a>
+          </td>
+          <td>
+            <a href="javascript:;" class="action">Remove</a>
+          </td>
+          <td>
+            <a href="javascript:;" class="action">Change Status</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
     <!-- END news item -->
   </div>
   <!-- END container -->
@@ -50,19 +62,19 @@
 
 <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="signin-modal">
   <div class="modal-dialog">
-      <div class="modal-content">
-          <div class="modal-header text-center">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-              </button>
-              <h2 class="modal-title">คุณต้องการลบบทความนี้ใช่หรือไม่ ?</h2>
-              <div class="form-group">
-                <span>
-                  <button class="btn btn-default">ยกเลิก</button>
-                  <button class="btn btn-success">ตกลง</button>
-                </span>
-              </div>
-          </div>
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h2 class="modal-title">คุณต้องการลบบทความนี้ใช่หรือไม่ ?</h2>
+        <div class="form-group">
+          <span>
+            <button class="btn btn-default">ยกเลิก</button>
+            <button class="btn btn-success">ตกลง</button>
+          </span>
+        </div>
       </div>
+    </div>
   </div>
 </div>
