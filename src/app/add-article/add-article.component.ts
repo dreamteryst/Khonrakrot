@@ -37,6 +37,7 @@ export class AddArticleComponent implements OnInit {
     self.status = $("#status").val();
     self.category = $("#category").val();
     self.http.post(window['domain'] + '/api/article/insert.php', {
+      username: localStorage.getItem('loginSessId'),
       topic: self.topic,
       content: self.content,
       status: self.status,
@@ -45,9 +46,11 @@ export class AddArticleComponent implements OnInit {
     }, httpOptions).subscribe(
       res => {
         self.returned = res;
-        $("#topic").val('');
-        $("#date").val('');
-        $('#summernote').summernote('code', '');
+        if(res['status']){
+          $("#topic").val('');
+          $("#date").val('');
+          $('#summernote').summernote('code', '');
+        }
       },
       err => {
         console.log(err);
