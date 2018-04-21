@@ -24,6 +24,8 @@ import { QuestionFilterPipe } from './question-filter.pipe';
 import { ShowNewsComponent } from './show-news/show-news.component';
 import { MyArticleComponent } from './my-article/my-article.component';
 import { ProfileComponent } from './profile/profile.component';
+import { EditArticleComponent } from './edit-article/edit-article.component';
+import { AddArticleComponent } from './add-article/add-article.component';
 
 const appRoutes: Routes = [
   { 
@@ -37,6 +39,8 @@ const appRoutes: Routes = [
       { path: 'register-success', component: RegisterSuccessComponent },
       { path: 'show-news/:id', component: ShowNewsComponent },
       { path: 'profile', component: ProfileComponent },
+      { path: 'edit-article/:id', component: EditArticleComponent },
+      { path: 'add-article', component: AddArticleComponent },
       { path: 'my-article', component: MyArticleComponent }
       
     ]
@@ -64,7 +68,9 @@ const appRoutes: Routes = [
     QuestionFilterPipe,
     ShowNewsComponent,
     MyArticleComponent,
-    ProfileComponent
+    ProfileComponent,
+    EditArticleComponent,
+    AddArticleComponent
   ],
   imports: [
     RouterModule.forRoot(
