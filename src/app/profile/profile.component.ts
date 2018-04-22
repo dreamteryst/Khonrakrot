@@ -37,9 +37,10 @@ export class ProfileComponent implements OnInit {
       this.question_1 = data['message'][0]['question_1'];
       this.question_2 = data['message'][0]['question_2'];
       this.question_3 = data['message'][0]['question_3'];
-      this.answer_1 = data['message'][0]['answer_1'];
-      this.answer_2 = data['message'][0]['answer_2'];
-      this.answer_3 = data['message'][0]['answer_3'];
+      this.answer_1 = "xxxxxxxx";
+      this.answer_2 = "xxxxxxxx";
+      this.answer_3 = "xxxxxxxx";
+      this.password = "xxxxxxxx";
     });
   }
   
