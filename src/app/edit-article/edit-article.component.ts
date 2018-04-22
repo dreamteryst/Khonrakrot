@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 
 declare var jquery: any;
@@ -18,7 +18,7 @@ export class EditArticleComponent implements OnInit {
   category: number;
   returned: any = { status: '', message: '' };
   id: number;
-  constructor(private http: HttpClient, private route: ActivatedRoute) { }
+  constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     $('#summernote').summernote({
@@ -30,6 +30,7 @@ export class EditArticleComponent implements OnInit {
     this.http.get(window['domain'] + '/api/article/read.php?username=' + localStorage.getItem('loginSessId') + '&id='+this.id)
     .subscribe(data => {
      data = data['message'][0];
+
      $('#topic').val(data['topic']);
      $('#summernote').summernote('code', data['content']);
     //  console.log(data['content']);
@@ -38,6 +39,46 @@ export class EditArticleComponent implements OnInit {
      $('#category').val(data['category']);
      
     });
+  }
+
+  formConfirm() {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+      })
+    };
+    var self = this;
+    self.topic = $("#topic").val();
+    self.date = $("#date").val();
+    self.content = $('#summernote').summernote('code');
+    self.status = $("#status").val();
+    self.category = $("#category").val();
+    // console.log(self.topic);
+    // console.log(self.date);
+    // console.log(self.content);
+    // console.log(self.status);
+    // console.log(self.category);
+    // console.log(localStorage.getItem('loginSessId'));
+    // console.log(this.id);
+    self.http.post(window['domain'] + '/api/article/edit.php', {
+      username: localStorage.getItem('loginSessId'),
+      topic: self.topic,
+      content: self.content,
+      status: self.status,
+      date: self.date,
+      category: self.category,
+      id_article: this.id
+    }, httpOptions).subscribe(
+      res => {
+        self.returned = res;
+        if(res['status']){
+          this.router.navigate(['/my-article']);
+        }
+      },
+      err => {
+        console.log(err);
+      }
+    );
   }
 
 }
