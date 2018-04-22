@@ -30,7 +30,7 @@ export class ProfileComponent implements OnInit {
     this.http.get(window['domain'] + '/api/fetch_user_profile.php?username=' + localStorage.getItem('loginSessId'))
     .subscribe(data => {
       this.name = data['message'][0]['name'];
-      this.people_id = data['message'][0]['people_id'];
+      this.people_id = data['message'][0]['people_id'].substring(0, 2) + data['message'][0]['people_id'].substring(2).replace(/./g, 'x');
       this.username = data['message'][0]['username'];
       this.date_of_Birth = data['message'][0]['date_of_Birth'];
       this.email = data['message'][0]['email'];
