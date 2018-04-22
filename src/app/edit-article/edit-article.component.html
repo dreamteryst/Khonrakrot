@@ -9,7 +9,7 @@
                 <!-- BEGIN checkout-header -->
                 <div class="checkout-header">
                     <!-- BEGIN row -->
-                    <div class="row">
+                    <div class="row text-center">
                         <span class="title-form">My Article</span>
                     </div>
                     <!-- END row -->
@@ -64,9 +64,10 @@
                         </label>
                         <div class="col-md-9">
                             <select class="form-control" id="category" name="category">
-                                <option value="0">test1</option>
-                                <option value="1">test2</option>
-                                <option value="2">test3</option>
+                                <option value="0">สาระน่ารู้</option>
+                                <option value="1">How to</option>
+                                <option value="2">รถมือสองคุณภาพดี</option>
+                                <option value="3">ราคาน้ำมันวันนี้</option>
                             </select>
                         </div>
                     </div>
@@ -74,7 +75,7 @@
                 <!-- END checkout-body -->
                 <!-- BEGIN checkout-footer -->
                 <div class="checkout-footer">
-                    <button type="button"  class="btn btn-inverse btn-lg p-l-30 p-r-30 m-l-10">Save</button>
+                    <button type="button" (click)="formConfirm()"  class="btn btn-inverse btn-lg p-l-30 p-r-30 m-l-10">Save</button>
                 </div>
                 <!-- END checkout-footer -->
             </form>
