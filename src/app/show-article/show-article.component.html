@@ -1,0 +1,36 @@
+<app-navbar></app-navbar>
+<!-- BEGIN #trending-items -->
+<div id="trending-items" class="section-container bg-white">
+  <!-- BEGIN container -->
+  <div class="container">
+    <h2>{{ topic }}</h2>
+    <p>
+      {{ username }} : {{ date }}
+      <br/>
+    </p>
+    <div class="multi_lines_text" [innerHTML]="content"></div>
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+          <h3>
+            Comment
+           </h3>
+      </div>
+      <div class="panel-body">
+        <div class="form-group">
+          <textarea class="form-control" rows="5" placeholder="Leave a message..." style="font-size:20px;" maxlength="250"></textarea>
+        </div>
+        <!-- <span>{{ length }}/250</span> -->
+        <div class="row">
+          <button type="button" class="btn btn-success pull-right">Comment</button>
+        </div>
+        <hr/>
+        <div class="col-md-12" style="word-wrap: break-word;">
+          <div class="text-comment">มอลล์ผลไม้ ไฮไลท์วอล์ค ภควัมบดีโกลด์คาแร็คเตอร์สารขัณฑ์แคทวอล์ค เอ๋อสตีล บ๋อยสจ๊วตหลวงพี่ จูเนียร์ โปรเจคท์มาร์จิน วัคค์เลดี้ ออดิทอเรียม โมจิวัจนะกรีนโต๊ะจีน สตริงควิกฟินิกซ์ บัตเตอร์ตัวเอง สหัสวรรษคอรัปชั่นเรตแม่ค้าเปราะบาง โค้ช แอโรบิคเทคเป่ายิ้งฉุบมาร์จิน ตาปรือสเกตช์แบนเนอร์</div>
+          <div class="row">
+              <span class="pull-right">โดย <strong>somji456</strong> เมื่อวันที่ 06/09/2018 12:23</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

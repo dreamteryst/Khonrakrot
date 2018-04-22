@@ -26,6 +26,7 @@ import { MyArticleComponent } from './my-article/my-article.component';
 import { ProfileComponent } from './profile/profile.component';
 import { EditArticleComponent } from './edit-article/edit-article.component';
 import { AddArticleComponent } from './add-article/add-article.component';
+import { ShowArticleComponent } from './show-article/show-article.component';
 
 const appRoutes: Routes = [
   { 
@@ -41,7 +42,8 @@ const appRoutes: Routes = [
       { path: 'profile', component: ProfileComponent },
       { path: 'edit-article/:id', component: EditArticleComponent },
       { path: 'add-article', component: AddArticleComponent },
-      { path: 'my-article', component: MyArticleComponent }
+      { path: 'my-article', component: MyArticleComponent },
+      { path: 'show-article/:id', component: ShowArticleComponent}
       
     ]
   },
@@ -70,7 +72,8 @@ const appRoutes: Routes = [
     MyArticleComponent,
     ProfileComponent,
     EditArticleComponent,
-    AddArticleComponent
+    AddArticleComponent,
+    ShowArticleComponent
   ],
   imports: [
     RouterModule.forRoot(
