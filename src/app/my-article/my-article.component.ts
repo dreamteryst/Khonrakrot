@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs/Observable';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { $$ } from 'protractor';
 
 
 declare var jquery: any;
@@ -15,6 +16,7 @@ declare var $: any;
 })
 export class MyArticleComponent implements OnInit {
   items: Observable<Object>;
+  returned: any = {status:true, message: '' };
 
   constructor(private router: Router, private http: HttpClient) { }
 
@@ -28,6 +30,26 @@ export class MyArticleComponent implements OnInit {
       .pipe(
         map(res => res['message']) // or any other operator
       );
+  }
+  remove(id){
+    var self = this;
+    $('#del-article-modal').modal('show');
+    $('#yes-remove').click(function(){
+      self.http.get(window['domain'] + '/api/article/remove.php?id='+id).subscribe(
+        res => {
+          self.returned = res;
+          if(res['status']){
+            console.log(self.returned.message);
+            $('#row-'+id).remove();
+            $('#del-article-modal').modal('hide');
+          }
+        },
+        err => {
+          console.log(err);
+        }
+      );
+      
+    });
   }
 
 }

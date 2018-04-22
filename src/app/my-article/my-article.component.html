@@ -34,9 +34,7 @@
           <td colspan="100%" style="text-align: center;">ไม่พบข้อมูล</td>
         </tr>
 
-        <tr *ngFor="let item of items | async">
-          <!-- <td>{{ i+1 }}</td> -->
-          <!-- <td>{{ item.date }}</td> -->
+        <tr *ngFor="let item of items | async" id="row-{{ item.id_article }}">
           <td>
             <p class="article-title">
               <a routerLink="/show-article/{{ item.id_article }}" id="show-article-{{ item.id_article }}">{{ item.topic }}</a>
@@ -46,7 +44,7 @@
             <a routerLink="/edit-article/{{ item.id_article }}" class="action">Edit</a>
           </td>
           <td>
-            <a href="javascript:;" class="action">Remove</a>
+            <a  (click)="remove(item.id_article)" class="action pointer">Remove</a>
           </td>
           <td>
             <a href="javascript:;" class="action">Change Status</a>
@@ -60,7 +58,7 @@
 </div>
 <!-- END #trending-items -->
 
-<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="signin-modal">
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="del-article-modal">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header text-center">
@@ -70,8 +68,8 @@
         <h2 class="modal-title">คุณต้องการลบบทความนี้ใช่หรือไม่ ?</h2>
         <div class="form-group">
           <span>
-            <button class="btn btn-default">ยกเลิก</button>
-            <button class="btn btn-success">ตกลง</button>
+            <button class="btn btn-default" id="no-remove">ยกเลิก</button>
+            <button class="btn btn-success" id="yes-remove">ตกลง</button>
           </span>
         </div>
       </div>
