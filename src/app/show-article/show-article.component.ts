@@ -66,7 +66,19 @@ export class ShowArticleComponent implements OnInit {
     }, httpOptions).subscribe(
       res => {
         console.log(res);
-        //window.location.reload();
+        if(res['status']){
+          var data = "";
+          data += '<div _ngcontent-c4 class="col-md-12" style="word-wrap: break-word;">';
+          data +=   '<div _ngcontent-c4 class="text-comment">';
+          data +=     $("#comment").val();
+          data +=   '</div>';
+          data +=   '<div _ngcontent-c4 class="row">';
+          data +=     '<span _ngcontent-c4 class="pull-right">โดย<strong>'+localStorage.getItem('loginSessId')+'</strong> เมื่อวันที่ '+res['date']+'</span>';
+          data +=   '</div>'
+          data += '</div>';
+          $("#comment").val("");
+          $('#div-comment').append(data);
+        }
       },
       err => {
         console.log(err);

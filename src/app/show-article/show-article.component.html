@@ -11,9 +11,9 @@
     <div class="multi_lines_text" [innerHTML]="content"></div>
     <div class="panel panel-primary">
       <div class="panel-heading">
-          <h3>
-            Comment
-           </h3>
+        <h3>
+          Comment
+        </h3>
       </div>
       <div class="panel-body">
         <div class="form-group">
@@ -24,14 +24,17 @@
           <button type="button" (click)="submit()" class="btn btn-success pull-right">Comment</button>
         </div>
         <hr/>
-        <div class="col-md-12" style="word-wrap: break-word;"  *ngFor="let item of items | async">
-          <div class="text-comment">
-            {{ item.message }}
-          </div>
-          <div class="row">
-              <span class="pull-right">โดย <strong>{{ item.username }}</strong> เมื่อวันที่ {{ item.date }}</span>
+        <div id="div-comment">
+          <div class="col-md-12" style="word-wrap: break-word;" *ngFor="let item of items | async">
+            <div class="text-comment">
+              {{ item.message }}
+            </div>
+            <div class="row">
+              <span class="pull-right">โดย<strong>{{ item.username }}</strong> เมื่อวันที่ {{ item.date }}</span>
+            </div>
           </div>
         </div>
+
       </div>
     </div>
   </div>
