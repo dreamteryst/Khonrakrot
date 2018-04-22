@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { map } from 'rxjs/operators';
 import { ActivatedRoute, Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 declare var jquery: any;
 declare var $: any;
@@ -13,12 +13,13 @@ declare var $: any;
   styleUrls: ['./show-article.component.css']
 })
 export class ShowArticleComponent implements OnInit {
-  id: number;
-  topic: string;
-  content: string;
-  date: string;
-  username: string;
-  length: number = 0;
+  id:number;
+  topic:string;
+  content:string;
+  date:string;
+  username:string;
+  length:number = 0;
+  comment:string;
   items: Observable<Object>;
   
 
@@ -47,6 +48,31 @@ export class ShowArticleComponent implements OnInit {
     $('textarea').keyup(function () {
       self.length = $(this).val().length;
     });
+  }
+
+  submit() {
+    if($("#comment").val().length <= 0) {
+      return;
+    }
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+      })
+    };
+    this.http.post(window['domain'] + '/api/comment/insert.php?id='+this.id, {
+      username: localStorage.getItem('loginSessId'),
+      id_article: this.id,
+      message: $("#comment").val()
+    }, httpOptions).subscribe(
+      res => {
+        console.log(res);
+        //window.location.reload();
+      },
+      err => {
+        console.log(err);
+      }
+    );
+
   }
 
 }

@@ -17,11 +17,11 @@
       </div>
       <div class="panel-body">
         <div class="form-group">
-          <textarea class="form-control" rows="5" placeholder="Leave a message..." style="font-size:20px;" maxlength="250"></textarea>
+          <textarea class="form-control" rows="5" id="comment" placeholder="Leave a message..." style="font-size:20px;" maxlength="250"></textarea>
         </div>
         <!-- <span>{{ length }}/250</span> -->
         <div class="row">
-          <button type="button" class="btn btn-success pull-right">Comment</button>
+          <button type="button" (click)="submit()" class="btn btn-success pull-right">Comment</button>
         </div>
         <hr/>
         <div class="col-md-12" style="word-wrap: break-word;"  *ngFor="let item of items | async">
