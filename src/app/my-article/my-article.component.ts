@@ -34,6 +34,8 @@ export class MyArticleComponent implements OnInit {
   remove(id){
     var self = this;
     $('#del-article-modal').modal('show');
+    $('#no-remove').modal('hide');
+    
     $('#yes-remove').click(function(){
       self.http.get(window['domain'] + '/api/article/remove.php?id='+id).subscribe(
         res => {
