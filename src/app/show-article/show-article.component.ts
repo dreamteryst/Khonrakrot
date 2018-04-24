@@ -21,6 +21,7 @@ export class ShowArticleComponent implements OnInit {
   length:number = 0;
   comment:string;
   items: Observable<Object>;
+  isNoComment: boolean = false;
   
 
   constructor(private route: ActivatedRoute, private http: HttpClient) { }
@@ -52,8 +53,10 @@ export class ShowArticleComponent implements OnInit {
 
   submit() {
     if($("#comment").val().length <= 0) {
+      this.isNoComment = true;
       return;
     }
+    this.isNoComment = false;
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'

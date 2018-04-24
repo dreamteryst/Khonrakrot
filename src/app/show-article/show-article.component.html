@@ -16,6 +16,7 @@
         </h3>
       </div>
       <div class="panel-body">
+        <span class="text-danger" *ngIf="isNoComment">กรุณาระบุข้อความ</span>
         <div class="form-group">
           <textarea class="form-control" rows="5" id="comment" placeholder="Leave a message..." style="font-size:20px;" maxlength="250"></textarea>
         </div>
