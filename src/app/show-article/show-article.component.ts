@@ -55,7 +55,11 @@ export class ShowArticleComponent implements OnInit {
     if($("#comment").val().length <= 0) {
       this.isNoComment = true;
       return;
+    } else if (!$("#comment").val().replace(/\s/g, '').length) {
+      this.isNoComment = true;
+      return;
     }
+    
     this.isNoComment = false;
     const httpOptions = {
       headers: new HttpHeaders({
