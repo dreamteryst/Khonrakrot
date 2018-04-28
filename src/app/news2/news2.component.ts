@@ -25,11 +25,11 @@ export class News2Component implements OnInit {
       $("#btnLogin").show();
       $("#btnRegister").show();
     });
-      this.items = this.http.get(window['domain'] + '/api/news/read.php')
-        .share()
-        .pipe(
-          map(res => res['message']) // or any other operator
-        );
+    this.items = this.http.get(window['domain'] + '/api/news/read.php')
+      .share()
+      .pipe(
+        map(res => res['message']) // or any other operator
+      );
   }
 
   more() {

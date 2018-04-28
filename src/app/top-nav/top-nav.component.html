@@ -9,13 +9,21 @@
                     <img src="assets/img/logo.png" class="img-logo" />
                 </a>
             </div>
-            <div class="sign-content">
+            <div class="sign-content" *ngIf="!isSignin">
                 <div style="display: flex; flex-direction: column; justify-content: flex-end; align-items: stretch;">
-                    <a routerLinkActive="active" id="btnLogin" style="color:white;" (click)="signin()">
+                    <a routerLinkActive="active" id="btnLogin" style="color:white;" (click)="signin()" class="pointer">
                         <i class="fas fa-lock"></i> Sign in</a>
                     <br>
                     <a routerLink="/register" routerLinkActive="active" id="btnRegister" style="color:white;">
                         <i class="fas fa-user"></i> Register</a>
+                </div>
+            </div>
+            <div class="sign-content" *ngIf="isSignin">
+                <div class="helloUser">
+                    <span style="color:white;">สวัสดีคุณ <a routerLink="/profile" routerLinkActive="active" style="color:white; text-decoration: underline;">{{ user }}</a></span>
+                    <br>
+                    <a routerLinkActive="active" id="btnSignOut" (click)="signout()" style="color:white;" class="pointer">
+                        Sign out</a>
                 </div>
             </div>
         </div>
@@ -31,32 +39,34 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <h2 class="modal-title">Sing in</h2>
+                <h2 class="modal-title">Sign in</h2>
             </div>
             <div class="modal-body text-center">
-                <form method="POST" name="sign-in" id="sign-in">
+                <p class="alert alert-danger" *ngIf="!returned.status">{{ returned.message }}</p>
+                <form method="POST" name="sign-in" id="sign-in" action="https://www.google.com/recaptcha/api/siteverify">
                     <div class="form-group row">
                         <label for="username" class="col-sm-3 col-form-label">Username</label>
                         <div class="col-sm-9">
-                            <input class="form-control" type="text" name="username" id="username">
+                            <input class="form-control" type="text" name="username" id="username" required>
                         </div>
                     </div>
                     <br>
                     <div class="form-group row">
                         <label for="password" class="col-sm-3 col-form-label">Password</label>
                         <div class="col-sm-9">
-                            <input class="form-control" type="text" name="password" id="password">
+                            <input class="form-control" type="password" name="password" id="password" required>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <a routerLink="javascript:;" routerLinkActive="active" class="col-sm-9">Forgot password?</a>
+                        <a routerLink="" routerLinkActive="active" class="col-sm-9">Forgot password?</a>
                     </div>
                     <br>
                     <div class="form-group">
                         <button type="button" class="btn btn-success btn-lg" id="modal-btn-yes">Sign in</button>
+                        <!-- <input type="submit" class="btn btn-success btn-lg" value="Sign in"> -->
                     </div>
                     <div class="form-group" style="justify-content: center; display: flex; padding-top:1rem;">
-                        <div class="g-recaptcha" data-sitekey="6LeOvlEUAAAAABOT5FzC5FVa2VrEEUOLd0-whV1w"></div>
+                        <re-captcha (resolved)="resolved($event)" siteKey="6LeOvlEUAAAAABOT5FzC5FVa2VrEEUOLd0-whV1w"></re-captcha>
                     </div>
                 </form>
             </div>

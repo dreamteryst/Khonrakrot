@@ -10,34 +10,61 @@ declare var $: any;
 export class TopNavComponent implements OnInit {
   username: string;
   password: string;
-  returned: any = { status: '', message: '' };
+  returned: any = {status:true, message: '' };
+  token: string;
+  isConfirm: boolean;
+  isSignin: boolean;
+  user: string;
 
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
+    this.isConfirm = false;
+    if(localStorage.getItem('loginSessId')==null){
+      this.isSignin = false;
+    }else{
+      this.user = localStorage.getItem('loginSessId');
+      this.isSignin = true;
+    }
   }
-  signin(){
-    $("#signin-modal").modal('show');
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
-      })
-    };
+  signin() {
     var self = this;
-    self.username = $("#username").val();
-    self.password = $("#password").val();
-    self.http.post(window['domain'] + '/api/signin/signin.php', {
-      username: self.username,
-      password: self.password,
-    }, httpOptions).subscribe(
-      res => {
-        self.returned = res;
-        $("#username").val('');
-        $("#password").val('');
-      },
-      err => {
-        console.log(err);
+    $("#signin-modal").modal('show');
+    $("#modal-btn-yes").click(function () {
+      if(!self.isConfirm){
+        self.returned.status = false;
+        self.returned.message = "* กรุณายืนยันว่าท่านไม่ใช่โปรแกรมอัตโนมัติ *";
+        return;
       }
-    );
+      this.username = $("#username").val();
+      this.password = $("#password").val();
+      var formData = new FormData();
+      formData.append('username', this.username);
+      formData.append('password', this.password);
+      self.http.post(window['domain'] + '/api/signin/signin.php', formData).subscribe(
+        res => {
+          self.returned = res;
+          if(res['status']){
+            localStorage.setItem('loginSessId',  this.username);
+            window.location.reload();
+          }
+        },
+        err => {
+          console.log(err);
+        }
+      );
+    });
+
+  }
+  
+  signout(){
+    localStorage.clear();
+    window.location.reload();
+  }
+
+  resolved(captchaResponse: string) {
+    this.token = captchaResponse;
+    this.isConfirm = true;
+    console.log(`Resolved captcha with response ${captchaResponse}:`);
   }
 }

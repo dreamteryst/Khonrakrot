@@ -5,6 +5,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { RecaptchaModule } from 'ng-recaptcha';
 import { environment } from '../environments/environment';
 
 
@@ -14,7 +15,6 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { MainComponent } from './main/main.component';
 import { TopNavComponent } from './top-nav/top-nav.component';
-import { NewsComponent } from './news/news.component';
 import { AddNewsComponent } from './add-news/add-news.component';
 import { ErrorComponent } from './error/error.component';
 import { News2Component } from './news2/news2.component';
@@ -22,6 +22,11 @@ import { RegisterComponent } from './register/register.component';
 import { RegisterSuccessComponent } from './register-success/register-success.component';
 import { QuestionFilterPipe } from './question-filter.pipe';
 import { ShowNewsComponent } from './show-news/show-news.component';
+import { MyArticleComponent } from './my-article/my-article.component';
+import { ProfileComponent } from './profile/profile.component';
+import { EditArticleComponent } from './edit-article/edit-article.component';
+import { AddArticleComponent } from './add-article/add-article.component';
+import { ShowArticleComponent } from './show-article/show-article.component';
 
 const appRoutes: Routes = [
   { 
@@ -33,7 +38,13 @@ const appRoutes: Routes = [
       { path: 'addnews', component: AddNewsComponent },
       { path: 'register', component: RegisterComponent },
       { path: 'register-success', component: RegisterSuccessComponent },
-      { path: 'show-news/:id', component: ShowNewsComponent }
+      { path: 'show-news/:id', component: ShowNewsComponent },
+      { path: 'profile', component: ProfileComponent },
+      { path: 'edit-article/:id', component: EditArticleComponent },
+      { path: 'add-article', component: AddArticleComponent },
+      { path: 'my-article', component: MyArticleComponent },
+      { path: 'show-article/:id', component: ShowArticleComponent}
+      
     ]
   },
   { path: 'home',
@@ -51,14 +62,18 @@ const appRoutes: Routes = [
     FooterComponent,
     MainComponent,
     TopNavComponent,
-    NewsComponent,
     AddNewsComponent,
     ErrorComponent,
     News2Component,
     RegisterComponent,
     RegisterSuccessComponent,
     QuestionFilterPipe,
-    ShowNewsComponent
+    ShowNewsComponent,
+    MyArticleComponent,
+    ProfileComponent,
+    EditArticleComponent,
+    AddArticleComponent,
+    ShowArticleComponent
   ],
   imports: [
     RouterModule.forRoot(
@@ -69,7 +84,8 @@ const appRoutes: Routes = [
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    RecaptchaModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

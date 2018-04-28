@@ -5,17 +5,16 @@
   <div class="container">
     <h2>{{ topic }}</h2>
     <p>
-      {{ topic }}
-      <br/> {{ date_post }}
+      {{ date_post }}
       <br/>
     </p>
-    <div class="multi_lines_text">{{ content }}</div>
+    <div class="multi_lines_text" [innerHTML]="content"></div>
     <div class="flex-item">
       <span>
         <button type="button" class="btn btn-info" id="previous" *ngIf="isPrevious" (click)="goPrevious()">Previous</button>
       </span>
       <span>
-        <button type="button" class="btn btn-info" id="next" (click)="goNext()">Next</button>
+        <button type="button" class="btn btn-info" id="next" *ngIf="isNext" (click)="goNext()">Next</button>
       </span>
     </div>
   </div>

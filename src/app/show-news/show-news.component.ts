@@ -18,6 +18,7 @@ export class ShowNewsComponent implements OnInit {
   next:number;
   previous:number;
   isPrevious:boolean;
+  isNext:boolean;
 
   constructor(private route: ActivatedRoute, private http: HttpClient, private router: Router) {}
 
@@ -45,12 +46,15 @@ export class ShowNewsComponent implements OnInit {
       this.topic = this.item['topic'];
       this.content = this.item['content'];
       this.date_post = this.item['date_post'];
+      this.next = this.item['next'];
+      this.previous = this.item['previous'];
+      
+      this.isPrevious = !(this.previous == null);
+      this.isNext = !(this.next == null);
     });
-    this.next = this.id*1 + 1*1;
-    this.previous = this.id*1 - 1*1;
-    
-    this.isPrevious = !(this.previous < 1);
-    console.log(this.next+" "+this.previous);
+    // this.next = this.id*1 + 1*1;
+    // this.previous = this.id*1 - 1*1;
+  
     
   }
 
